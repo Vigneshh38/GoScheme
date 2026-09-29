@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>Home — Matching Schemes</title>
+<link rel="stylesheet" href="common.css">
+<style>
+  .header { display: flex; align-items: center; justify-content: space-between; padding: 12px 22px 0; }
+  .hello { display: flex; align-items: center; gap: 12px; }
+  .avatar {
+    width: 46px; height: 46px; border-radius: 50%;
+    background: linear-gradient(145deg, #3FA9F5, #0070C0);
+    color: #fff; font-weight: 600; font-size: 19px; display: grid; place-items: center;
+  }
+  .hello .t1 { font-size: 19px; font-weight: 700; line-height: 1.2; }
+  .hello .t2 { font-size: 13px; color: var(--muted); }
+  .bell { position: relative; width: 44px; height: 44px; border-radius: 50%; background: #F4F7FB; display: grid; place-items: center; }
+  .bell svg { width: 21px; height: 21px; }
+  .bell::after { content: ''; position: absolute; top: 10px; right: 11px; width: 8px; height: 8px; border-radius: 50%; background: #EF4444; border: 2px solid #F4F7FB; }
+
+  .banner {
+    position: relative; overflow: hidden;
+    margin: 16px 18px 0; padding: 15px 18px; border-radius: 22px; color: #fff;
+    background: linear-gradient(135deg, #2F8FE0 0%, #0070C0 55%, #0B5CAD 100%);
+    box-shadow: 0 12px 28px rgba(0,112,192,.28);
+  }
+  .banner .blob { position: absolute; border-radius: 50%; background: rgba(255,255,255,.10); }
+  .banner .b1 { width: 150px; height: 150px; right: -40px; top: -60px; }
+  .banner .b2 { width: 90px; height: 90px; right: 50px; bottom: -50px; background: rgba(255,255,255,.07); }
+  .banner .row { position: relative; display: flex; align-items: center; gap: 10px; font-size: 13px; opacity: .92; font-weight: 500; }
+  .banner .row svg { width: 18px; height: 18px; }
+  .banner .big { position: relative; font-size: 21px; font-weight: 700; margin-top: 6px; line-height: 1.25; }
+  .banner .big small { display: block; font-size: 14px; font-weight: 500; opacity: .9; }
+  .banner .cta {
+    position: relative; margin-top: 12px; display: inline-flex; align-items: center; gap: 6px;
+    background: #fff; color: var(--blue); font-weight: 600; font-size: 13px; padding: 7px 14px; border-radius: 14px;
+  }
+  .banner .cta svg { width: 15px; height: 15px; }
+
+  .chips { display: flex; gap: 8px; padding: 14px 18px 0; white-space: nowrap; }
+  .chip {
+    height: 34px; padding: 0 14px; border-radius: 17px; border: 1.5px solid var(--line);
+    display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--ink); background: #fff;
+  }
+  .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .chip .n { font-size: 11px; background: rgba(255,255,255,.2); padding: 1px 7px; border-radius: 9px; }
+  .chip .dot { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 600; color: #fff; }
+
+  .section { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 22px 9px; }
+  .section h2 { margin: 0; font-size: 17px; font-weight: 600; }
+  .section span { font-size: 12px; color: var(--muted); }
+
+  .cards { padding: 0 18px; display: flex; flex-direction: column; gap: 8px; }
+  .card {
+    display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 18px;
+    background: #fff; border: 1px solid var(--line); box-shadow: 0 3px 12px rgba(15,23,42,.05);
+  }
+  .card .ic { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; flex: none; }
+  .card .ic svg { width: 24px; height: 24px; }
+  .card .mid { flex: 1; min-width: 0; }
+  .card .name { font-size: 14.5px; white-space: nowrap; font-weight: 600; line-height: 1.25; }
+  .card .ben { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .card .ben b { color: var(--ink); font-weight: 600; }
+  .card .who { display: inline-block; margin-top: 3px; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 8px; background: #F1F5F9; color: #334155; }
+  .badge { flex: none; display: flex; align-items: center; gap: 3px; font-size: 11.5px; font-weight: 600; padding: 5px 9px; border-radius: 12px; }
+  .badge svg { width: 14px; height: 14px; stroke-width: 3; }
+  .ok { background: var(--green-soft); color: #15803D; }
+  .maybe { background: var(--amber-soft); color: #B45309; }
+
+  .tabbar {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 86px; background: #fff;
+    border-top: 1px solid var(--line); display: flex; justify-content: space-around; padding-top: 10px;
+  }
+  .tab { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #94A3B8; font-weight: 500; width: 80px; }
+  .tab svg { width: 24px; height: 24px; }
+  .tab.on { color: var(--blue); }
+</style>
+</head>
+<body>
+<div class="screen">
+  <div class="status"><span>9:41</span><span class="icons"></span></div>
+
+  <div class="header">
+    <div class="hello">
+      <div class="avatar">M</div>
+      <div>
+        <div class="t1"><span class="ta">வணக்கம்</span>, Murugan 👋</div>
+        <div class="t2">Farmer · Madurai</div>
+      </div>
+    </div>
+    <div class="bell"><i data-lucide="bell"></i></div>
+  </div>
+
+  <div class="banner">
+    <div class="blob b1"></div><div class="blob b2"></div>
+    <div class="row"><i data-lucide="sparkles"></i>Found for your family</div>
+    <div class="big">5 schemes match you
+      <small class="ta">உங்களுக்கு 5 திட்டங்கள் உள்ளன</small></div>
+  </div>
+
+  <div class="chips">
+    <div class="chip on">All <span class="n">5</span></div>
+    <div class="chip"><span class="dot" style="background:#0070C0">M</span>Me</div>
+    <div class="chip"><span class="dot" style="background:#DB2777">L</span>Lakshmi</div>
+    <div class="chip"><span class="dot" style="background:#7C3AED">P</span>Priya</div>
+  </div>
+
+  <div class="section"><h2>Best matches</h2><span>Sorted by match</span></div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="ic" style="background:#DCFCE7;color:#16A34A"><i data-lucide="wheat"></i></div>
+      <div class="mid">
+        <div class="name">PM-KISAN</div>
+        <div class="ben"><b>₹6,000</b> per year</div>
+        <span class="who">For you</span>
+      </div>
+      <div class="badge ok"><i data-lucide="check"></i>Eligible</div>
+    </div>
+
+    <div class="card">
+      <div class="ic" style="background:#FCE7F3;color:#DB2777"><i data-lucide="heart-pulse"></i></div>
+      <div class="mid">
+        <div class="name">Ayushman Bharat</div>
+        <div class="ben"><b>₹5 lakh</b> health cover / year</div>
+        <span class="who">Whole family</span>
+      </div>
+      <div class="badge ok"><i data-lucide="check"></i>Eligible</div>
+    </div>
+
+    <div class="card">
+      <div class="ic" style="background:#FFEDD5;color:#EA580C"><i data-lucide="hand-heart"></i></div>
+      <div class="mid">
+        <div class="name">Magalir Urimai Thogai</div>
+        <div class="ben"><b>₹1,000</b> per month</div>
+        <span class="who">For Lakshmi · Wife</span>
+      </div>
+      <div class="badge ok"><i data-lucide="check"></i>Eligible</div>
+    </div>
+
+    <div class="card">
+      <div class="ic" style="background:#E0EEFA;color:#0070C0"><i data-lucide="graduation-cap"></i></div>
+      <div class="mid">
+        <div class="name">Pudhumai Penn</div>
+        <div class="ben"><b>₹1,000</b> per month for college</div>
+        <span class="who">For Priya · Daughter</span>
+      </div>
+      <div class="badge ok"><i data-lucide="check"></i>Eligible</div>
+    </div>
+
+    <div class="card">
+      <div class="ic" style="background:#FEF3C7;color:#D97706"><i data-lucide="house"></i></div>
+      <div class="mid">
+        <div class="name">PMAY – Gramin</div>
+        <div class="ben"><b>₹1.2 lakh</b> to build a house</div>
+        <span class="who">1 more question</span>
+      </div>
+      <div class="badge maybe"><i data-lucide="circle-help"></i>Maybe</div>
+    </div>
+  </div>
+
+  <div class="tabbar">
+    <div class="tab on"><i data-lucide="house"></i>Home</div>
+    <div class="tab"><i data-lucide="file-text"></i>Applications</div>
+    <div class="tab"><i data-lucide="bell"></i>Alerts</div>
+    <div class="tab"><i data-lucide="user"></i>Profile</div>
+  </div>
+  <div class="home-indicator"></div>
+</div>
+<script src="statusbar.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=block');
+
+:root {
+  --blue: #0070C0;
+  --blue-2: #2F8FE0;
+  --blue-soft: #E8F2FC;
+  --ink: #0F172A;
+  --muted: #64748B;
+  --line: #EEF2F7;
+  --green: #16A34A;
+  --green-soft: #DCFCE7;
+  --amber: #D97706;
+  --amber-soft: #FEF3C7;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  width: 390px;
+  height: 844px;
+  overflow: hidden;
+  background: #fff;
+  color: var(--ink);
+  font-family: 'Poppins', 'Noto Sans Tamil', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ta { font-family: 'Noto Sans Tamil', 'Poppins', sans-serif; }
+
+.screen { position: relative; width: 390px; height: 844px; }
+
+/* iOS status bar */
+.status {
+  height: 50px;
+  padding: 16px 30px 0 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+}
+.status .icons { display: flex; gap: 6px; align-items: center; }
+
+.home-indicator {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 134px;
+  height: 5px;
+  border-radius: 3px;
+  background: #0F172A;
+}
+
+[data-lucide], svg.lucide { stroke-width: 2.2; }

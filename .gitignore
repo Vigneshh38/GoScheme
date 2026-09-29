@@ -1,0 +1,20 @@
+# dependencies & builds
+node_modules/
+app/dist/
+app/dist-artifact/
+*.local
+
+# voice generator: Python env and scratch audio (model cache lives on D:\hf-cache)
+tools/tts/.venv/
+tools/tts/tmp.wav
+tools/tts/pip-install.log
+tools/tts/report.json
+__pycache__/
+
+# Office lock files and superseded decks (old "Scheme Saathi" name)
+~$*
+Scheme_Saathi_Expo*.pptx
+
+# local editor / Claude Code settings
+.claude/
+.vscode/

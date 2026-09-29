@@ -1,0 +1,668 @@
+{
+ "generatedAt": "2026-09-29T11:40:41.083Z",
+ "schemes": {
+  "pm-kisan": {
+   "source": {
+    "name": "myScheme (Government of India)",
+    "url": "https://www.myscheme.gov.in/schemes/pm-kisan",
+    "checked": "2026-09-29"
+   },
+   "en": {
+    "name": "Pradhan Mantri Kisan Samman Nidhi",
+    "department": "Department of Agriculture and Cooperation",
+    "summary": "Farmer welfare scheme by Ministry of Agriculture and Farmers Welfare to provide income support to all landholding farmers' families in the country to supplement their financial needs for procuring various inputs related to agriculture and allied activities as well as domestic needs.",
+    "benefits_md": "Financial benefit of **Rs. 6000 per annum per family** payable in three equal installments of **Rs 2000 each**, every four months.",
+    "eligibility_md": "All landholding farmers' families, which have cultivable land holding in their names are eligible to get benefit under the scheme.",
+    "exclusions_md": "The following categories of beneficiaries of higher economic status shall not be eligible for benefit under the scheme:\n\n1. All Institutional Land holders.\n1. Farmer families in which one or more of its members belong to following categories\n1. Former and present holders of constitutional posts\n1. Former and present Ministers/ State Ministers and former/present Members of LokSabha/ RajyaSabha/ State Legislative Assemblies/ State Legislative Councils,former and present Mayors of Municipal Corporations, former and present Chairpersons of District Panchayats.\n1. All serving or retired officers and employees of Central/ State Government Ministries /Offices/Departments and its field units Central or State PSEs and Attached offices /Autonomous Institutions under Government as well as regular employees of the Local Bodies (Excluding Multi Tasking Staff /Class IV/Group D employees)\n1. All superannuated/retired pensioners whose monthly pension is Rs.10,000/-or more (Excluding Multi Tasking Staff / Class IV/Group D employees) of above category\n1. All Persons who paid Income Tax in last assessment year\n1. Professionals like Doctors, Engineers, Lawyers, Chartered Accountants, and Architects registered with Professional bodies and carrying out profession by undertaking practices.",
+    "process": [
+     {
+      "mode": "Online - via CSC",
+      "md": "1. The following are the prerequisites for the enrollment process:\n\n- Aadhaar Card\n- Landholding paper\n- Savings bank account\n1. The VLE will fill in the complete details of farmer registration details like State, district, subdistrict block, and village, key in the Aadhaar number, Name of the beneficiary, category, Bank detail, Land Registration ID, and Date of birth as printed on Aadhaar card for authentication..\n1. The VLE will fill in the Land details like Survey/ Kahta No., Khasra no., and area of land as mentioned in land holding papers.\n1. Upload the supporting documents like Land, Aadhar, and Bank passbook.\n1. Self-declaration accept and save the application form.\n1. After saving the application form make payment through CSC ID.\n1. Check the Beneficiary status through the Aadhaar number."
+     }
+    ],
+    "documents": [
+     "Aadhaar Card",
+     "Landholding papers",
+     "Savings Bank Account"
+    ]
+   },
+   "ta": {
+    "name": "பிரதான் மந்திரி கிசான் சம்மன் நிதி",
+    "department": "வேளாண்மை மற்றும் கூட்டுறவுத் துறை",
+    "summary": "நாட்டில் உள்ள அனைத்து நில உரிமையாளர்களின் குடும்பங்களுக்கும் விவசாயம் மற்றும் அது சார்ந்த செயல்பாடுகள் மற்றும் உள்நாட்டு தேவைகள் தொடர்பான பல்வேறு இடுபொருள்களை கொள்முதல் செய்வதற்கான நிதித் தேவைகளைப் பூர்த்தி செய்வதற்காக வருமான ஆதரவை வழங்குவதற்காக வேளாண் மற்றும் விவசாயிகள் நல அமைச்சகத்தின் விவசாய நலத் திட்டம்.",
+    "benefits_md": "நிதியுதவி ** ரூ. ஒரு குடும்பத்திற்கு ஆண்டுக்கு 6000 ** ஒவ்வொரு நான்கு மாதங்களுக்கும் தலா 2000 ரூபாய் என்ற மூன்று சம தவணைகளில் செலுத்தப்பட வேண்டும்.",
+    "eligibility_md": "தங்கள் பெயரில் சாகுபடி செய்யக்கூடிய நிலம் வைத்திருக்கும் அனைத்து நில உரிமையாளர்கள் மற்றும் குடும்பங்கள் இத்திட்டத்தின் கீழ் பயனடைய தகுதியுடையவர்கள்.",
+    "exclusions_md": "உயர் பொருளாதார அந்தஸ்துள்ள பின்வரும் வகை பயனாளிகள் இத்திட்டத்தின் கீழ் பயனடைய தகுதியற்றவர்கள்: அனைத்து நிறுவன நில உரிமையாளர்களும்.\n1. ஒன்று அல்லது அதற்கு மேற்பட்ட உறுப்பினர்கள் பின்வரும் பிரிவுகளைச் சேர்ந்த விவசாயக் குடும்பங்கள்\n1. அரசியலமைப்பு பதவிகளின் முன்னாள் மற்றும் தற்போதைய உரிமையாளர்கள்\n1. முன்னாள் மற்றும் தற்போதைய அமைச்சர்கள்/மாநில அமைச்சர்கள் மற்றும் மக்களவை/மாநிலங்களவை/மாநில சட்டமன்றங்கள்/மாநில சட்டப்பேரவைகளின் முன்னாள்/தற்போதைய உறுப்பினர்கள், மாநகராட்சிகளின் முன்னாள் மற்றும் தற்போதைய மேயர்கள், மாவட்ட பஞ்சாயத்துகளின் முன்னாள் மற்றும் தற்போதைய தலைவர்கள்.\n1. மத்திய/மாநில அரசு அமைச்சகங்கள்/அலுவலகங்கள்/துறைகள் மற்றும் அதன் கள அலகுகள் மத்திய அல்லது மாநில பொதுத்துறை நிறுவனங்கள் மற்றும் அரசின் கீழ் இணைக்கப்பட்ட அலுவலகங்கள்/தன்னாட்சி நிறுவனங்கள் மற்றும் உள்ளாட்சி அமைப்புகளின் வழக்கமான ஊழியர்கள் (மல்டி டாஸ்கிங் ஊழியர்கள்/வகுப்பு IV/குரூப் D ஊழியர்கள் தவிர)\n1. 1ஆம் பிரிவின் அனைத்து ஓய்வூதியதாரர்களும், மாதாந்திர ஓய்வூதியம் ரூ. 10,000/- அல்லது அதற்கு மேல் (மல்டி டாஸ்கிங் ஊழியர்கள்/நான்காம் வகுப்பு/குரூப் டி ஊழியர்கள் தவிர). கடந்த மதிப்பீட்டு ஆண்டில் வருமான வரி செலுத்திய அனைத்து நபர்களும்\n1. மருத்துவர்கள், பொறியாளர்கள், வழக்கறிஞர்கள், பட்டய கணக்காளர்கள் மற்றும் கட்டிடக் கலைஞர்கள் போன்ற தொழில் வல்லுநர்கள் தொழில்முறை அமைப்புகளில் பதிவுசெய்து நடைமுறைகளை மேற்கொள்வதன் மூலம் தொழிலை மேற்கொள்கின்றனர்.",
+    "process": [
+     {
+      "mode": "Online - via CSC",
+      "md": "1. பதிவு செயல்முறைக்கான முன்நிபந்தனைகள் பின்வருமாறு:-ஆதார் அட்டை-நில உடைமைத் தாள்-சேமிப்பு வங்கிக் கணக்கு\n1. விஎல்இ மாநிலம், மாவட்டம், துணை மாவட்டத் தொகுதி மற்றும் கிராமம் போன்ற விவசாயிகளின் பதிவு விவரங்கள், ஆதார் எண், பயனாளியின் பெயர், வகை, வங்கி விவரம், நிலப் பதிவு ஐடி மற்றும் ஆதார் அட்டையில் அச்சிடப்பட்ட பிறந்த தேதி ஆகியவற்றின் முழு விவரங்களையும் பூர்த்தி செய்யும்.\n1. நில அளவை/கஹ்தா எண், கஸ்ரா எண் மற்றும் நில உடைமை ஆவணங்களில் குறிப்பிடப்பட்டுள்ள நிலப்பரப்பு போன்ற நில விவரங்களை வி. எல். இ நிரப்புகிறது.\n1. நிலம், ஆதார் மற்றும் வங்கி பாஸ் புக் போன்ற துணை ஆவணங்களை பதிவேற்றவும்.\n1. சுய அறிவிப்பு விண்ணப்ப படிவத்தை ஏற்றுக்கொண்டு சேமிக்கவும்.\n1. விண்ணப்ப படிவத்தை சேமித்த பிறகு சிஎஸ்சி ஐடி மூலம் பணம் செலுத்துங்கள்.\n1. ஆதார் எண் மூலம் பயனாளியின் நிலையை சரிபார்க்கவும்."
+     }
+    ],
+    "documents": [
+     "ஆதார் அட்டை",
+     "நில உடைமை ஆவணங்கள்",
+     "சேமிப்பு வங்கிக் கணக்கு"
+    ]
+   },
+   "links": [
+    {
+     "kind": "guidelines",
+     "url": "https://pmkisan.gov.in/Documents/RevisedPM-KISANOperationalGuidelines(English).pdf",
+     "title": "Scheme Guidelines"
+    },
+    {
+     "kind": "guidelines",
+     "url": "https://pmkisan.gov.in/Documents/Note-on-Modes-and-processes-of-ekyc-13th-Nov-English.pdf",
+     "title": "Processes Of E-KYC"
+    },
+    {
+     "kind": "form",
+     "url": "https://pmkisan.gov.in/registrationformnew.aspx",
+     "title": "New Farmer Registration Form"
+    },
+    {
+     "kind": "portal",
+     "url": "https://www.pmkisan.gov.in/KnowYour_Registration.aspx",
+     "title": "Know Your Registration"
+    }
+   ]
+  },
+  "cmchis": {
+   "source": {
+    "name": "myScheme (Government of India)",
+    "url": "https://www.myscheme.gov.in/schemes/cmchis",
+    "checked": "2026-09-29"
+   },
+   "en": {
+    "name": "Chief Minister's Comprehensive Health Insurance Scheme (CMCHIS + PM-JAY)",
+    "department": "Planning, Development and Special Initiatives Department",
+    "summary": "Chief Minister Comprehensive Health Insurance Scheme  provides quality health care to the eligible person through empanelled government and private hospitals to reduce the financial hardship to the enrolled families and move towards universal health coverage by effectively linking with public",
+    "benefits_md": "1. Extensive Coverage for Medical Emergencies: The Chief Minister Comprehensive Health Insurance Scheme is designed to provide financial support to families who are not financially equipped to handle medical emergencies due to the high costs of healthcare treatments in India. The scheme offers access to high-end medical treatments without the worry of incurring a significant financial burdens.\n1. Large Network of Hospitals: One of the significant advantages of the Chief Minister Comprehensive Health Insurance Scheme is that it has a vast network of hospitals that are empanelled to provide medical treatment. This ensures that beneficiaries can access medical facilities quickly, even in remote areas.\n1. Comprehensive Coverage for Multiple Treatments: The scheme provides coverage for numerous treatments, thereby reducing the likelihood of beneficiaries having to pay for medical treatments from their pocket. This ensures that beneficiaries can avail of any treatment covered under the policy free of cost, making healthcare more affordable.\n1. High Sum Insured: The Chief Minister Comprehensive Health Insurance Scheme provides high coverage of up to Rs. 5 lahks per family for each policy year. This amount is sufficient to avail of most minor healthcare treatments, and it provides significant relief to families who cannot afford healthcare expenses.\n1. Coverage for Additional Medical Procedures: Unlike typical health insurance policies, the Chief Minister Comprehensive Health Insurance Scheme also provides coverage for follow-up treatments and diagnostic procedures. This eliminates the need for beneficiaries to spend extra money on carrying out these procedures, thus providing additional financial relief.",
+    "eligibility_md": "The Chief Minister’s Comprehensive Health Insurance Scheme is intended for the residents of Tamil Nadu who meet the specified eligibility criteria. To qualify for benefits under the scheme, the applicant's name must be present in the family card, and their family's annual income should be less than Rs.1,20,000/- per annum. This eligibility can be confirmed by producing necessary documents, such as the family card, Aadhar card, and income certificate issued by the VAO/Revenue Authorities, along with a self-declaration from the head of the family.\n<br>\n\nUnder this scheme, the definition of family includes the eligible member, their legal spouse, their children, and their dependent parents. By ensuring that these individuals meet the necessary criteria, they can access the benefits of the scheme and receive quality healthcare services without financial burden.",
+    "exclusions_md": "",
+    "process": [
+     {
+      "mode": "Online / enrolment centre",
+      "md": "1. Read the official enrolment guide (**How to Enroll**) on cmchistn.com — it is available in Tamil and English.\n1. Keep ready: **family card**, **Aadhaar card**, **income certificate from the VAO / Revenue authorities**, and a **self-declaration** from the head of the family.\n1. Apply through **CMCHIS-PMJAY Apply Now** on cmchistn.com, or at the nearest enrolment centre.\n1. After enrolment, treatment is **cashless at empanelled hospitals** (the list is on cmchistn.com). Helpline: **1800 425 3993**."
+     }
+    ],
+    "documents": [
+     "Income certificate from the Village Administrative Officer/Revenue authorities",
+     "Ration Card (both original and photocopy)",
+     "Self-declaration from the head of the family",
+     "Proof of identity",
+     "Address proof",
+     "Aadhar card",
+     "PAN card (optional)"
+    ]
+   },
+   "ta": {
+    "name": "முதலமைச்சரின் விரிவான மருத்துவக் காப்பீட்டுத் திட்டம் (CMCHIS + PM-JAY)",
+    "department": "திட்டமிடல், மேம்பாடு மற்றும் சிறப்பு முயற்சிகள் துறை",
+    "summary": "முதலமைச்சரின் விரிவான சுகாதாரக் காப்பீட்டுத் திட்டம், பதிவுசெய்யப்பட்ட குடும்பங்களின் நிதி நெருக்கடியைக் குறைப்பதற்கும், பொதுமக்களுடன் திறம்பட இணைப்பதன் மூலம் உலகளாவிய சுகாதாரக் காப்பீட்டை நோக்கிச் செல்வதற்கும், பட்டியலிடப்பட்ட அரசு மற்றும் தனியார் மருத்துவமனைகள் மூலம் தகுதியான நபர்களுக்கு தரமான சுகாதார சேவையை வழங்குகிறது",
+    "benefits_md": "1. மருத்துவ அவசரநிலைகளுக்கான விரிவான பாதுகாப்பு: இந்தியாவில் சுகாதார சிகிச்சைகளின் அதிக செலவுகள் காரணமாக மருத்துவ அவசரநிலைகளைக் கையாள நிதி ரீதியாகத் தயாராக இல்லாத குடும்பங்களுக்கு நிதி உதவியை வழங்குவதற்காக முதலமைச்சரின் விரிவான சுகாதாரக் காப்பீட்டுத் திட்டம் வடிவமைக்கப்பட்டுள்ளது. இந்தத் திட்டம் குறிப்பிடத்தக்க நிதிச் சுமைகளை ஏற்படுத்தும் என்ற கவலை இல்லாமல் உயர்தர மருத்துவ சிகிச்சைகளுக்கான அணுகலை வழங்குகிறது.\n1. மருத்துவமனைகளின் பெரிய நெட்வொர்க்: முதலமைச்சரின் விரிவான சுகாதாரக் காப்பீட்டுத் திட்டத்தின் குறிப்பிடத்தக்க நன்மைகளில் ஒன்று, மருத்துவ சிகிச்சையை வழங்குவதற்காக பட்டியலிடப்பட்ட மருத்துவமனைகளின் பரந்த நெட்வொர்க்கைக் கொண்டுள்ளது. பயனாளிகள் தொலைதூரப் பகுதிகளிலும் கூட மருத்துவ வசதிகளை விரைவாக அணுக முடியும் என்பதை இது உறுதி செய்கிறது.\n1. பல சிகிச்சைகளுக்கான விரிவான காப்பீடு: இந்தத் திட்டம் ஏராளமான சிகிச்சைகளுக்கு காப்பீட்டை வழங்குகிறது, இதன் மூலம் பயனாளிகள் தங்கள் பாக்கெட்டில் இருந்து மருத்துவ சிகிச்சைகளுக்கு பணம் செலுத்த வேண்டிய வாய்ப்பைக் குறைக்கிறது. பாலிசியின் கீழ் வரும் எந்தவொரு சிகிச்சையையும் பயனாளிகள் இலவசமாகப் பெற முடியும் என்பதை இது உறுதிசெய்கிறது, இதனால் சுகாதாரப் பராமரிப்பு மிகவும் மலிவு விலையில் கிடைக்கும்.\n1. உயர் காப்பீட்டுத் தொகை: முதலமைச்சரின் விரிவான சுகாதாரக் காப்பீட்டுத் திட்டம் ரூ. ஒவ்வொரு பாலிசி வருடத்திற்கும் ஒரு குடும்பத்திற்கு 5 லட்சம். இந்த தொகை பெரும்பாலான சிறிய சுகாதார சிகிச்சைகளைப் பெற போதுமானது, மேலும் இது சுகாதாரச் செலவுகளைச் செய்ய முடியாத குடும்பங்களுக்கு குறிப்பிடத்தக்க நிவாரணத்தை வழங்குகிறது.\n1. கூடுதல் மருத்துவ நடைமுறைகளுக்கான காப்பீடு: வழக்கமான சுகாதாரக் காப்பீட்டுக் கொள்கைகளைப் போலல்லாமல், முதலமைச்சரின் விரிவான சுகாதாரக் காப்பீட்டுத் திட்டம் பின்தொடர்தல் சிகிச்சைகள் மற்றும் நோயறிதல் நடைமுறைகளுக்கான காப்பீட்டையும் வழங்குகிறது. இந்த நடைமுறைகளை நிறைவேற்ற பயனாளிகள் கூடுதல் பணம் செலவழிக்க வேண்டிய அவசியத்தை இது நீக்குகிறது, இதனால் கூடுதல் நிதி நிவாரணம் கிடைக்கிறது.",
+    "eligibility_md": "முதலமைச்சரின் விரிவான சுகாதாரக் காப்பீட்டுத் திட்டம், குறிப்பிட்ட தகுதி அளவுகோல்களை பூர்த்தி செய்யும் தமிழ்நாட்டில் வசிப்பவர்களுக்கானது. திட்டத்தின் கீழ் நன்மைகளுக்கு தகுதி பெற, விண்ணப்பதாரரின் பெயர் குடும்ப அட்டையில் இருக்க வேண்டும், மேலும் அவர்களின் குடும்பத்தின் ஆண்டு வருமானம் ஆண்டுக்கு ரூ. குடும்ப அட்டை, ஆதார் அட்டை மற்றும் வி. ஏ. ஓ/வருவாய் அதிகாரிகளால் வழங்கப்பட்ட வருமானச் சான்றிதழ் போன்ற தேவையான ஆவணங்களை சமர்ப்பித்து, குடும்பத் தலைவரின் சுய அறிவிப்புடன் இந்த தகுதியை உறுதிப்படுத்தலாம். இத்திட்டத்தின் கீழ், குடும்பத்தின் வரையறை தகுதியான உறுப்பினர், அவர்களின் சட்டப்பூர்வ வாழ்க்கைத் துணை, அவர்களின் குழந்தைகள் மற்றும் அவர்களைச் சார்ந்திருக்கும் பெற்றோர்களை உள்ளடக்கியது. இந்த தனிநபர்கள் தேவையான அளவுகோல்களை பூர்த்தி செய்வதை உறுதி செய்வதன் மூலம், அவர்கள் திட்டத்தின் பலன்களைப் பெறலாம் மற்றும் நிதிச் சுமை இல்லாமல் தரமான சுகாதார சேவைகளைப் பெறலாம்.",
+    "exclusions_md": "",
+    "process": [
+     {
+      "mode": "இணையவழி / பதிவு மையம்",
+      "md": "1. cmchistn.com இல் உள்ள அதிகாரப்பூர்வ **பதிவு வழிகாட்டியைப் (How to Enroll)** படிக்கவும் — தமிழ் மற்றும் ஆங்கிலத்தில் உள்ளது.\n1. தயாராக வைத்திருக்கவும்: **குடும்ப அட்டை**, **ஆதார் அட்டை**, **கிராம நிர்வாக அலுவலர் / வருவாய்த் துறை வழங்கிய வருமானச் சான்றிதழ்**, குடும்பத் தலைவரின் **சுய உறுதிமொழி**.\n1. cmchistn.com இல் **CMCHIS-PMJAY Apply Now** மூலம் அல்லது அருகிலுள்ள பதிவு மையத்தில் விண்ணப்பிக்கவும்.\n1. பதிவுக்குப் பின், **இணைக்கப்பட்ட மருத்துவமனைகளில் பணமில்லா சிகிச்சை** (பட்டியல் cmchistn.com இல்). உதவி எண்: **1800 425 3993**."
+     }
+    ],
+    "documents": [
+     "கிராம நிர்வாக அதிகாரி/வருவாய் அதிகாரிகளிடமிருந்து வருமானச் சான்றிதழ்",
+     "ரேஷன் கார்டு (அசல் மற்றும் புகைப்பட நகல் இரண்டும்)",
+     "குடும்பத் தலைவரிடமிருந்து சுய அறிவிப்பு",
+     "அடையாளச் சான்று",
+     "முகவரிச் சான்று",
+     "ஆதார் அட்டை",
+     "பான் கார்டு (விருப்பப்படி)"
+    ]
+   },
+   "links": [
+    {
+     "kind": "portal",
+     "url": "https://www.cmchistn.com/",
+     "title": "CMCHIS — Apply Now / Enrollment"
+    },
+    {
+     "kind": "guidelines",
+     "url": "https://www.cmchistn.com/enrollment/how-to-enroll",
+     "title": "How to Enroll (Tamil & English guides)"
+    }
+   ]
+  },
+  "kmut": {
+   "source": {
+    "name": "kmut.tn.gov.in (Government of Tamil Nadu)",
+    "url": "https://kmut.tn.gov.in/about-kmut.html",
+    "checked": "2026-09-29"
+   },
+   "en": {
+    "name": "Kalaignar Magalir Urimai Thogai",
+    "department": "Government of Tamil Nadu",
+    "summary": "A monthly rights amount for the woman head of every eligible family in Tamil Nadu.",
+    "benefits_md": "**₹1,000 every month**, paid directly into the bank account of the woman head of the family.",
+    "eligibility_md": "1. Everyone named on one ration card is treated as one family. The **woman head of each eligible family** can apply.\n1. A woman named as head on the ration card is the woman head. If a man is named as head, **his wife is treated as the woman head**. If his wife's name is not on the card, the family can choose another woman.\n1. Unmarried single women, widows and transgender persons who head a family are also treated as woman heads.\n1. She must be **21 or older** (born before 15 September 2002).\n1. The family must meet all three economic criteria: **annual income below ₹2.5 lakh**; less than **5 acres of wet land or 10 acres of dry land**; household electricity use **below 3,600 units a year**.",
+    "exclusions_md": "",
+    "process": [
+     {
+      "mode": "Offline",
+      "md": "1. Apply only at the **registration camp for the ration shop** where your family card is registered.\n1. Only **one beneficiary per ration card** can apply.\n1. You do **not** need a separate income certificate or land documents for the economic criteria.\n1. The result is sent by SMS. You can check the status on the KMUT website by logging in with your Aadhaar number.\n1. If rejected, you can appeal **within 30 days** of the SMS, with proof, to the Revenue Divisional Officer — **only through an e-Sevai centre**."
+     }
+    ],
+    "documents": [
+     "Aadhaar card",
+     "Ration card (family card)",
+     "Bank account linked with Aadhaar"
+    ]
+   },
+   "ta": {
+    "name": "கலைஞர் மகளிர் உரிமைத் தொகை",
+    "department": "தமிழ்நாடு அரசு",
+    "summary": "தகுதியான ஒவ்வொரு குடும்பத்தின் குடும்பத் தலைவிக்கும் மாதந்தோறும் வழங்கப்படும் உரிமைத் தொகை.",
+    "benefits_md": "**மாதம் ₹1,000**, குடும்பத் தலைவியின் வங்கிக் கணக்கில் நேரடியாக வரவு வைக்கப்படும்.",
+    "eligibility_md": "1. குடும்ப அட்டையில் பெயர் இடம் பெற்றுள்ள அனைவரும் ஒரு குடும்பமாகக் கருதப்படுவர். தகுதி வாய்ந்த ஒவ்வொரு குடும்பத்திலும் உள்ள **குடும்பத் தலைவி** விண்ணப்பிக்கலாம்.\n1. குடும்ப அட்டையில் குடும்பத் தலைவர் எனக் குறிப்பிடப்பட்டுள்ள பெண் குடும்பத் தலைவி ஆவார். ஆண் குடும்பத் தலைவராக இருந்தால், **அவரின் மனைவி குடும்பத் தலைவியாகக் கருதப்படுவார்**. மனைவியின் பெயர் இல்லையெனில், குடும்பத்தின் வேறு ஒரு பெண்ணைத் தேர்வு செய்யலாம்.\n1. திருமணமாகாத தனித்த பெண்கள், கைம்பெண்கள், திருநங்கைகள் தலைமையிலான குடும்பங்களும் தகுதி பெறும்.\n1. **21 வயது நிரம்பியவராக** இருக்க வேண்டும் (15 செப்டம்பர் 2002-க்கு முன் பிறந்தவர்).\n1. குடும்பம் மூன்று பொருளாதார அளவுகோல்களையும் பூர்த்தி செய்ய வேண்டும்: **ஆண்டு வருமானம் ₹2.5 இலட்சத்திற்குக் கீழ்**; **5 ஏக்கருக்குக் குறைவான நன்செய் அல்லது 10 ஏக்கருக்குக் குறைவான புன்செய்** நிலம்; வீட்டு மின் பயன்பாடு **ஆண்டுக்கு 3,600 யூனிட்டுக்குக் கீழ்**.",
+    "exclusions_md": "",
+    "process": [
+     {
+      "mode": "நேரில்",
+      "md": "1. உங்கள் குடும்ப அட்டை உள்ள **நியாயவிலைக் கடைக்கான விண்ணப்பப் பதிவு முகாமில்** மட்டுமே விண்ணப்பிக்க வேண்டும்.\n1. **ஒரு குடும்ப அட்டைக்கு ஒருவர்** மட்டுமே விண்ணப்பிக்கலாம்.\n1. பொருளாதாரத் தகுதிகளுக்காக தனியாக வருமானச் சான்று அல்லது நில ஆவணங்கள் இணைக்கத் **தேவையில்லை**.\n1. முடிவு குறுஞ்செய்தியாக அனுப்பப்படும். ஆதார் எண் மூலம் KMUT இணையதளத்தில் நிலையை அறியலாம்.\n1. நிராகரிக்கப்பட்டால், குறுஞ்செய்தி வந்த **30 நாட்களுக்குள்**, ஆதாரத்துடன் வருவாய் கோட்ட அலுவலருக்கு **இ-சேவை மையம் வழியாக மட்டும்** மேல்முறையீடு செய்யலாம்."
+     }
+    ],
+    "documents": [
+     "ஆதார் அட்டை",
+     "குடும்ப அட்டை",
+     "ஆதாருடன் இணைக்கப்பட்ட வங்கிக் கணக்கு"
+    ]
+   },
+   "links": [
+    {
+     "kind": "portal",
+     "label": {
+      "en": "KMUT website — check status",
+      "ta": "KMUT இணையதளம் — நிலையை அறிய"
+     },
+     "url": "https://kmut.tn.gov.in/"
+    },
+    {
+     "kind": "info",
+     "label": {
+      "en": "e-Sevai centres (for appeals)",
+      "ta": "இ-சேவை மையங்கள் (மேல்முறையீட்டுக்கு)"
+     },
+     "url": "https://kmut.tn.gov.in/esevai-centers.html"
+    },
+    {
+     "kind": "portal",
+     "label": {
+      "en": "Magalir Urimai portal (TNeGA)",
+      "ta": "மகளிர் உரிமை இணையதளம் (TNeGA)"
+     },
+     "url": "https://kmut.tnega.org/"
+    }
+   ]
+  },
+  "pudhumai-penn": {
+   "source": {
+    "name": "myScheme (Government of India)",
+    "url": "https://www.myscheme.gov.in/schemes/pudhumai-penn-scheme",
+    "checked": "2026-09-29"
+   },
+   "en": {
+    "name": "Moovalur Ramamirtham Ammaiyar Higher Education Assurance Scheme",
+    "department": "Department of Social Welfare and Women Empowerment",
+    "summary": "The scheme “Moovalur Ramamirtham Ammaiyar Higher Education Assurance Scheme” was launched by the Department of Social Welfare & Women Empowerment, Government of Tamil Nadu.",
+    "benefits_md": "1. All girl students who studied from Classes 6th to 12th in Government schools will be paid ₹1,000/- per month till the completion of their undergraduate degree, diploma, ITI, and any other recognized course.\n\n1. The assistance amount under this scheme will be disbursed directly into the student’s Bank Account.\n\n1. The students shall be eligible for this in addition to other scholarships.",
+    "eligibility_md": "1. The applicant should be residing in the state of Tamil Nadu.\n\n1. The applicant should be a student.\n\n1. The applicant should be a female to avail of benefits from this scheme.\n\n1. All girl students who studied from Classes 6th to 12th in Government schools of Tamil Nadu are eligible to apply under the scheme.\n\n1. The assistance can be extended to any number of girl students in a family pursuing higher education at recognized Institutions/Colleges/Universities.\n\n1. The girl students should pursue their education in recognized courses and colleges/universities.\n\n1. Only the first course of higher education will be considered as an eligible factor.\n\n**Note 01:** The girl students availing of other scholarships are also eligible to enroll in this scheme.\n**Note 02:** The higher education department facilitates opening a &quot;zero balance&quot; bank account and certifying every six months in a year viz., 30th June and 31st December on the bonafide status of the girl students who had applied.\n**Note 03:** Four core banks viz., Indian Bank, Canara Bank, Indian Overseas Bank, and SBI have been identified to open bank accounts to the students wherever necessary to furnish the debit card.",
+    "exclusions_md": "",
+    "process": [
+     {
+      "mode": "Online",
+      "md": "1. To avail of the benefits of the scheme, the applicants (girl students) should visit the Official Portal &#39;[Penkalvi](https://penkalvi.tn.gov.in/index.php)’.\n1. On the home page of Portal &amp; if you are already registered, enter your login information or select the registration option.\n1. Login successfully after successful registration.\n1. Check the information provided in the application form and fill it out completely.\n1. Upload all the relevant documents and select the option to submit the application form."
+     }
+    ],
+    "documents": [
+     "Identity proof",
+     "Passport size photos",
+     "Residence Certificate",
+     "Educational Certificates",
+     "Family Income Certificate (If applicable)",
+     "Bank account details"
+    ]
+   },
+   "ta": {
+    "name": "மூவலூர் ராமாமிர்தம் அம்மையார் உயர்கல்வி உத்தரவாதத் திட்டம்",
+    "department": "சமூக நலம் மற்றும் மகளிர் அதிகாரமளித்தல் துறை",
+    "summary": "\"மூவலூர் ராமாமிர்தம் அம்மையார் உயர்கல்வி உத்தரவாதத் திட்டம்\" என்ற திட்டம் தமிழ்நாடு அரசின் சமூக நலம் மற்றும் மகளிர் அதிகாரமளித்தல் துறையால் தொடங்கப்பட்டது.",
+    "benefits_md": "1. அரசு பள்ளிகளில் 6 ஆம் வகுப்பு முதல் 12 ஆம் வகுப்பு வரை படித்த அனைத்து பெண் மாணவர்களுக்கும் அவர்களின் இளங்கலை பட்டம், டிப்ளோமா, ஐடிஐ மற்றும் அங்கீகரிக்கப்பட்ட பிற படிப்புகள் முடியும் வரை மாதத்திற்கு ரூ. 1,000/- வழங்கப்படும்.\n1. இத்திட்டத்தின் கீழ் வழங்கப்படும் உதவித் தொகை நேரடியாக மாணவர்களின் வங்கிக் கணக்கில் செலுத்தப்படும்.\n1. மாணவர்கள் மற்ற உதவித்தொகைக்கு கூடுதலாக இதற்கு தகுதியுடையவர்களாக இருப்பார்கள்.",
+    "eligibility_md": "1. விண்ணப்பதாரர் தமிழ்நாட்டில் வசிப்பவராக இருக்க வேண்டும்.\n1. விண்ணப்பதாரர் ஒரு மாணவராக இருக்க வேண்டும்.\n1. இந்தத் திட்டத்தின் பலன்களைப் பெற விண்ணப்பதாரர் ஒரு பெண்ணாக இருக்க வேண்டும்.\n1. தமிழ்நாட்டின் அரசு பள்ளிகளில் 6 ஆம் வகுப்பு முதல் 12 ஆம் வகுப்பு வரை படித்த அனைத்து பெண் மாணவர்களும் இத்திட்டத்தின் கீழ் விண்ணப்பிக்க தகுதியுடையவர்கள்.\n1. அங்கீகரிக்கப்பட்ட நிறுவனங்கள்/கல்லூரிகள்/பல்கலைக்கழகங்களில் உயர்கல்வி படிக்கும் ஒரு குடும்பத்தில் எத்தனை பெண் மாணவர்கள் இருந்தாலும் இந்த உதவியை வழங்கலாம்.\n1. பெண் மாணவர்கள் அங்கீகரிக்கப்பட்ட படிப்புகள் மற்றும் கல்லூரிகள்/பல்கலைக்கழகங்களில் தங்கள் கல்வியைத் தொடர வேண்டும்.\n1. உயர்கல்வியின் முதல் படிப்பு மட்டுமே தகுதியான காரணியாக கருதப்படும். ** குறிப்பு 1: ** பிற புலமைப்பரிசில் பெறும் பெண் மாணவர்களும் இந்தத் திட்டத்தில் சேர தகுதியுடையவர்கள். ** குறிப்பு 02: ** உயர் கல்வித் துறை ஒரு பூஜ்ஜிய இருப்பு வங்கிக் கணக்கைத் திறக்கவும், ஒரு வருடத்தில் ஒவ்வொரு ஆறு மாதங்களுக்கும் அதாவது ஜூன் 30 மற்றும் டிசம்பர் 31 ஆம் தேதிகளில் விண்ணப்பித்த பெண் மாணவர்களின் உண்மையான நிலை குறித்து சான்றளிக்கவும் உதவுகிறது. ** குறிப்பு 3: ** இந்தியன் வங்கி, கனரா வங்கி, இந்தியன் ஓவர்சீஸ் வங்கி மற்றும் எஸ்பிஐ ஆகிய நான்கு முக்கிய வங்கிகள் டெபிட் கார்டை வழங்க தேவையான இடங்களில் மாணவர்களுக்கு வங்கிக் கணக்குகளைத் திறக்க அடையாளம் காணப்பட்டுள்ளன.",
+    "exclusions_md": "",
+    "process": [
+     {
+      "mode": "Online",
+      "md": "1. திட்டத்தின் பலன்களைப் பெற, விண்ணப்பதாரர்கள் (பெண் மாணவர்கள்) அதிகாரப்பூர்வ இணையதளமான & ஆம்ப்; #39; [பென்கல்வி](https://penkalvi.tn.gov.in/index.php) ஐப் பார்வையிட வேண்டும்.\n1. போர்ட்டலின் முகப்புப் பக்கத்தில் நீங்கள் ஏற்கனவே பதிவுசெய்திருந்தால், உங்கள் உள்நுழைவுத் தகவலை உள்ளிடவும் அல்லது பதிவு விருப்பத்தைத் தேர்ந்தெடுக்கவும்.\n1. வெற்றிகரமாக பதிவு செய்த பிறகு வெற்றிகரமாக உள்நுழைக.\n1. விண்ணப்பப் படிவத்தில் வழங்கப்பட்ட தகவல்களைச் சரிபார்த்து அதை முழுமையாக நிரப்பவும்.\n1. தொடர்புடைய அனைத்து ஆவணங்களையும் பதிவேற்றவும் மற்றும் விண்ணப்ப படிவத்தை சமர்ப்பிக்கும் விருப்பத்தைத் தேர்ந்தெடுக்கவும்."
+     }
+    ],
+    "documents": [
+     "அடையாளச் சான்று",
+     "கடவுச்சீட்டு அளவு புகைப்படங்கள்",
+     "குடியிருப்புச் சான்றிதழ்",
+     "கல்விச் சான்றிதழ்கள்",
+     "குடும்ப வருமானச் சான்றிதழ் (பொருந்தினால்)",
+     "வங்கிக் கணக்கு விவரங்கள்"
+    ]
+   },
+   "links": [
+    {
+     "kind": "portal",
+     "url": "https://penkalvi.tn.gov.in/index.php",
+     "title": "Penkalvi"
+    },
+    {
+     "kind": "portal",
+     "url": "https://www.tnsocialwelfare.tn.gov.in/en/specilisationswomen-welfare/pudhumai-penn-scheme",
+     "title": "Official Website"
+    }
+   ]
+  },
+  "tamil-pudhalvan": {
+   "source": {
+    "name": "Vikaspedia (Government of India portal)",
+    "url": "https://en.vikaspedia.in/viewcontent/schemesall/state-specific-schemes/welfare-schemes-of-tamil-nadu/tamizh-pudhalvan-scheme?lgn=en",
+    "checked": "2026-09-29"
+   },
+   "en": {
+    "name": "Tamizh Pudhalvan",
+    "department": "Social Welfare & Women Empowerment Department, Government of Tamil Nadu",
+    "summary": "Monthly support for boys from government and government-aided schools to finish higher education.",
+    "benefits_md": "**₹1,000 every month**, paid directly into the student's bank account while studying.",
+    "eligibility_md": "1. **Boy students** who studied **class 6 to 12 in a government or government-aided school**.\n1. Now studying an **undergraduate degree, ITI, diploma or polytechnic** course.",
+    "exclusions_md": "",
+    "process": [
+     {
+      "mode": "Online",
+      "md": "1. Get your **EMIS / UMIS ID** from the nodal officer at your college or university.\n1. Log in to the **UMIS portal**. Username: your EMIS / UMIS ID. Password: the last 4 digits of your mobile number and your year of birth.\n1. Fill in the Tamizh Pudhalvan application form and upload the documents.\n1. Print the filled form and **submit it to your college**. The college forwards it for payment.\n1. Help: call **14417** or email umishelpdesk@tn.gov.in, or contact the District Social Welfare Officer."
+     }
+    ],
+    "documents": [
+     "Aadhaar card",
+     "Bank account details",
+     "Mobile number and email",
+     "UMIS / EMIS number",
+     "Education certificates",
+     "Photo"
+    ]
+   },
+   "ta": {
+    "name": "தமிழ்ப் புதல்வன்",
+    "department": "சமூக நலன் மற்றும் மகளிர் உரிமைத் துறை, தமிழ்நாடு அரசு",
+    "summary": "அரசு மற்றும் அரசு உதவி பெறும் பள்ளிகளில் படித்த மாணவர்கள் உயர்கல்வியை முடிக்க மாதாந்திர உதவி.",
+    "benefits_md": "படிக்கும் காலம் முழுவதும் **மாதம் ₹1,000**, மாணவரின் வங்கிக் கணக்கில் நேரடியாக வரவு.",
+    "eligibility_md": "1. **6 முதல் 12 ஆம் வகுப்பு வரை அரசு அல்லது அரசு உதவி பெறும் பள்ளியில்** படித்த **மாணவர்கள்**.\n1. தற்போது **இளங்கலைப் பட்டம், ஐடிஐ, பட்டயம் அல்லது பாலிடெக்னிக்** படிப்பவர்கள்.",
+    "exclusions_md": "",
+    "process": [
+     {
+      "mode": "இணையவழி",
+      "md": "1. உங்கள் கல்லூரியின் பொறுப்பு அலுவலரிடம் **EMIS / UMIS எண்ணைப்** பெறவும்.\n1. **UMIS இணையதளத்தில்** உள்நுழையவும். பயனர் பெயர்: EMIS / UMIS எண். கடவுச்சொல்: மொபைல் எண்ணின் கடைசி 4 இலக்கங்கள் மற்றும் பிறந்த ஆண்டு.\n1. தமிழ்ப் புதல்வன் விண்ணப்பப் படிவத்தை நிரப்பி ஆவணங்களைப் பதிவேற்றவும்.\n1. நிரப்பிய படிவத்தை அச்சிட்டு **கல்லூரியில் சமர்ப்பிக்கவும்**. கல்லூரி அதைத் தொகை வழங்க அனுப்பும்.\n1. உதவிக்கு: **14417** அழைக்கவும் அல்லது umishelpdesk@tn.gov.in, அல்லது மாவட்ட சமூக நல அலுவலரை அணுகவும்."
+     }
+    ],
+    "documents": [
+     "ஆதார் அட்டை",
+     "வங்கிக் கணக்கு விவரம்",
+     "மொபைல் எண் மற்றும் மின்னஞ்சல்",
+     "UMIS / EMIS எண்",
+     "கல்விச் சான்றிதழ்கள்",
+     "புகைப்படம்"
+    ]
+   },
+   "links": [
+    {
+     "kind": "portal",
+     "label": {
+      "en": "UMIS portal — apply online",
+      "ta": "UMIS இணையதளம் — விண்ணப்பிக்க"
+     },
+     "url": "https://umisdashboard.tnega.org/"
+    }
+   ]
+  },
+  "pmay-g": {
+   "source": {
+    "name": "myScheme (Government of India)",
+    "url": "https://www.myscheme.gov.in/schemes/pmay-g",
+    "checked": "2026-09-29"
+   },
+   "en": {
+    "name": "Pradhan Mantri Awaas Yojana - Gramin",
+    "department": "Department of Rural Development",
+    "summary": "Launch on 1st April 2016, Pradhan Mantri Awaas Yojana Gramin (PMAY-G) is centre's flagship mission by the Ministry of Rural Development (MoRD), implemented by the Ministry of Housing and Urban Affairs (MoHUA). PMAY-G addresses the rural housing shortage and bridges the housing deficit in rural areas",
+    "benefits_md": "1. Financial Assistance of ₹ 1,20,000 per unit for plain areas; and ₹ 1,30,000 per unit for hilly areas, difficult areas, and IAP districts (Himalayan states, North-Eastern states, and Union Territories of Jammu & Kashmir).\n1. A willing beneficiary can avail of institutional finance (loan) of up to ₹ 70,000 at 3% lower interest rate, to build a permanent house. The maximum principal amount for which subsidy can be sought is ₹ 2,00,000.\n1. The minimum size of the house shall be is 25 sq m including a dedicated area for hygienic cooking.\n1. In convergence with Swachh Bharat Mission-Gramin (SBM-G), the beneficiaries get financial assistance of up to ₹ 12,000 for the construction of toilets.\n1. In convergence with MGNREGA, the beneficiary is entitled to employment as unskilled labor (Rural Mason Training) at ₹ 90.95 per day for 95 days.\n1. In convergence with Pradhan Mantri Ujjwala Yojana, one LPG connection per house is provided.\n1. Convergence with different government programmes for piped drinking water, electricity connection, clean & efficient cooking fuel, treatment of social and liquid waste, etc.\n1. Payments are made electronically directly to bank accounts or post office accounts that are linked to Aadhaar.\n\n**Note:** Beneficiaries are identified using the \"Housing Deprivation Parameters\" from the Socio-Economic and Caste Census (SECC) 2011 [[https://secc.gov.in/]](https://secc.gov.in/), further verified by the Gram Sabhas.",
+    "eligibility_md": "The universe of eligible beneficiaries under PMAY-G will include all the houseless households living in zero, one, or two-room houses with kutcha walls and kutcha roofs (as per SECC data, and subject to the exclusion process).\n> **Criteria for Automatic/Compulsory Inclusion -**\n\n1.\tHouseholds without shelter\n2.\tDestitute/ living on alms\n3.\tManual scavengers\n4.\tPrimitive Tribal Groups\n5.\tLegally released bonded laborer\n> **Prioritisation within the Universe**\n\ni.  There will be multilayered prioritization within the universe of eligible PMAY-G beneficiaries. Priority will first be assigned on the basis of parameters reflecting housing deprivation in each category viz., SC/ST, Minorities, and Others.\nii.  To begin with, households will be prioritized based on houselessness followed by the number of rooms; zero, one, and two rooms, in that order.\niii.  In a particular social category viz., SC/ST, Minorities, and Others, households that are houseless or living in houses with a lower number of rooms shall not be ranked below households living in houses with a higher number of rooms.\nWithin the above priority groups, households that fulfill the criteria of \"compulsory inclusion\", will be further elevated. Automatically included households shall not rank lower than other households within a priority group. Inter-se priority within the two subgroups viz. households which are automatically included and otherwise will be determined based on their cumulative deprivation scores.\nThe scores will be calculated from the socio-economic parameters given below with each having equal weight:\ni.\tHouseholds with no adult member between ages 16 to 59\nii.\tFemale-headed households with no adult male member between ages 16 to 59\niii.\tHouseholds with no literate adult above 25 years\niv.\tHouseholds with any disabled member and no able-bodied adult member\nv.\tLandless Households deriving the major part of their income from manual casual labor\nvi. Households with higher deprivation scores will be ranked higher within the subgroups.\n**Note:** _To ensure that assistance is targeted at those who are genuinely deprived and that the selection is objective and verifiable, the housing deprivation parameters in the SECC data will be used for identifying households and then verified by the Gram Sabhas._\n> ***Earmarking of Targets -***\n\n**For SC/ST:**\n60% of the target allocated to each State/ UT should be earmarked for SC/STs, subject to the availability of eligible beneficiaries. Within earmarked targets, the proportion of SC and ST is to be decided from time to time by the respective States/UTs. Further, the States/ UTs would be allowed to interchange targets between SC and ST if there are no eligible beneficiaries from either of the category and it is certified as such. In case all eligible SC and ST households are covered, the State/ UT targets would be allocated to beneficiaries from the 'Other' categories included in the Permanent Wait List drawn from SECC 2011.\n**For Minorities:**\nFurther, as far as possible, 15% of the total fund would be earmarked for Minorities at the National Level for households. The allocation of targets for Minorities among the States/UTs will be on the basis of the proportionate rural population of Minorities in the respective State/UT as per Census 2011 data. Minorities notified under Section 2(c) of the National Commission for Minorities Act, 1992 are to be considered eligible for receiving benefits against Minority earmarks.\n**For PwDs:**\nAccordingly, in the scheme of PMAY-G, while deciding the inter-se priority among the beneficiaries who are to be provided assistance, households with any disabled member and no able-bodied adult member have been accorded additional deprivation score so that such households are given priority while allotting the houses. Keeping in view the provisions of the Persons with Disabilities Act, of 1995, the States to the extent possible, may ensure that 3% of beneficiaries at the State Level are from among persons with disabilities.\n> **Tie Breaker**\n\nIn case there is a tie with more than one household within a subgroup having the same deprivation score, the households will be ranked according to priority on the basis of the following parameters:\ni.\tHouseholds with widows and next-of-kin of members of defence/paramilitary/police forces killed in action.\nii.\tHouseholds where a member is suffering from leprosy or cancer and People living with HIV (PLHIV).\niii.\tHouseholds with a single girl child.\niv.\tBeneficiary families of the Scheduled Tribes and Other Traditional Forest Dwellers (Recognition of Forest Rights) Act, 2006, commonly known as the Forest Rights Act.\nv.\tTransgender persons.",
+    "exclusions_md": ">\n1. Exclusion of pucca houses**\n\nAll households living in houses with pucca roofs and/or pucca walls and households living in houses with more than 2 rooms are filtered out.\n>\n1. Automatic Exclusion**\n\nFrom the remaining set of households, all households fulfilling any one of the 13 parameters listed below are automatically excluded:-\n1.\tMotorised two/three/four wheeler/ fishing boat\n2.\tMechanised three/four-wheeler agricultural equipment\n3.\tKisan Credit Card with a credit limit of Rs.50,000 or above\n4.\tHousehold with any member as a Government employee\n5.\tHouseholds with non-agricultural enterprises registered with the Government\n6.\tAny member of the family earning more than Rs.10,000 per month\n7.\tPaying income tax\n8.\tPaying professional tax\n9.\tOwn a refrigerator\n10.\tOwn a landline phone\n11.\tOwn 2.5 acres or more of irrigated land with at least one irrigation equipment\n12.\t5 acres or more of irrigated land for two or more crop seasons\n13.\tOwning at least 7.5 acres of land or more with at least one irrigation equipment",
+    "process": [
+     {
+      "mode": "Online",
+      "md": "**Beneficiary Registration Manual** - [https://pmayg.nic.in/netiayHome/Document/Document-PMAYG-Registratio-Manual.pdf](https://pmayg.nic.in/netiayHome/Document/Document-PMAYG-Registratio-Manual.pdf)\nThere are four sections to the beneficiary registration process:\nPersonal details, Bank account details, Convergence details, and Details from the concerned office.\nTo successfully register or add the beneficiary, follow the steps given below:\nVisit the official website for login PMAY-G.\n\n1. Fill in the details required in the personal details section (such as gender, mobile number, Aadhaar number, etc.)\n1. Upload the consent form required to use the Aadhaar number.\n1. Click on the search button to find the beneficiary name, PMAY ID, and priority.\n1.  Click on ‘'Select to Register’'.\n1. The beneficiary details will be automatically generated and displayed.\n1. The remaining beneficiary details can now be filled in, such as ownership type, relation, Aadhaar number, etc.\n1. Upload the consent form required to use the Aadhaar number on behalf of the beneficiary\n1. In the next section, add the beneficiary account details in the required fields, such as beneficiary name, bank account number, etc.\n1. If the beneficiary wants to avail a loan, select ‘'Yes’' and enter the required loan amount.\n1. In the next section, enter the MGNREGA job card number and Swachh Bharat Mission (SBM) number of the beneficiary\n1. The next section will be filled in by the concerned office."
+     }
+    ],
+    "documents": [
+     "Aadhaar number and a self-attested copy of the Aadhaar Card (If the applicant is illiterate, then in such case a consent letter has to be obtained along with the thumbprint of the applicant)",
+     "Job Card (duly registered with MGNREGA)",
+     "Bank account details – both originals and duplicates",
+     "Swachh Bharat Mission (SBM) number",
+     "Affidavit stating the beneficiaries, or their family members do not own a pucca house"
+    ]
+   },
+   "ta": {
+    "name": "பிரதான் மந்திரி ஆவாஸ் யோஜனா-கிராமின்",
+    "department": "கிராமப்புற மேம்பாட்டுத் துறை",
+    "summary": "ஏப்ரல் 1,2016 அன்று தொடங்கப்பட்ட பிரதான் மந்திரி ஆவாஸ் யோஜனா கிராமின் (பி. எம். ஏ. ஒய்-ஜி) என்பது கிராமப்புற மேம்பாட்டு அமைச்சகத்தால் (எம். ஓ. ஆர். டி) மையத்தின் முதன்மை பணியாகும், இது வீட்டுவசதி மற்றும் நகர்ப்புற விவகார அமைச்சகத்தால் (எம். ஓ. எச். யு. ஏ) செயல்படுத்தப்படுகிறது. பி. எம். ஏ. ஒய்-ஜி கிராமப்புற வீட்டுவசதி பற்றாக்குறையை நிவர்த்தி செய்கிறது மற்றும் கிராமப்புறங்களில் வீட்டுவசதி பற்றாக்குறையை பூர்த்தி செய்கிறது",
+    "benefits_md": "1. சமவெளிப் பகுதிகளுக்கு ஒரு யூனிட்டுக்கு ரூ 1,20,000 மற்றும் மலைப்பாங்கான பகுதிகள், கடினமான பகுதிகள் மற்றும் ஐஎபி மாவட்டங்களுக்கு (இமயமலை மாநிலங்கள், வடகிழக்கு மாநிலங்கள் மற்றும் ஜம்மு-காஷ்மீர் யூனியன் பிரதேசங்கள்) ஒரு யூனிட்டுக்கு ரூ 1,30,000 நிதி உதவி.\n1. ஒரு விருப்பமுள்ள பயனாளி ஒரு நிரந்தர வீட்டைக் கட்டுவதற்கு 3 சதவீதம் குறைந்த வட்டி விகிதத்தில் 70,000 ரூபாய் வரை நிறுவன நிதி (கடன்) பெறலாம். மானியத்தை கோரக்கூடிய அதிகபட்ச அசல் தொகை ₹ 2,00,000 ஆகும்.\n1. வீட்டின் குறைந்தபட்ச அளவு 25 சதுர மீட்டராக இருக்க வேண்டும், இதில் சுகாதாரமான சமையலுக்கான பிரத்யேக பகுதி இருக்கும்.\n1. ஸ்வச் பாரத் மிஷன்-கிராமின் (எஸ். பி. எம்-ஜி) உடன் இணைந்து, பயனாளிகள் கழிப்பறைகள் கட்டுவதற்கு 12,000 ரூபாய் வரை நிதி உதவி பெறுகிறார்கள்.\n1. எம். ஜி. என். ஆர். இ. ஜி. ஏ. வுடன் இணைந்து, பயனாளிக்கு திறமையற்ற தொழிலாளர்களாக (கிராமப்புற மேசன் பயிற்சி) 95 நாட்களுக்கு ஒரு நாளைக்கு ரூ.\n1. பிரதான் மந்திரி உஜ்வாலா யோஜனாவுடன் இணைந்து, ஒரு வீட்டிற்கு ஒரு எல்பிஜி இணைப்பு வழங்கப்படுகிறது.\n1. குழாய் மூலம் குடிநீர், மின்சார இணைப்பு, தூய்மையான மற்றும் திறமையான சமையல் எரிபொருள், சமூக மற்றும் திரவ கழிவுகளை சுத்திகரிப்பு போன்ற பல்வேறு அரசு திட்டங்களுடன் ஒருங்கிணைத்தல்.\n1. ஆதார் உடன் இணைக்கப்பட்டுள்ள வங்கிக் கணக்குகள் அல்லது தபால் அலுவலகக் கணக்குகளுக்கு மின்னணு முறையில் பணம் செலுத்தப்படுகிறது. ** குறிப்பு: ** கிராம சபைகளால் மேலும் சரிபார்க்கப்பட்ட சமூக-பொருளாதார மற்றும் சாதி கணக்கெடுப்பு (எஸ். இ. சி. சி) 2011 [[https://secc.gov.in](https://secc.gov.in) இலிருந்து 'வீட்டுவசதி இழப்பு அளவுகோல்களைப்' பயன்படுத்தி பயனாளிகள் அடையாளம் காணப்படுகிறார்கள்.",
+    "eligibility_md": "PMAY-G இன் கீழ் தகுதியான பயனாளிகளின் பிரபஞ்சம் பூஜ்ஜிய, ஒரு அல்லது இரண்டு அறைகள் கொண்ட வீடுகளில் வசிக்கும் அனைத்து வீடற்ற குடும்பங்களையும் உள்ளடக்கும் (SECC தரவுகளின்படி, விலக்கு செயல்முறைக்கு உட்பட்டு). தங்குமிடம் இல்லாத குடும்பங்கள் 2. ஆதரவற்றவர்கள்/பிச்சைக்காரர்களாக வாழ்வது 3. கையால் துப்புரவாளர்கள் 4. பழங்கால பழங்குடி குழுக்கள் 5. சட்டப்பூர்வமாக விடுவிக்கப்பட்ட பிணைக்கப்பட்ட தொழிலாளி> ** பிரபஞ்சத்திற்குள் முன்னுரிமை ** ஐ. தகுதியான பி. எம். ஏ. ஒய்-ஜி பயனாளிகளின் பல அடுக்கு முன்னுரிமை பிரபஞ்சத்திற்குள் இருக்கும். எஸ்சி/எஸ்டி, சிறுபான்மையினர் மற்றும் பிறர் என ஒவ்வொரு பிரிவிலும் வீட்டுவசதி பற்றாக்குறையை பிரதிபலிக்கும் அளவுருக்களின் அடிப்படையில் முன்னுரிமை முதலில் ஒதுக்கப்படும். ஆரம்பத்தில், வீடற்ற நிலையின் அடிப்படையில் வீடுகளுக்கு முன்னுரிமை அளிக்கப்படும், அதைத் தொடர்ந்து அறைகளின் எண்ணிக்கை நிர்ணயிக்கப்படும். பூஜ்ஜியம், ஒன்று மற்றும் இரண்டு அறைகள், அந்த வரிசையில். ஒரு குறிப்பிட்ட சமூகப் பிரிவில், அதாவது எஸ்சி/எஸ்டி, சிறுபான்மையினர் மற்றும் பிறர், வீடற்ற அல்லது குறைந்த எண்ணிக்கையிலான அறைகளைக் கொண்ட வீடுகளில் வசிக்கும் குடும்பங்கள் அதிக எண்ணிக்கையிலான அறைகளைக் கொண்ட வீடுகளில் வசிக்கும் குடும்பங்களுக்குக் கீழே தரவரிசைப்படுத்தப்படக்கூடாது. மேற்கூறிய முன்னுரிமை குழுக்களுக்குள், 'மேற்கோள்' அளவுகோல்களை பூர்த்தி செய்யும் குடும்பங்கள் கட்டாய சேர்க்கை , மேலும் உயர்த்தப்படும். தானாக சேர்க்கப்பட்ட குடும்பங்கள் முன்னுரிமை குழுவில் மற்ற குடும்பங்களை விட குறைவாக இருக்கக்கூடாது. இரண்டு துணைக்குழுக்களுக்குள் உள்ள வீடுகளுக்கு இடையேயான முன்னுரிமை, அவை தானாகவே சேர்க்கப்பட்டுள்ளன, இல்லையெனில் அவற்றின் ஒட்டுமொத்த இழப்பு மதிப்பெண்களின் அடிப்படையில் தீர்மானிக்கப்படும். கீழே கொடுக்கப்பட்டுள்ள சமூக-பொருளாதார அளவுருக்களிலிருந்து மதிப்பெண்கள் கணக்கிடப்படும், ஒவ்வொன்றும் சமமான எடையைக் கொண்டிருக்கும்: ஐ. 16 முதல் 59 வயதுக்குட்பட்ட வயது வந்த உறுப்பினர் இல்லாத குடும்பங்கள். 16 முதல் 59 வயதிற்குட்பட்ட வயது வந்த ஆண் உறுப்பினர் இல்லாத பெண் தலைமை குடும்பங்கள். 25 வயதிற்கு மேற்பட்ட கல்வியறிவு பெற்ற வயது வந்தோர் இல்லாத குடும்பங்கள். ஊனமுற்ற உறுப்பினரைக் கொண்ட குடும்பங்கள் மற்றும் திறமையான வயது வந்த உறுப்பினர் இல்லாத குடும்பங்கள் வி. நிலமற்ற குடும்பங்கள் தங்கள் வருமானத்தின் பெரும்பகுதியை கையால் சாதாரண உழைப்பிலிருந்து பெறுகின்றன. அதிக இழப்பு மதிப்பெண்களைக் கொண்ட குடும்பங்கள் துணைக்குழுக்களுக்குள் அதிக தரவரிசைப்படுத்தப்படும். ** குறிப்பு: ** * உதவி உண்மையில் பின்தங்கியவர்களை இலக்காகக் கொண்டிருப்பதை உறுதி செய்வதற்கும், தேர்வு புறநிலை மற்றும் சரிபார்க்கக்கூடியதாக இருப்பதற்கும், எஸ். இ. சி. சி தரவுகளில் உள்ள வீட்டுவசதி பற்றாக்குறை அளவுருக்கள் வீடுகளை அடையாளம் காண பயன்படுத்தப்படும், பின்னர் கிராம சபைகளால் சரிபார்க்கப்படும். * ஒவ்வொரு மாநிலத்திற்கும்/யூனியன் பிரதேசங்களுக்கும் ஒதுக்கப்பட்ட இலக்கில் 60 சதவீதம் எஸ்சி/எஸ்டி பிரிவினருக்கு ஒதுக்கப்பட வேண்டும், தகுதியான பயனாளிகள் கிடைப்பதற்கு உட்பட்டு. ஒதுக்கப்பட்ட இலக்குகளுக்குள், எஸ்சி மற்றும் எஸ்டியின் விகிதம் அவ்வப்போது அந்தந்த மாநிலங்கள்/யூனியன் பிரதேசங்களால் தீர்மானிக்கப்பட வேண்டும். மேலும், எந்தவொரு பிரிவிலிருந்தும் தகுதியான பயனாளிகள் யாரும் இல்லையென்றால், மாநிலங்கள்/யூனியன் பிரதேசங்கள் எஸ்சி மற்றும் எஸ்டி இடையே இலக்குகளை பரிமாறிக்கொள்ள அனுமதிக்கப்படும். தகுதியுள்ள அனைத்து எஸ்சி மற்றும் எஸ்டி குடும்பங்களும் இதில் உள்ளடக்கப்பட்டால், மாநில/யூனியன் பிரதேச இலக்குகள் பயனாளிகளுக்கு 'ஐடி1' இலிருந்து ஒதுக்கப்படும். பிற & #39; எஸ். இ. சி. சி 2011 இலிருந்து எடுக்கப்பட்ட நிரந்தர காத்திருப்பு பட்டியலில் சேர்க்கப்பட்டுள்ள பிரிவுகள். ** சிறுபான்மையினருக்கு: * மேலும், முடிந்தவரை, மொத்த நிதியில் 15 சதவீதம் தேசிய அளவில் சிறுபான்மையினருக்கு வீடுகளுக்காக ஒதுக்கப்படும். 2011 மக்கள் தொகை கணக்கெடுப்பின்படி, அந்தந்த மாநிலங்கள்/யூனியன் பிரதேசங்களில் உள்ள சிறுபான்மையினரின் விகிதாசார கிராமப்புற மக்கள் தொகையின் அடிப்படையில் மாநிலங்கள்/யூனியன் பிரதேசங்களில் சிறுபான்மையினருக்கான இலக்குகள் ஒதுக்கப்படும். தேசிய சிறுபான்மையினர் ஆணையச் சட்டம், 1992 இன் பிரிவு 2 (சி) இன் கீழ் அறிவிக்கப்பட்ட சிறுபான்மையினர் சிறுபான்மையினருக்கு எதிரான சலுகைகளைப் பெற தகுதியுடையவர்களாக கருதப்பட வேண்டும். அதன்படி, பி. எம். ஏ. ஒய்-ஜி திட்டத்தில், உதவி வழங்கப்பட வேண்டிய பயனாளிகளிடையே இடைநிலை முன்னுரிமையை தீர்மானிக்கும் போது, எந்தவொரு ஊனமுற்ற உறுப்பினரும், உடல் திறன் கொண்ட வயது வந்த உறுப்பினரும் இல்லாத குடும்பங்களுக்கு கூடுதல் பற்றாக்குறை மதிப்பெண் வழங்கப்பட்டுள்ளது, இதனால் அத்தகைய குடும்பங்களுக்கு வீடுகளை ஒதுக்கும் போது முன்னுரிமை அளிக்கப்படுகிறது. மாற்றுத்திறனாளிகள் சட்டம், 1995 இன் விதிகளைக் கருத்தில் கொண்டு, மாநில அளவில் பயனாளிகளில் 3 சதவீதம் பேர் மாற்றுத்திறனாளிகளைச் சேர்ந்தவர்கள் என்பதை மாநிலங்கள் முடிந்தவரை உறுதி செய்யலாம். ஐ. விதவைகளுடன் கூடிய குடும்பங்கள் மற்றும் நடவடிக்கையில் கொல்லப்பட்ட பாதுகாப்பு/துணை ராணுவம்/காவல் படைகளின் உறுப்பினர்களின் அடுத்த உறவினர்கள். ஒரு உறுப்பினர் தொழுநோய் அல்லது புற்றுநோயால் பாதிக்கப்பட்டுள்ள குடும்பங்கள் மற்றும் எச். ஐ. வி (பி. எல். எச். ஐ. வி) உடன் வாழும் மக்கள். ஒற்றை பெண் குழந்தையுடன் கூடிய குடும்பங்கள். iv. பட்டியலிடப்பட்ட பழங்குடியினர் மற்றும் பிற பாரம்பரிய வனவாசிகள் (வன உரிமைகளை அங்கீகரித்தல்) சட்டம், 2006 இன் பயனாளி குடும்பங்கள், பொதுவாக வன உரிமைகள் சட்டம் என்று அழைக்கப்படுகிறது. வி. திருநங்கைகள்.",
+    "exclusions_md": ">\n1. பக்கா வீடுகளை விலக்குதல் ** பக்கா கூரைகள் மற்றும்/அல்லது பக்கா சுவர்கள் கொண்ட வீடுகளில் வசிக்கும் அனைத்து வீடுகளும் மற்றும் 2 அறைகளுக்கு மேல் உள்ள வீடுகளில் வசிக்கும் வீடுகளும் வடிகட்டப்படுகின்றன.\n1. தானியங்கி விலக்கு ** மீதமுள்ள குடும்பங்களிலிருந்து, கீழே பட்டியலிடப்பட்டுள்ள 13 அளவுருக்களில் ஏதேனும் ஒன்றை பூர்த்தி செய்யும் அனைத்து வீடுகளும் தானாகவே விலக்கப்படுகின்றன:-1. மோட்டார் பொருத்தப்பட்ட இரு சக்கரம்/மூன்று சக்கரம்/நான்கு சக்கரம்/மீன்பிடி படகு 2. இயந்திரமயமாக்கப்பட்ட மூன்று/நான்கு சக்கர விவசாய உபகரணங்கள் 3. கிசான் கிரெடிட் கார்டு ரூ. 50,000 அல்லது அதற்கு மேற்பட்ட கிரெடிட் வரம்புடன். அரசு ஊழியராக எந்தவொரு உறுப்பினருடனும் குடும்பம் 5. வேளாண்மை அல்லாத நிறுவனங்களைக் கொண்ட குடும்பங்கள் அரசாங்கத்தில் பதிவு செய்யப்பட்டுள்ளன. குடும்பத்தின் எந்தவொரு உறுப்பினரும் மாதத்திற்கு 10,000 ரூபாய்க்கு மேல் வருமானம் ஈட்டுபவர். 8. வருமான வரி செலுத்துதல். தொழில்முறை வரி செலுத்துதல் 9. 10. சொந்தமாக ஒரு குளிர்சாதன பெட்டி வைத்திருங்கள். சொந்தமாக ஒரு லேண்ட்லைன் தொலைபேசி 11 வைத்திருங்கள். குறைந்தபட்சம் ஒரு நீர்ப்பாசன கருவியுடன் 2.50 ஏக்கர் அல்லது அதற்கு மேற்பட்ட நீர்ப்பாசன நிலத்தை சொந்தமாக வைத்திருக்க வேண்டும். இரண்டு அல்லது அதற்கு மேற்பட்ட பயிர் பருவங்களுக்கு 5 ஏக்கர் அல்லது அதற்கு மேற்பட்ட நீர்ப்பாசன நிலம். குறைந்தபட்சம் ஒரு நீர்ப்பாசன கருவியுடன் குறைந்தது 7.5 ஏக்கர் அல்லது அதற்கு மேற்பட்ட நிலத்தை சொந்தமாக வைத்திருத்தல்",
+    "process": [
+     {
+      "mode": "Online",
+      "md": "பயனாளி பதிவு கையேடு **-[https://pmayg.nic.in/netiayHome/Document/Document-PMAYG-Registratio-Manual.pdf](https://pmayg.nic.in/netiayHome/Document/Document-PMAYG-Registratio-Manual.pdf) பயனாளி பதிவு செயல்முறைக்கு நான்கு பிரிவுகள் உள்ளன: தனிப்பட்ட விவரங்கள், வங்கிக் கணக்கு விவரங்கள், ஒருங்கிணைப்பு விவரங்கள் மற்றும் சம்பந்தப்பட்ட அலுவலகத்திலிருந்து விவரங்கள். பயனாளியை வெற்றிகரமாக பதிவு செய்ய அல்லது சேர்க்க, கீழே கொடுக்கப்பட்டுள்ள படிகளைப் பின்பற்றவும்: பி. எம். ஏ. ஒய்-ஜி-இல் உள்நுழைய அதிகாரப்பூர்வ வலைத்தளத்தைப் பார்வையிடவும். தனிப்பட்ட விவரங்கள் பிரிவில் (பாலினம், மொபைல் எண், ஆதார் எண் போன்றவை) தேவையான விவரங்களை நிரப்பவும்.\n1. ஆதார் எண்ணைப் பயன்படுத்தத் தேவையான ஒப்புதல் படிவத்தைப் பதிவேற்றவும்.\n1. பயனாளியின் பெயர், பி. எம். ஏ. ஒய் ஐடி மற்றும் முன்னுரிமையைக் கண்டறிய தேடல் பொத்தானைக் கிளிக் செய்க.\n1. '& #39 ஐக் கிளிக் செய்க;' & #39 ஐத் தேர்ந்தெடுக்கவும்.\n1. பயனாளியின் விவரங்கள் தானாகவே உருவாக்கப்பட்டு காண்பிக்கப்படும்.\n1. உரிமையாளர் வகை, உறவு, ஆதார் எண் போன்ற மீதமுள்ள பயனாளி விவரங்களை இப்போது நிரப்பலாம்.\n1. பயனாளியின் சார்பாக ஆதார் எண்ணைப் பயன்படுத்தத் தேவையான ஒப்புதல் படிவத்தைப் பதிவேற்றவும். அடுத்த பிரிவில், பயனாளியின் பெயர், வங்கிக் கணக்கு எண் போன்ற தேவையான புலங்களில் பயனாளியின் கணக்கு விவரங்களைச் சேர்க்கவும்.\n1. பயனாளி கடனைப் பெற விரும்பினால், '& #39; ஆம்' & #39 ஐத் தேர்ந்தெடுத்து தேவையான கடன் தொகையை உள்ளிடவும்.\n1. அடுத்த பிரிவில், எம்ஜிஎன்ஆர்இஜிஏ வேலை அட்டை எண் மற்றும் பயனாளியின் ஸ்வச் பாரத் மிஷன் (எஸ். பி. எம்) எண்ணை உள்ளிடவும். அடுத்த பகுதி சம்பந்தப்பட்ட அலுவலகத்தால் நிரப்பப்படும்."
+     }
+    ],
+    "documents": [
+     "ஆதார் எண் மற்றும் ஆதார் அட்டையின் சுய சான்றளிக்கப்பட்ட நகல் (விண்ணப்பதாரர் கல்வியறிவு இல்லாதவராக இருந்தால், அத்தகைய சந்தர்ப்பத்தில் விண்ணப்பதாரரின் கட்டைவிரலுடன் ஒரு ஒப்புதல் கடிதத்தையும் பெற வேண்டும்)",
+     "வேலை அட்டை (முறையாக எம். ஜி. என். ஆர். இ. ஜி. ஏ-வில் பதிவு செய்யப்பட்டது)",
+     "வங்கிக் கணக்கு விவரங்கள்-அசல் மற்றும் நகல் இரண்டும்",
+     "ஸ்வச் பாரத் மிஷன் (எஸ். பி. எம்) எண்",
+     "பயனாளிகள் அல்லது அவர்களது குடும்ப உறுப்பினர்களுக்கு பக்கா வீடு இல்லை என்று பிரமாணப் பத்திரம் கூறுகிறது"
+    ]
+   },
+   "links": [
+    {
+     "kind": "guidelines",
+     "url": "https://pmayg.nic.in/netiayHome/Document/Document-PMAYG-Registratio-Manual.pdf",
+     "title": "https://pmayg.nic.in/netiayHome/Document/Document-PMAYG-Registratio-Manual.pdf"
+    },
+    {
+     "kind": "guidelines",
+     "url": "https://pmayg.nic.in/netiayHome/Uploaded/Guidelines-Hindi_book_final.pdf",
+     "title": "Guidelines (Hindi)"
+    },
+    {
+     "kind": "guidelines",
+     "url": "https://pmayg.nic.in/netiayHome/Uploaded/Guidelines-English_Book_Final.pdf",
+     "title": "Guidelines (ENGLISH)"
+    },
+    {
+     "kind": "portal",
+     "url": "https://pmayg.nic.in/netiay/PBIDashboard/PMAYGDashboard.aspx",
+     "title": "PMAY-G Dashboard"
+    }
+   ]
+  },
+  "old-age-pension": {
+   "source": {
+    "name": "myScheme (Government of India)",
+    "url": "https://www.myscheme.gov.in/schemes/ignoapstn",
+    "checked": "2026-09-29"
+   },
+   "en": {
+    "name": "Indira Gandhi National Old Age Pension Scheme -Tamil Nadu",
+    "department": "Department of Social Welfare and Women Empowerment",
+    "summary": "The 'Indira Gandhi National Old Age Pension Scheme' was launched by the Social Welfare and Women Empowerment Department, Government of Tamil Nadu. A pension of ₹1,000 is provided to destitute old age persons of 60 years and above belonging to households below the poverty line.",
+    "benefits_md": "1. **Pension: ₹1,200 a month** — raised from ₹1,000 by the Tamil Nadu Cabinet from August 2023 (myScheme still lists ₹1,000).\n1. One free dhoti (men) or saree (women) during Pongal and Deepavali.\n1. Free rice through Anganwadi centres: 2 kg a month for those taking the nutritious meal, 4 kg for others.",
+    "eligibility_md": "1. The applicant should be destitute.\n1. The applicant's age should be 60 years and above.\n1. The applicant should belong to the \"Below Poverty Line\" category.",
+    "exclusions_md": "",
+    "process": [
+     {
+      "mode": "Online - via CSC",
+      "md": "1. The applicant should gather copies of the necessary documents needed to apply for the concerned scheme.\n1. The applicant should visit the nearest [Common Service Center](https://tnega.tn.gov.in/csclocation) (CSC) and complete the Biometric Verification Process.\n1. In the application form, fill in all the mandatory fields and upload copies of all the mandatory documents.\n1. Request a receipt or acknowledgment from the concerned authority to whom the application has been submitted. Ensure that the receipt contains essential details such as the date and time of submission, and a unique identification number (if applicable)."
+     }
+    ],
+    "documents": [
+     "Applicant Photo",
+     "Aadhaar Card",
+     "Proof of age",
+     "Aadhaar Consent Form",
+     "Smart Ration Card or Any Address Proof",
+     "Self–declaration of Applicant",
+     "Any Identity Proof (Voter ID Card, Passport, PAN Card, Driving License)",
+     "Bank Passbook",
+     "BPL Card Number"
+    ]
+   },
+   "ta": {
+    "name": "இந்திரா காந்தி தேசிய முதியோர் ஓய்வூதியத் திட்டம்-தமிழ்நாடு",
+    "department": "சமூக நலம் மற்றும் மகளிர் அதிகாரமளித்தல் துறை",
+    "summary": "'இந்திரா காந்தி தேசிய முதியோர் ஓய்வூதியத் திட்டம்' தமிழ்நாடு அரசின் சமூக நலம் மற்றும் மகளிர் அதிகாரமளித்தல் துறையால் தொடங்கப்பட்டது. வறுமைக் கோட்டிற்குக் கீழே உள்ள குடும்பங்களைச் சேர்ந்த 60 வயது மற்றும் அதற்கு மேற்பட்ட ஆதரவற்ற முதியவர்களுக்கு 1,000 ரூபாய் ஓய்வூதியம் வழங்கப்படுகிறது.",
+    "benefits_md": "1. **ஓய்வூதியம்: மாதம் ₹1,200** — ஆகஸ்ட் 2023 முதல் தமிழ்நாடு அமைச்சரவை ₹1,000-இலிருந்து உயர்த்தியது (myScheme இல் இன்னும் ₹1,000 எனக் காட்டப்படுகிறது).\n1. பொங்கல், தீபாவளியின் போது இலவச வேட்டி (ஆண்கள்) அல்லது சேலை (பெண்கள்).\n1. அங்கன்வாடி மையங்கள் மூலம் இலவச அரிசி: சத்துணவு உண்பவர்களுக்கு மாதம் 2 கிலோ, மற்றவர்களுக்கு 4 கிலோ.",
+    "eligibility_md": "1. விண்ணப்பதாரர் ஆதரவற்றவராக இருக்க வேண்டும்.\n1. விண்ணப்பதாரரின் வயது 60 வயது மற்றும் அதற்கு மேல் இருக்க வேண்டும்.\n1. விண்ணப்பதாரர் வறுமைக் கோட்டிற்குக் கீழே உள்ள பிரிவைச் சேர்ந்தவராக இருக்க வேண்டும்.",
+    "exclusions_md": "",
+    "process": [
+     {
+      "mode": "Online - via CSC",
+      "md": "1. விண்ணப்பதாரர் சம்பந்தப்பட்ட திட்டத்திற்கு விண்ணப்பிக்க தேவையான ஆவணங்களின் நகல்களை சேகரிக்க வேண்டும்.\n1. விண்ணப்பதாரர் அருகிலுள்ள பொது சேவை மையத்திற்கு (https://tnega.tn.gov.in/csclocation) (சிஎஸ்சி) சென்று பயோமெட்ரிக் சரிபார்ப்பு செயல்முறையை முடிக்க வேண்டும்.\n1. விண்ணப்பப் படிவத்தில், அனைத்து கட்டாய புலங்களையும் பூர்த்தி செய்து, அனைத்து கட்டாய ஆவணங்களின் நகல்களையும் பதிவேற்றவும்.\n1. விண்ணப்பத்தை சமர்ப்பித்த சம்பந்தப்பட்ட அதிகாரியிடமிருந்து ரசீது அல்லது ஒப்புதலைக் கோருங்கள். ரசீதில் சமர்ப்பிக்கப்பட்ட தேதி மற்றும் நேரம் போன்ற அத்தியாவசிய விவரங்கள் மற்றும் ஒரு தனித்துவமான அடையாள எண் (பொருந்தினால்) இருப்பதை உறுதிப்படுத்திக் கொள்ளுங்கள்."
+     }
+    ],
+    "documents": [
+     "விண்ணப்பதாரரின் புகைப்படம்",
+     "ஆதார் அட்டை",
+     "வயதுச் சான்று",
+     "ஆதார் ஒப்புதல் படிவம்",
+     "ஸ்மார்ட் ரேஷன் கார்டு அல்லது ஏதேனும் முகவரி சான்று",
+     "விண்ணப்பதாரரின் சுய பிரகடனம்",
+     "எந்தவொரு அடையாளச் சான்றும் (வாக்காளர் அடையாள அட்டை, பாஸ்போர்ட், பான் கார்டு, ஓட்டுநர் உரிமம்)",
+     "வங்கி பாஸ் புக்",
+     "பிபிஎல் கார்டு எண்"
+    ]
+   },
+   "links": [
+    {
+     "kind": "portal",
+     "url": "https://tnega.tn.gov.in/csclocation",
+     "title": "Common Service Center"
+    },
+    {
+     "kind": "guidelines",
+     "url": "https://cms.tn.gov.in/sites/default/files/documents/swwe_e_cc_2022_23.pdf",
+     "title": "Citizen's Charter"
+    },
+    {
+     "kind": "form",
+     "url": "https://tnlegalservices.tn.gov.in/swwe/Annexure_English.pdf",
+     "title": "Documents Required"
+    }
+   ]
+  },
+  "ujjwala": {
+   "source": {
+    "name": "myScheme (Government of India)",
+    "url": "https://www.myscheme.gov.in/schemes/pmuy",
+    "checked": "2026-09-29"
+   },
+   "en": {
+    "name": "Pradhan Mantri Ujjwala Yojana",
+    "department": "Ministry Of Petroleum and Natural Gas",
+    "summary": "A scheme by Ministry of Petroleum and Natural Gas for Providing free LPG connections to women belonging to the Below Poverty Line (BPL) households.",
+    "benefits_md": "1. Rs. 1600 for a connection 14.2kg cylinder or Rs. 1150 for a 5 kg cylinder.\n1. Additionally, All PMUY beneficiaries will be provided with first LPG refill and Stove (hot plate) both free of cost along with their deposit free connection.\n\n<br>\n\n#### Note:\nPriority would be given to the states which have lower LPG coverage (Compared to the national average) as on 1st Jan 2016.",
+    "eligibility_md": "An adult woman belonging to a poor household and not having an LPG connection in her household will be eligible under UJJWALA 2.0. The beneficiaries should belong to any of the following categories:\n\n1. Eligible as per SECC 2011 list\n1. Belongs to SC/ST households, be a beneficiary of Pradhan Mantri Awas Yojana (PMAY), Antyodaya Anna Yojana (AAY), Forest dwellers, Most Backward Classes (MBC), Tea and Ex-Tea Garden Tribes, People residing in river islands (Beneficiary will submit supporting document)\n1. If she is not falling in the above 2 categories, then she can stake her claim to be a beneficiary under Poor household by submitting 14-point declaration (as per prescribed format)",
+    "exclusions_md": "Male Member from a household cannot apply for the scheme.",
+    "process": [
+     {
+      "mode": "Online",
+      "md": "1. Following are the prerequisites for the enrollment process:\n\n1. Aadhar Card\n\n1. Ration card\n\n1. Address Proof\n\n1. Passport size photograph\n\n1. Bank Details\n\n1. Apply the application form through online [official website](www.pmuy.gov.in).\n1. Select the oil company name example Indane / Bharatgas / HP Gas\n1. Select Type of Connection like Ujjwala 2.0 New Connection\n1. Choose State, District and Name of Distributor.\n1. Enter Mobile Number, Captcha and OTP.\n1. Select Migrant Family status in YES or NO\n1. For family Identifier in NO fill Annexure 1\n1. For  family Identifier in Yes fill Ration Card\n1. Select Category.\n1. Fill all Family Details, Personal details, address details, bank details, Choose Cylinder Types, Select rural or urban and select declaration and submit.\n1. Generate Reference number and visit Gas agency."
+     }
+    ],
+    "documents": [
+     "Valid Photo ID",
+     "Ration Card issued by the State from which application is being made/ other State Govt. document certifying family composition/ Self-Declaration as per Annexure I (for migrant applicants)",
+     "Proof of Address - Aadhaar will be taken as Proof of Identity and Proof of Address if the connection is required in the same address. In that case only Aadhaar is sufficient",
+     "Bank Account Number and IFSC",
+     "Aadhaar (not mandatory for Assam and Meghalaya)",
+     "Passport size photograph"
+    ]
+   },
+   "ta": {
+    "name": "பிரதான் மந்திரி உஜ்வாலா யோஜனா",
+    "department": "Ministry Of Petroleum and Natural Gas",
+    "summary": "வறுமைக் கோட்டிற்குக் கீழே உள்ள (பிபிஎல்) குடும்பங்களைச் சேர்ந்த பெண்களுக்கு இலவச எல்பிஜி இணைப்புகளை வழங்குவதற்கான பெட்ரோலியம் மற்றும் இயற்கை எரிவாயு அமைச்சகத்தின் திட்டம்.",
+    "benefits_md": "1. ரூ. 14. 2 கிலோ எடையுள்ள சிலிண்டருக்கு 1600 அல்லது ரூ. 5 கிலோ எடையுள்ள சிலிண்டருக்கு 1150.\n1. கூடுதலாக, அனைத்து பி. எம். யு. ஒய் பயனாளிகளுக்கும் முதல் எல்பிஜி ரீ:பில் மற்றும் அடுப்பு (ஹாட் பிளேட்) ஆகிய இரண்டும் அவர்களின் வைப்புத்தொகை இல்லாத இணைப்புடன் இலவசமாக வழங்கப்படும். 2016 ஜனவரி 1ஆம் தேதி நிலவரப்படி (தேசிய சராசரியுடன் ஒப்பிடுகையில்) குறைந்த எல்பிஜி வசதி கொண்ட மாநிலங்களுக்கு முன்னுரிமை வழங்கப்படும்.",
+    "eligibility_md": "ஒரு ஏழை குடும்பத்தைச் சேர்ந்த வயது வந்த பெண் மற்றும் அவரது வீட்டில் எல்பிஜி இணைப்பு இல்லாதவர், உஜ்வாலா 2 இன் கீழ் தகுதி பெறுவார்கள். பயனாளிகள் பின்வரும் பிரிவுகளில் ஏதேனும் ஒன்றைச் சேர்ந்தவர்களாக இருக்க வேண்டும். எஸ். இ. சி. சி 2011 பட்டியலின் படி தகுதி\n1. எஸ்சி/எஸ்டி குடும்பங்களைச் சேர்ந்தவர்கள், பிரதான் மந்திரி அவாஸ் யோஜனா (பி. எம். ஏ. ஒய்), அந்தியோதயா அன்ன யோஜனா (ஏ. ஏ. ஒய்), வனவாசிகள், மிகவும் பிற்படுத்தப்பட்ட வகுப்பினர் (எம். பி. சி), தேயிலை மற்றும் முன்னாள் தேநீர் தோட்ட பழங்குடியினர், ஆற்றுத் தீவுகளில் வசிக்கும் மக்கள் (பயனாளி ஆதரவு ஆவணத்தை சமர்ப்பிப்பார்)\n1. மேற்கூறிய 2 பிரிவுகளுக்குள் அவள் வராவிட்டால், 14 அம்ச அறிவிப்பை (பரிந்துரைக்கப்பட்ட வடிவத்தின் படி) சமர்ப்பிப்பதன் மூலம் ஏழை குடும்பத்தின் கீழ் ஒரு பயனாளி என்று அவள் உரிமை கோரலாம்",
+    "exclusions_md": "ஒரு குடும்பத்தைச் சேர்ந்த ஆண் உறுப்பினர் இந்த திட்டத்திற்கு விண்ணப்பிக்க முடியாது.",
+    "process": [
+     {
+      "mode": "Online",
+      "md": "1. பதிவு செயல்முறைக்கான முன்நிபந்தனைகள் பின்வருமாறு:\n1. ஆதார் அட்டை\n1. ரேஷன் கார்டு\n1. முகவரிச் சான்று\n1. பாஸ்போர்ட் அளவு புகைப்படம்\n1. வங்கி விவரங்கள்\n1. ஆன்லைன் மூலம் விண்ணப்ப படிவத்தை விண்ணப்பிக்கவும் [அதிகாரப்பூர்வ வலைத்தளம்](www.pmuy.gov.in).\n1. எண்ணெய் நிறுவனத்தின் பெயர் உதாரணம் இண்டேன்/பாரத்காஸ்/எச். பி. கேஸ் 1 ஐத் தேர்ந்தெடுக்கவும். உஜ்வாலா 2 புதிய இணைப்பு 1 போன்ற இணைப்பின் வகையைத் தேர்ந்தெடுக்கவும். மாநிலம், மாவட்டம் மற்றும் விநியோகஸ்தரின் பெயரைத் தேர்ந்தெடுக்கவும்.\n1. மொபைல் எண், கேப்ட்சா மற்றும் ஓடிபி ஆகியவற்றை உள்ளிடவும்.\n1. ஆம் அல்லது எண் 1 இல் புலம்பெயர்ந்த குடும்ப அந்தஸ்தைத் தேர்ந்தெடுக்கவும். எண் இல் உள்ள குடும்ப அடையாளங்காட்டிக்கு இணைப்பு 1 1 ஐ நிரப்பவும். குடும்ப அடையாளங்காட்டிக்கு ஆம் ரேஷன் கார்டு 1 ஐ நிரப்பவும். பிரிவைத் தேர்ந்தெடுக்கவும்.\n1. அனைத்து குடும்ப விவரங்கள், தனிப்பட்ட விவரங்கள், முகவரி விவரங்கள், வங்கி விவரங்களை நிரப்பவும், சிலிண்டர் வகைகளைத் தேர்ந்தெடுக்கவும், கிராமப்புற அல்லது நகர்ப்புறத்தைத் தேர்ந்தெடுத்து அறிவிப்பைத் தேர்ந்தெடுத்து சமர்ப்பிக்கவும்.\n1. குறிப்பு எண்ணை உருவாக்கி எரிவாயு நிறுவனத்தைப் பார்வையிடவும்."
+     }
+    ],
+    "documents": [
+     "செல்லுபடியாகும் புகைப்பட ஐடி",
+     "விண்ணப்பிக்கும் மாநிலத்தால் வழங்கப்பட்ட ரேஷன் கார்டு/பிற மாநில அரசு. இணைப்பு I இன் படி குடும்ப அமைப்பு/சுய அறிவிப்பை சான்றளிக்கும் ஆவணம் (புலம்பெயர்ந்த விண்ணப்பதாரர்களுக்கு)",
+     "முகவரிச் சான்று-அதே முகவரியில் இணைப்பு தேவைப்பட்டால் ஆதார் அடையாளச் சான்று மற்றும் முகவரிச் சான்று என எடுத்துக் கொள்ளப்படும். அப்படியானால் ஆதார் மட்டுமே போதுமானது",
+     "வங்கிக் கணக்கு எண் மற்றும் ஐஎஃப்எஸ்சி",
+     "ஆதார் (அசாம் மற்றும் மேகாலயாவுக்கு கட்டாயமில்லை)",
+     "பாஸ்போர்ட் அளவு புகைப்படம்"
+    ]
+   },
+   "links": [
+    {
+     "kind": "portal",
+     "url": "https://www.pmuy.gov.in",
+     "title": "official website"
+    },
+    {
+     "kind": "guidelines",
+     "url": "http://nadia.gov.in/DISHA/DISHASchemeGuidelines/Pradhan%20Mantri%20UJJWALA%20Yojna%20Guideline.pdf",
+     "title": "Scheme Guidelines"
+    },
+    {
+     "kind": "portal",
+     "url": "https://www.pmuy.gov.in/index.aspx",
+     "title": "Additional Guidelines"
+    },
+    {
+     "kind": "portal",
+     "url": "https://mopng.gov.in/en/marketing/pmuy",
+     "title": "Additional Guidelines"
+    }
+   ]
+  },
+  "pmjjby": {
+   "source": {
+    "name": "myScheme (Government of India)",
+    "url": "https://www.myscheme.gov.in/schemes/pmjjby",
+    "checked": "2026-09-29"
+   },
+   "en": {
+    "name": "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+    "department": "Department of Financial Service",
+    "summary": "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY) is an insurance scheme offering life insurance cover for death due to any reason. It is a one-year cover, renewable from year to year. The scheme is offered by banks/post offices and administered through life insurance companies.",
+    "benefits_md": "1. PMJJBY offers one- year term **life cover of ₹ 2.00 Lakh** to all the subscribers in the age group of 18-50 years.\n1. It covers death due to any reason.\n1. Premium payable is ₹ 436/- per annum** per subscriber, to be auto debited from the subscriber’s bank/post office account.",
+    "eligibility_md": "1. The age of the applicant must be between 18 to 50 Years.\n1. The applicant must hold an individual bank / post office account.",
+    "exclusions_md": "<br>",
+    "process": [
+     {
+      "mode": "Offline",
+      "md": "1. Download and take print of the “CONSENT-CUM-DECLARATION FORM” given in the link below: [https://www.jansuraksha.gov.in/Files/PMJJBY/English/ApplicationForm.pdf#zoom=250](https://www.jansuraksha.gov.in/Files/PMJJBY/English/ApplicationForm.pdf#zoom=250)\n1. Duly fill and sign the application form, attach the self-attested copies of the required documents, and submit the case to the authorised official of Bank / Post Office. The official will return you the “ACKNOWLEDGEMENT SLIP CUM CERTIFICATE OF INSURANCE”."
+     },
+     {
+      "mode": "Online",
+      "md": "One can also avail cover under PMJJBY online using their bank's Net banking facility."
+     }
+    ],
+    "documents": [
+     "Consent-cum-declaration form (filled and signed)",
+     "Aadhaar card",
+     "Bank or post office account (passbook)"
+    ]
+   },
+   "ta": {
+    "name": "பிரதான் மந்திரி ஜீவன் ஜோதி பீமா யோஜனா",
+    "department": "நிதிச் சேவைத் துறை",
+    "summary": "பிரதான் மந்திரி ஜீவன் ஜோதி பீமா யோஜனா (பி. எம். ஜே. ஜே. பி. ஒய்) என்பது எந்தவொரு காரணத்தாலும் ஏற்படும் மரணத்திற்கு ஆயுள் காப்பீட்டை வழங்கும் ஒரு காப்பீட்டுத் திட்டமாகும். இது ஒரு வருட காப்பீடு, ஆண்டுக்கு ஆண்டு புதுப்பிக்கத்தக்கது. இந்தத் திட்டம் வங்கிகள்/தபால் நிலையங்களால் வழங்கப்படுகிறது மற்றும் ஆயுள் காப்பீட்டு நிறுவனங்கள் மூலம் நிர்வகிக்கப்படுகிறது.",
+    "benefits_md": "1. பி. எம். ஜே. ஜே. பி. ஒய். 1 வயதிற்குட்பட்ட அனைத்து சந்தாதாரர்களுக்கும் ஒரு வருட கால ** ரூ. 2 லட்சம் ** ஆயுள் காப்பீட்டை வழங்குகிறது. இது எந்தவொரு காரணத்தாலும் ஏற்படும் மரணத்தை உள்ளடக்கியது.\n1. சந்தாதாரரின் வங்கி/தபால் அலுவலகக் கணக்கிலிருந்து தானாக டெபிட் செய்யப்படும் ஒரு சந்தாதாரருக்கு செலுத்த வேண்டிய பிரீமியம் ஆண்டுக்கு ₹436/- ஆகும்.",
+    "eligibility_md": "1. விண்ணப்பதாரரின் வயது 18 முதல் 50 வயதுக்குள் இருக்க வேண்டும்.\n1. விண்ணப்பதாரர் ஒரு தனிப்பட்ட வங்கி/தபால் அலுவலகக் கணக்கை வைத்திருக்க வேண்டும்.",
+    "exclusions_md": "<பிஆர்>",
+    "process": [
+     {
+      "mode": "Offline",
+      "md": "1. கீழ்கண்ட இணைப்பில் கொடுக்கப்பட்டுள்ள \"கான்சென்ட்-கம்-அறிவிப்பு படிவத்தை\" பதிவிறக்கம் செய்து பிரிண்ட் எடுத்துக் கொள்ளுங்கள்: [https://www.jansuraksha.gov.in/Files/PMJJBY/English/ApplicationForm.pdf#zoom=250](https://www.jansuraksha.gov.in/Files/PMJJBY/English/ApplicationForm.pdf#zoom=250)\n1. முறைப்படி விண்ணப்ப படிவத்தை பூர்த்தி செய்து கையொப்பமிடவும், தேவையான ஆவணங்களின் சுய சான்றளிக்கப்பட்ட நகல்களை இணைக்கவும், வழக்கை வங்கி/தபால் அலுவலகத்தின் அங்கீகரிக்கப்பட்ட அதிகாரியிடம் சமர்ப்பிக்கவும். அந்த அதிகாரி உங்களுக்கு \"ஆக்னோலெட்ஜெமென்ட் ஸ்லிப் செர்டி:பிகேட் ஆ:ப் இன்சூரன்ஸ்\" என்ற சான்றிதழைத் திருப்பித் தருவார்."
+     },
+     {
+      "mode": "Online",
+      "md": "ஒருவர் தங்கள் வங்கியின் நெட் பேங்கிங் வசதியைப் பயன்படுத்தி பி. எம். ஜே. ஜே. பி. ஒய் இன் கீழ் ஆன்லைனிலும் பாதுகாப்பைப் பெறலாம்."
+     }
+    ],
+    "documents": [
+     "ஒப்புதல் மற்றும் உறுதிமொழிப் படிவம் (நிரப்பி கையொப்பமிட்டது)",
+     "ஆதார் அட்டை",
+     "வங்கி அல்லது அஞ்சலக கணக்கு (கணக்குப் புத்தகம்)"
+    ]
+   },
+   "links": [
+    {
+     "kind": "form",
+     "url": "https://www.jansuraksha.gov.in/Files/PMJJBY/English/ApplicationForm.pdf",
+     "title": "https://www.jansuraksha.gov.in/Files/PMJJBY/English/ApplicationForm.pdf#zoom=250"
+    },
+    {
+     "kind": "guidelines",
+     "url": "https://jansuraksha.gov.in/Files/PMJJBY/English/Rules.pdf",
+     "title": "Guidelines"
+    }
+   ]
+  },
+  "e-shram": {
+   "source": {
+    "name": "eshram.gov.in FAQs (Ministry of Labour & Employment)",
+    "url": "https://eshram.gov.in/faqs",
+    "checked": "2026-09-29"
+   },
+   "en": {
+    "name": "e-Shram card",
+    "department": "Ministry of Labour & Employment, Government of India",
+    "summary": "A national register of unorganised workers. Registered workers get a 12-digit UAN card.",
+    "benefits_md": "1. A free **e-Shram card with a 12-digit UAN** (Universal Account Number).\n1. One ID to reach social-security and welfare schemes for workers through the e-Shram **One-Stop Solution**.\n1. Used to deliver help to workers in emergencies.",
+    "eligibility_md": "1. Anyone **working in the unorganised sector**, aged **16 to 59**.\n1. **No income limit** and no educational qualification needed.\n1. **Agricultural labourers and landless farmers** can register.",
+    "exclusions_md": "If a worker moves to the organised sector, they get only the benefits for organised-sector workers.",
+    "process": [
+     {
+      "mode": "Online",
+      "md": "1. Register yourself on **eshram.gov.in** with your Aadhaar number and the mobile number linked to Aadhaar.\n1. No Aadhaar-linked mobile? Visit the nearest **Common Service Centre (CSC)** or State Seva Kendra to register with your fingerprint.\n1. Registration is **completely free**. Helpline: **14434**."
+     }
+    ],
+    "documents": [
+     "Aadhaar number",
+     "Mobile number linked with Aadhaar"
+    ]
+   },
+   "ta": {
+    "name": "இ-ஷ்ரம் அட்டை",
+    "department": "தொழிலாளர் மற்றும் வேலைவாய்ப்பு அமைச்சகம், இந்திய அரசு",
+    "summary": "அமைப்புசாரா தொழிலாளர்களின் தேசிய பதிவேடு. பதிவு செய்தவர்களுக்கு 12 இலக்க UAN அட்டை வழங்கப்படும்.",
+    "benefits_md": "1. இலவச **இ-ஷ்ரம் அட்டை — 12 இலக்க UAN** எண்.\n1. இ-ஷ்ரம் **ஒருங்கிணைந்த சேவை** மூலம் தொழிலாளர் நலத் திட்டங்களை அணுக ஒரே அடையாளம்.\n1. அவசர காலங்களில் தொழிலாளர்களுக்கு உதவி வழங்கப் பயன்படும்.",
+    "eligibility_md": "1. **அமைப்புசாரா துறையில் வேலை செய்யும்**, **16 முதல் 59 வயது** உடைய எவரும்.\n1. **வருமான வரம்பு இல்லை**; கல்வித் தகுதி தேவையில்லை.\n1. **விவசாயக் கூலித் தொழிலாளர்கள் மற்றும் நிலமற்ற விவசாயிகள்** பதிவு செய்யலாம்.",
+    "exclusions_md": "அமைப்புசார் துறைக்கு மாறினால், அமைப்புசார் தொழிலாளர்களுக்கான பலன்கள் மட்டுமே கிடைக்கும்.",
+    "process": [
+     {
+      "mode": "இணையவழி",
+      "md": "1. ஆதார் எண் மற்றும் ஆதாருடன் இணைக்கப்பட்ட மொபைல் எண்ணுடன் **eshram.gov.in** இல் பதிவு செய்யவும்.\n1. ஆதாருடன் இணைந்த மொபைல் இல்லையெனில், அருகிலுள்ள **பொது சேவை மையத்தில் (CSC)** கைரேகை மூலம் பதிவு செய்யலாம்.\n1. பதிவு **முற்றிலும் இலவசம்**. உதவி எண்: **14434**."
+     }
+    ],
+    "documents": [
+     "ஆதார் எண்",
+     "ஆதாருடன் இணைக்கப்பட்ட மொபைல் எண்"
+    ]
+   },
+   "links": [
+    {
+     "kind": "portal",
+     "label": {
+      "en": "e-Shram portal — register",
+      "ta": "இ-ஷ்ரம் இணையதளம் — பதிவு செய்ய"
+     },
+     "url": "https://eshram.gov.in/"
+    }
+   ]
+  }
+ }
+}

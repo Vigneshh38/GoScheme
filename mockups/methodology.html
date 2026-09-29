@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GoScheme Methodology</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+  :root { --blue: #0070C0; --blue-soft: #E8F2FC; --ink: #0F172A; --muted: #64748B; --line: #E2E8F0;
+          --green: #16A34A; --green-soft: #DCFCE7; --red: #DC2626; --red-soft: #FEE2E2; --amber-soft: #FEF3C7; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1000px; height: 448px; overflow: hidden; background: #fff; color: var(--ink);
+    font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; }
+  [data-lucide] { stroke-width: 2.2; }
+
+  .lane { display: grid; grid-template-columns: 92px 1fr; gap: 10px; margin-bottom: 10px; }
+  .lane-label { border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+    font-size: 12px; font-weight: 700; letter-spacing: .8px; color: #fff; }
+  .lane-label svg { width: 22px; height: 22px; }
+  .flow { display: flex; align-items: stretch; }
+  .arrow { width: 26px; flex: none; display: grid; place-items: center; color: #94A3B8; }
+  .arrow svg { width: 20px; height: 20px; stroke-width: 2.6; }
+
+  .step { flex: 1; background: #fff; border: 1.5px solid var(--line); border-radius: 14px; padding: 9px 11px; display: flex; flex-direction: column; min-width: 0; }
+  .step .h { display: flex; align-items: center; gap: 7px; }
+  .num { width: 22px; height: 22px; border-radius: 50%; font-size: 11.5px; font-weight: 700; color: #fff; display: grid; place-items: center; flex: none; }
+  .step .t { font-size: 13.5px; font-weight: 600; line-height: 1.2; }
+  .step .d { font-size: 11.5px; color: var(--muted); margin-top: 4px; line-height: 1.35; }
+
+  .check { flex: 1.45; }
+  .branch { margin-top: 5px; display: flex; flex-direction: column; gap: 4px; }
+  .b { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; border-radius: 8px; padding: 3px 7px; line-height: 1.25; }
+  .b svg { width: 13px; height: 13px; stroke-width: 3; flex: none; }
+  .b.yes { background: var(--green-soft); color: #15803D; }
+  .b.no  { background: var(--red-soft); color: #B91C1C; }
+
+  .pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+  .pill { font-size: 10.5px; font-weight: 600; border-radius: 7px; padding: 2px 7px; }
+
+  .l1 .lane-label { background: #0070C0; } .l1 .num { background: #0070C0; } .l1 .step { border-color: #BFDBF7; }
+  .l2 .lane-label { background: #16A34A; } .l2 .num { background: #16A34A; } .l2 .step { border-color: #BBF7D0; }
+  .l3 .lane-label { background: #7C3AED; } .l3 .num { background: #7C3AED; } .l3 .step { border-color: #DDD6FE; }
+
+  .phases { margin-top: 6px; border-top: 1.5px dashed var(--line); padding-top: 12px; }
+  .phases .ttl { font-size: 12px; font-weight: 700; letter-spacing: .8px; color: var(--muted); margin-bottom: 8px; }
+  .ph-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .ph { border-radius: 14px; padding: 9px 12px; background: #F8FAFC; border: 1.5px solid var(--line); }
+  .ph.now { background: var(--blue-soft); border-color: #BFDBF7; }
+  .ph .k { display: flex; align-items: center; justify-content: space-between; }
+  .ph .k b { font-size: 13px; }
+  .ph .k span { font-size: 10.5px; font-weight: 600; border-radius: 7px; padding: 2px 8px; background: #E2E8F0; color: #334155; }
+  .ph.now .k span { background: var(--blue); color: #fff; }
+  .ph .d { font-size: 11.5px; color: var(--muted); margin-top: 3px; line-height: 1.35; }
+</style>
+</head>
+<body>
+
+<div class="lane l1">
+  <div class="lane-label"><i data-lucide="mic"></i>ONBOARD</div>
+  <div class="flow">
+    <div class="step"><div class="h"><span class="num">1</span><span class="t">Choose language</span></div>
+      <div class="d">Tamil or English; consent screen</div></div>
+    <div class="arrow"><i data-lucide="arrow-right"></i></div>
+    <div class="step"><div class="h"><span class="num">2</span><span class="t">Ask by voice</span></div>
+      <div class="d">One question at a time, spoken + shown on screen</div></div>
+    <div class="arrow"><i data-lucide="arrow-right"></i></div>
+    <div class="step check"><div class="h"><span class="num">3</span><span class="t">Clear &amp; valid answer?</span></div>
+      <div class="branch">
+        <div class="b yes"><i data-lucide="check"></i>Yes → green, slides out, next question</div>
+        <div class="b no"><i data-lucide="x"></i>No → red shake, ask again; tap/type after 2 tries</div>
+      </div></div>
+    <div class="arrow"><i data-lucide="arrow-right"></i></div>
+    <div class="step"><div class="h"><span class="num">4</span><span class="t">Confirm profile</span></div>
+      <div class="d">Edit answers; add family members</div></div>
+  </div>
+</div>
+
+<div class="lane l2">
+  <div class="lane-label"><i data-lucide="search-check"></i>DISCOVER</div>
+  <div class="flow">
+    <div class="step"><div class="h"><span class="num">5</span><span class="t">Rule engine match</span></div>
+      <div class="d">Every scheme checked against every family member</div></div>
+    <div class="arrow"><i data-lucide="arrow-right"></i></div>
+    <div class="step"><div class="h"><span class="num">6</span><span class="t">Scheme cards</span></div>
+      <div class="d">Best match first, with benefit amount</div></div>
+    <div class="arrow"><i data-lucide="arrow-right"></i></div>
+    <div class="step" style="flex:1.45"><div class="h"><span class="num">7</span><span class="t">Clear result for each scheme</span></div>
+      <div class="pills">
+        <span class="pill" style="background:#DCFCE7;color:#15803D">✓ Eligible</span>
+        <span class="pill" style="background:#FEF3C7;color:#B45309">? Maybe — 1 more question</span>
+        <span class="pill" style="background:#FEE2E2;color:#B91C1C">✗ Not eligible, because… + fix</span>
+      </div></div>
+  </div>
+</div>
+
+<div class="lane l3">
+  <div class="lane-label"><i data-lucide="file-pen-line"></i>APPLY</div>
+  <div class="flow">
+    <div class="step"><div class="h"><span class="num">8</span><span class="t">Tap a scheme</span></div>
+      <div class="d">“Who is this for?”</div></div>
+    <div class="arrow"><i data-lucide="arrow-right"></i></div>
+    <div class="step" style="flex:1.3"><div class="h"><span class="num">9</span><span class="t">Auto-fill every field</span></div>
+      <div class="pills">
+        <span class="pill" style="background:#E8F2FC;color:#0070C0">Profile</span>
+        <span class="pill" style="background:#FCE7F3;color:#BE185D">Document photo → OCR</span>
+        <span class="pill" style="background:#FEF3C7;color:#B45309">Voice</span>
+      </div></div>
+    <div class="arrow"><i data-lucide="arrow-right"></i></div>
+    <div class="step"><div class="h"><span class="num">10</span><span class="t">Review &amp; edit</span></div>
+      <div class="d">Confirm OCR text; Aadhaar masked</div></div>
+    <div class="arrow"><i data-lucide="arrow-right"></i></div>
+    <div class="step"><div class="h"><span class="num">11</span><span class="t">Form ready</span></div>
+      <div class="d">Filled official PDF or portal + documents list</div></div>
+  </div>
+</div>
+
+<div class="phases">
+  <div class="ttl">IMPLEMENTATION PLAN</div>
+  <div class="ph-row">
+    <div class="ph now"><div class="k"><b>Phase 1 · Prototype</b><span>Expo demo</span></div>
+      <div class="d">Voice onboarding + scheme matching for 10 schemes (steps 1–7)</div></div>
+    <div class="ph"><div class="k"><b>Phase 2 · Auto-fill</b><span>Next</span></div>
+      <div class="d">Document OCR, review screen, filled official PDF (steps 8–11)</div></div>
+    <div class="ph"><div class="k"><b>Phase 3 · Scale</b><span>Later</span></div>
+      <div class="d">Portal filling, deadline reminders, status tracking, new-scheme alerts</div></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

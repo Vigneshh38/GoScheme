@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GoScheme Novelty</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+  :root { --blue: #0070C0; --blue-soft: #E8F2FC; --ink: #0F172A; --muted: #64748B; --line: #E2E8F0;
+          --green: #16A34A; --green-soft: #DCFCE7; --amber: #B45309; --amber-soft: #FEF3C7; --red: #DC2626; --red-soft: #FEE2E2; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1160px; height: 452px; overflow: hidden; background: #fff; color: var(--ink);
+    font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; }
+  [data-lucide] { stroke-width: 2.2; }
+  .sec { font-size: 12.5px; font-weight: 700; letter-spacing: .8px; color: var(--muted); margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
+  .sec svg { width: 16px; height: 16px; }
+  .wrap { display: grid; grid-template-columns: 640px 1fr; gap: 22px; }
+
+  /* comparison */
+  .cmp { position: relative; }
+  .tbl { display: grid; grid-template-columns: 172px repeat(3, 1fr) 140px; border: 1.5px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .c { padding: 8px 8px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: center; text-align: center; font-size: 11.5px; min-height: 52px; }
+  .c.f { justify-content: flex-start; text-align: left; font-size: 12.5px; font-weight: 600; gap: 8px; padding-left: 12px; }
+  .c.f svg { width: 17px; height: 17px; color: var(--blue); flex: none; }
+  .h { border-top: 0; background: #F8FAFC; font-weight: 700; font-size: 12.5px; min-height: 58px; flex-direction: column; gap: 1px; }
+  .h small { font-size: 10px; font-weight: 500; color: var(--muted); }
+  .us { background: var(--blue-soft); }
+  .h.us { background: var(--blue); color: #fff; }
+  .h.us small { color: #D6E8F8; }
+  .y, .n, .p { white-space: nowrap; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; border-radius: 8px; padding: 3px 8px; line-height: 1.2; }
+  .y { background: var(--green-soft); color: #15803D; }
+  .n { background: var(--red-soft); color: #B91C1C; }
+  .p { background: var(--amber-soft); color: var(--amber); }
+  .y svg, .n svg { width: 13px; height: 13px; stroke-width: 3; flex: none; }
+  .note { font-size: 10.5px; color: var(--muted); margin-top: 6px; }
+  .extra { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .extra b { font-size: 12px; font-weight: 700; color: var(--blue); margin-right: 2px; }
+  .chip { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 600; border-radius: 10px; padding: 4px 10px; background: var(--blue-soft); color: var(--blue); }
+  .chip svg { width: 13px; height: 13px; }
+
+  /* right */
+  .impact { border-radius: 18px; background: linear-gradient(135deg, #2F8FE0 0%, #0070C0 60%, #0B5CAD 100%); color: #fff; padding: 14px 16px; }
+  .impact .t { font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .impact .t svg { width: 18px; height: 18px; }
+  .aud { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
+  .aud span { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 600; background: rgba(255,255,255,.16); border-radius: 10px; padding: 4px 9px; }
+  .aud svg { width: 13px; height: 13px; }
+  .eg { margin-top: 11px; background: #fff; color: var(--ink); border-radius: 14px; padding: 10px 12px; display: flex; gap: 12px; align-items: center; }
+  .eg .big { font-size: 24px; font-weight: 700; color: var(--blue); line-height: 1; white-space: nowrap; }
+  .eg .big small { display: block; font-size: 10.5px; font-weight: 600; color: var(--muted); margin-top: 3px; }
+  .eg .d { font-size: 11.5px; color: #334155; line-height: 1.35; }
+  .eg .d b { color: var(--ink); }
+
+  .ben { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+  .b { border-radius: 16px; padding: 12px 12px; border: 1.5px solid var(--line); }
+  .b .ic { width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; }
+  .b .ic svg { width: 19px; height: 19px; }
+  .b .t { font-size: 13.5px; font-weight: 700; margin-top: 7px; }
+  .b .d { font-size: 11.5px; color: var(--muted); line-height: 1.38; margin-top: 3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cmp">
+    <div class="sec"><i data-lucide="sparkles"></i>WHAT MAKES US DIFFERENT</div>
+    <div class="tbl">
+      <div class="c h" style="justify-content:center;align-items:flex-start;padding-left:12px">Feature</div>
+      <div class="c h">myScheme<small>Govt portal</small></div>
+      <div class="c h">Jugalbandi<small>WhatsApp bot</small></div>
+      <div class="c h">Haqdarshak<small>Agent network</small></div>
+      <div class="c h us">GoScheme<small>Our app</small></div>
+
+      <div class="c f"><i data-lucide="mic"></i>Talk by voice in your language</div>
+      <div class="c"><span class="n"><i data-lucide="x"></i>No</span></div>
+      <div class="c"><span class="y"><i data-lucide="check"></i>Yes</span></div>
+      <div class="c"><span class="p">Via agent</span></div>
+      <div class="c us"><span class="y"><i data-lucide="check"></i>Tamil + English</span></div>
+
+      <div class="c f"><i data-lucide="badge-check"></i>Eligibility check</div>
+      <div class="c"><span class="y"><i data-lucide="check"></i>Filters</span></div>
+      <div class="c"><span class="p">Info only</span></div>
+      <div class="c"><span class="y"><i data-lucide="check"></i>Free</span></div>
+      <div class="c us"><span class="y"><i data-lucide="check"></i>+ why &amp; fix</span></div>
+
+      <div class="c f"><i data-lucide="file-pen-line"></i>Fills the application form</div>
+      <div class="c"><span class="n"><i data-lucide="x"></i>No</span></div>
+      <div class="c"><span class="n"><i data-lucide="x"></i>No</span></div>
+      <div class="c"><span class="p">Agent + fee</span></div>
+      <div class="c us"><span class="y"><i data-lucide="check"></i>Auto-fill</span></div>
+
+      <div class="c f"><i data-lucide="scan-text"></i>Reads documents from a photo</div>
+      <div class="c"><span class="n"><i data-lucide="x"></i>No</span></div>
+      <div class="c"><span class="n"><i data-lucide="x"></i>No</span></div>
+      <div class="c"><span class="p">By agent</span></div>
+      <div class="c us"><span class="y"><i data-lucide="check"></i>OCR</span></div>
+
+      <div class="c f"><i data-lucide="hand-coins"></i>Free, self-service start to end</div>
+      <div class="c"><span class="p">Info only</span></div>
+      <div class="c"><span class="p">Info only</span></div>
+      <div class="c"><span class="n"><i data-lucide="x"></i>Fee</span></div>
+      <div class="c us"><span class="y"><i data-lucide="check"></i>Yes</span></div>
+    </div>
+    <div class="note">Based on our study of each service's public information (2026).</div>
+    <div class="extra"><b>Also in GoScheme:</b>
+      <span class="chip"><i data-lucide="users"></i>Whole-family profiles</span>
+      <span class="chip"><i data-lucide="circle-help"></i>“Maybe” + 1 more question</span>
+      <span class="chip"><i data-lucide="bell-ring"></i>Deadline reminders</span>
+      <span class="chip"><i data-lucide="lock"></i>Data stays on phone</span>
+    </div>
+  </div>
+
+  <div>
+    <div class="sec"><i data-lucide="target"></i>POTENTIAL IMPACT</div>
+    <div class="impact">
+      <div class="t"><i data-lucide="users"></i>Built for everyone who is eligible but unaware</div>
+      <div class="aud">
+        <span><i data-lucide="wheat"></i>Farmers</span><span><i data-lucide="graduation-cap"></i>Students</span>
+        <span><i data-lucide="heart-handshake"></i>Women</span><span><i data-lucide="person-standing"></i>Seniors</span>
+        <span><i data-lucide="hard-hat"></i>Workers</span><span><i data-lucide="smartphone"></i>First-time phone users</span>
+      </div>
+      <div class="eg">
+        <div class="big">₹30,000<small>per year, in cash</small></div>
+        <div class="d"><b>Example family</b> (farmer, Madurai): 5 schemes found. Cash from PM-KISAN, Magalir Urimai Thogai and Pudhumai Penn, <b>plus ₹5 lakh</b> health cover</div>
+      </div>
+    </div>
+
+    <div class="sec" style="margin-top:14px"><i data-lucide="heart"></i>BENEFITS</div>
+    <div class="ben" style="margin-top:0">
+      <div class="b"><div class="ic" style="background:#E8F2FC;color:#0070C0"><i data-lucide="users-round"></i></div>
+        <div class="t">Social</div><div class="d">Tamil voice opens schemes to low-literacy, elderly and women users</div></div>
+      <div class="b"><div class="ic" style="background:#FEF3C7;color:#B45309"><i data-lucide="indian-rupee"></i></div>
+        <div class="t">Economic</div><div class="d">Unclaimed money reaches families; no agent fees or lost workdays</div></div>
+      <div class="b"><div class="ic" style="background:#DCFCE7;color:#16A34A"><i data-lucide="leaf"></i></div>
+        <div class="t">Environmental</div><div class="d">Fewer trips to offices; digital forms mean less paper</div></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

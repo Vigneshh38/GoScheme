@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Step Icon</title>
+<style>
+  html, body { margin: 0; width: 128px; height: 128px; background: transparent; overflow: hidden; }
+  .c { width: 128px; height: 128px; border-radius: 50%; background: #0070C0; display: grid; place-items: center; color: #fff; }
+  .c svg { width: 64px; height: 64px; stroke-width: 2.2; }
+</style>
+</head>
+<body>
+<div class="c"><i id="ic"></i></div>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+  document.getElementById('ic').setAttribute('data-lucide', location.hash.slice(1) || 'mic');
+  lucide.createIcons();
+</script>
+</body>
+</html>

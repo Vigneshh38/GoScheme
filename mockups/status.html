@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GoScheme Project Status</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+  :root { --blue: #0070C0; --blue-soft: #E8F2FC; --ink: #0F172A; --muted: #64748B; --line: #E2E8F0;
+          --green: #16A34A; --green-soft: #DCFCE7; --amber: #D97706; --amber-soft: #FEF3C7; --red: #DC2626; --red-soft: #FEE2E2; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1160px; height: 520px; overflow: hidden; background: #fff; color: var(--ink);
+    font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; }
+  [data-lucide] { stroke-width: 2.2; }
+  .sec { font-size: 12.5px; font-weight: 700; letter-spacing: .8px; color: var(--muted); margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
+  .sec svg { width: 16px; height: 16px; }
+
+  /* status tracker */
+  .tracker { display: flex; align-items: flex-start; padding: 4px 6px 0; }
+  .st { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; }
+  .st:not(:last-child)::after { content: ''; position: absolute; top: 19px; left: calc(50% + 24px); right: calc(-50% + 24px); height: 4px; border-radius: 2px; background: var(--line); }
+  .st.done:not(:last-child)::after { background: var(--green); }
+  .st.now:not(:last-child)::after { background: linear-gradient(90deg, var(--blue) 40%, var(--line) 40%); }
+  .dot { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: #F1F5F9; color: #94A3B8; border: 2px solid var(--line); }
+  .dot svg { width: 20px; height: 20px; }
+  .done .dot { background: var(--green); color: #fff; border-color: var(--green); }
+  .now .dot { background: var(--blue); color: #fff; border-color: var(--blue); box-shadow: 0 0 0 6px rgba(0,112,192,.15); }
+  .st .n { font-size: 13.5px; font-weight: 600; margin-top: 8px; }
+  .st .d { font-size: 11.5px; color: var(--muted); line-height: 1.3; margin-top: 2px; padding: 0 6px; }
+  .st .chip { margin-top: 5px; font-size: 10.5px; font-weight: 600; padding: 2px 8px; border-radius: 8px; }
+  .done .chip { background: var(--green-soft); color: #15803D; }
+  .now .chip { background: var(--blue); color: #fff; }
+  .todo .chip { background: #F1F5F9; color: var(--muted); }
+
+  .bottom { display: grid; grid-template-columns: 330px 1fr; gap: 16px; margin-top: 16px; }
+
+  /* feasibility */
+  .feas { display: flex; flex-direction: column; gap: 8px; }
+  .fz { border: 1.5px solid var(--line); border-radius: 14px; padding: 9px 12px; display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: center; }
+  .fz .ic { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--blue-soft); color: var(--blue); }
+  .fz .ic svg { width: 18px; height: 18px; }
+  .fz .top { display: flex; justify-content: space-between; align-items: center; }
+  .fz .t { font-size: 13.5px; font-weight: 600; }
+  .fz .d { font-size: 11.5px; color: var(--muted); line-height: 1.3; margin-top: 1px; }
+  .lvl { font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 8px; }
+  .hi { background: var(--green-soft); color: #15803D; }
+  .md { background: var(--amber-soft); color: #B45309; }
+
+  /* challenges */
+  .tbl { border: 1.5px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .hd, .r { display: grid; grid-template-columns: 1fr 26px 1.35fr; align-items: center; }
+  .hd { background: #F8FAFC; font-size: 11.5px; font-weight: 700; letter-spacing: .6px; color: var(--muted); padding: 7px 12px; }
+  .r { padding: 7px 12px; border-top: 1px solid var(--line); }
+  .ch { display: flex; align-items: center; gap: 9px; }
+  .ch .ic { width: 30px; height: 30px; border-radius: 9px; background: var(--red-soft); color: var(--red); display: grid; place-items: center; flex: none; }
+  .ch .ic svg { width: 16px; height: 16px; }
+  .ch .t { font-size: 13px; font-weight: 600; line-height: 1.2; }
+  .ch .t small { display: block; font-size: 11px; font-weight: 400; color: var(--muted); }
+  .ar { color: #94A3B8; display: grid; place-items: center; }
+  .ar svg { width: 17px; height: 17px; stroke-width: 2.6; }
+  .fx { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; line-height: 1.35; color: #1E293B; }
+  .fx svg { width: 15px; height: 15px; color: var(--green); flex: none; margin-top: 2px; stroke-width: 2.8; }
+</style>
+</head>
+<body>
+
+<div class="sec"><i data-lucide="flag"></i>PROJECT STATUS</div>
+<div class="tracker">
+  <div class="st done"><div class="dot"><i data-lucide="check"></i></div><div class="n">Research</div>
+    <div class="d">Problem study; compared myScheme, Jugalbandi, Haqdarshak</div><span class="chip">Done</span></div>
+  <div class="st done"><div class="dot"><i data-lucide="check"></i></div><div class="n">Design</div>
+    <div class="d">User flow, UI screens, architecture &amp; tech stack</div><span class="chip">Done</span></div>
+  <div class="st now"><div class="dot"><i data-lucide="hammer"></i></div><div class="n">Prototype</div>
+    <div class="d">Voice onboarding + matching for 10 schemes</div><span class="chip">In progress</span></div>
+  <div class="st todo"><div class="dot"><i data-lucide="scan-text"></i></div><div class="n">Auto-fill</div>
+    <div class="d">Document OCR, review screen, filled PDF</div><span class="chip">Next</span></div>
+  <div class="st todo"><div class="dot"><i data-lucide="users"></i></div><div class="n">Pilot</div>
+    <div class="d">Test with real users; add more schemes</div><span class="chip">Planned</span></div>
+</div>
+
+<div class="bottom">
+  <div>
+    <div class="sec"><i data-lucide="gauge"></i>FEASIBILITY</div>
+    <div class="feas">
+      <div class="fz"><span class="ic"><i data-lucide="cpu"></i></span><div>
+        <div class="top"><span class="t">Technical</span><span class="lvl hi">High</span></div>
+        <div class="d">Tamil speech, OCR and PDF tools already exist</div></div></div>
+      <div class="fz"><span class="ic"><i data-lucide="database"></i></span><div>
+        <div class="top"><span class="t">Scheme data</span><span class="lvl md">Medium</span></div>
+        <div class="d">Public on myScheme &amp; TN govt sites; needs manual curation</div></div></div>
+      <div class="fz"><span class="ic"><i data-lucide="indian-rupee"></i></span><div>
+        <div class="top"><span class="t">Cost</span><span class="lvl hi">High</span></div>
+        <div class="d">Runs on the phone; free / low-cost cloud tiers</div></div></div>
+      <div class="fz"><span class="ic"><i data-lucide="smartphone"></i></span><div>
+        <div class="top"><span class="t">Adoption</span><span class="lvl md">Medium</span></div>
+        <div class="d">Android phones are common; trust must be earned</div></div></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="sec"><i data-lucide="shield-alert"></i>CHALLENGES &amp; RISKS → HOW WE OVERCOME THEM</div>
+    <div class="tbl">
+      <div class="hd"><span>Challenge</span><span></span><span>Strategy</span></div>
+      <div class="r">
+        <div class="ch"><span class="ic"><i data-lucide="mic-off"></i></span><span class="t">Tamil speech errors<small>Accents, noise, Tamil-English mix</small></span></div>
+        <span class="ar"><i data-lucide="arrow-right"></i></span>
+        <div class="fx"><i data-lucide="check"></i>Confidence check + ask again; answer choices &amp; ranges; tap/type backup</div>
+      </div>
+      <div class="r">
+        <div class="ch"><span class="ic"><i data-lucide="refresh-cw"></i></span><span class="t">Scheme rules change<small>No official public API</small></span></div>
+        <span class="ar"><i data-lucide="arrow-right"></i></span>
+        <div class="fx"><i data-lucide="check"></i>Curated rule catalog, updated from the cloud without an app update; official link on every card</div>
+      </div>
+      <div class="r">
+        <div class="ch"><span class="ic"><i data-lucide="scan-text"></i></span><span class="t">OCR mistakes<small>Blurry or old documents</small></span></div>
+        <span class="ar"><i data-lucide="arrow-right"></i></span>
+        <div class="fx"><i data-lucide="check"></i>User confirms every OCR field; unsure fields highlighted; photo retake tips</div>
+      </div>
+      <div class="r">
+        <div class="ch"><span class="ic"><i data-lucide="lock-open"></i></span><span class="t">Privacy of personal data<small>Aadhaar, income, family</small></span></div>
+        <span class="ar"><i data-lucide="arrow-right"></i></span>
+        <div class="fx"><i data-lucide="check"></i>Encrypted on the phone; masked Aadhaar; photos deleted; consent screen (DPDP Act 2023)</div>
+      </div>
+      <div class="r">
+        <div class="ch"><span class="ic"><i data-lucide="globe-lock"></i></span><span class="t">Govt portals<small>Captcha, OTP, page changes</small></span></div>
+        <span class="ar"><i data-lucide="arrow-right"></i></span>
+        <div class="fx"><i data-lucide="check"></i>User solves captcha/OTP; app fills the rest; filled PDF as fallback</div>
+      </div>
+      <div class="r">
+        <div class="ch"><span class="ic"><i data-lucide="user-x"></i></span><span class="t">User trust<small>Fear of scams</small></span></div>
+        <span class="ar"><i data-lucide="arrow-right"></i></span>
+        <div class="fx"><i data-lucide="check"></i>Always free; “Not an official app” disclaimer; never asks for money or OTP</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

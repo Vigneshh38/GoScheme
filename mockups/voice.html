@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>Voice Onboarding</title>
+<link rel="stylesheet" href="common.css">
+<style>
+  .top {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 22px 0;
+  }
+  .icon-btn {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: #F4F7FB; display: grid; place-items: center; color: var(--ink);
+  }
+  .icon-btn svg { width: 20px; height: 20px; }
+  .progress { display: flex; gap: 5px; }
+  .progress span { width: 22px; height: 6px; border-radius: 3px; background: #E2E8F0; }
+  .progress span.done { background: var(--blue); }
+  .progress span.now { background: linear-gradient(90deg, var(--blue) 50%, #BFDBF7 50%); }
+  .lang {
+    height: 32px; padding: 0 12px; border-radius: 16px; background: var(--blue-soft);
+    color: var(--blue); font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 6px;
+  }
+  .lang svg { width: 15px; height: 15px; }
+
+  .q { padding: 40px 30px 0; text-align: center; }
+  .q .step { font-size: 13px; font-weight: 600; color: var(--blue); letter-spacing: .3px; }
+  .q h1 { margin: 10px 0 6px; font-size: 29px; line-height: 1.35; font-weight: 700; }
+  .q p { margin: 0; font-size: 15px; color: var(--muted); }
+
+  .orb-wrap { position: relative; height: 290px; margin-top: 18px; display: grid; place-items: center; }
+  .ring { position: absolute; border-radius: 50%; }
+  .r1 { width: 270px; height: 270px; background: radial-gradient(circle, rgba(47,143,224,.10) 55%, rgba(47,143,224,0) 71%); }
+  .r2 { width: 222px; height: 222px; border: 1.5px solid rgba(0,112,192,.10); background: rgba(47,143,224,.06); }
+  .r3 { width: 186px; height: 186px; border: 1.5px solid rgba(0,112,192,.14); }
+  .orb {
+    position: relative; width: 150px; height: 150px; border-radius: 50%;
+    background:
+      radial-gradient(circle at 70% 25%, rgba(165,243,252,.95) 0%, rgba(165,243,252,0) 42%),
+      radial-gradient(circle at 30% 80%, #0052A3 0%, rgba(0,82,163,0) 60%),
+      linear-gradient(145deg, #3FA9F5 0%, #0070C0 55%, #0B4F9C 100%);
+    box-shadow: 0 18px 50px rgba(0,112,192,.35), inset 0 -8px 24px rgba(0,40,100,.25), inset 0 8px 20px rgba(255,255,255,.35);
+  }
+  .listening {
+    text-align: center; color: var(--blue); font-size: 14px; font-weight: 500;
+    display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: -6px;
+  }
+  .wave { display: flex; gap: 3px; align-items: center; height: 16px; }
+  .wave i { width: 3px; border-radius: 2px; background: var(--blue); display: block; }
+
+  .answer {
+    margin: 22px 26px 0; padding: 14px 18px; border-radius: 18px;
+    background: var(--green-soft); border: 1.5px solid #86EFAC;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .answer .txt { font-size: 19px; font-weight: 600; color: #15803D; }
+  .answer .sub { font-size: 12.5px; color: #16A34A; margin-top: 2px; font-family: 'Poppins', sans-serif; font-weight: 500; }
+  .answer .ok {
+    width: 34px; height: 34px; border-radius: 50%; background: var(--green);
+    display: grid; place-items: center; color: #fff; flex: none;
+  }
+  .answer .ok svg { width: 20px; height: 20px; stroke-width: 3; }
+
+  .controls {
+    position: absolute; left: 0; right: 0; bottom: 44px;
+    display: flex; justify-content: center; align-items: center; gap: 34px;
+  }
+  .side { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); font-weight: 500; }
+  .side .icon-btn { width: 52px; height: 52px; }
+  .mic {
+    width: 78px; height: 78px; border-radius: 50%;
+    background: linear-gradient(145deg, #2F8FE0, #0070C0);
+    display: grid; place-items: center; color: #fff;
+    box-shadow: 0 10px 26px rgba(0,112,192,.40), 0 0 0 8px rgba(0,112,192,.10);
+  }
+  .mic svg { width: 32px; height: 32px; }
+</style>
+</head>
+<body>
+<div class="screen">
+  <div class="status"><span>9:41</span><span class="icons"></span></div>
+
+  <div class="top">
+    <div class="icon-btn"><i data-lucide="chevron-left"></i></div>
+    <div class="progress">
+      <span class="done"></span><span class="now"></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="lang"><i data-lucide="languages"></i>தமிழ்</div>
+  </div>
+
+  <div class="q">
+    <div class="step">கேள்வி 2 / 7 &nbsp;·&nbsp; Question 2 of 7</div>
+    <h1 class="ta">உங்கள் வயது என்ன?</h1>
+    <p>What is your age?</p>
+  </div>
+
+  <div class="orb-wrap">
+    <div class="ring r1"></div>
+    <div class="ring r2"></div>
+    <div class="ring r3"></div>
+    <div class="orb"></div>
+  </div>
+
+  <div class="listening">
+    <span class="wave"><i style="height:6px"></i><i style="height:12px"></i><i style="height:16px"></i><i style="height:9px"></i><i style="height:13px"></i></span>
+    <span class="ta">கேட்கிறது…</span><span style="color:var(--muted)">Listening</span>
+  </div>
+
+  <div class="answer">
+    <div>
+      <div class="txt ta">எனக்கு 45 வயது</div>
+      <div class="sub">Age: 45 ✓</div>
+    </div>
+    <div class="ok"><i data-lucide="check"></i></div>
+  </div>
+
+  <div class="controls">
+    <div class="side"><div class="icon-btn"><i data-lucide="keyboard"></i></div>Type</div>
+    <div class="mic"><i data-lucide="mic"></i></div>
+    <div class="side"><div class="icon-btn"><i data-lucide="volume-2"></i></div>Repeat</div>
+  </div>
+
+  <div class="home-indicator"></div>
+</div>
+<script src="statusbar.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

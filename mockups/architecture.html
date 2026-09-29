@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GoScheme Architecture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+  :root {
+    --blue: #0070C0; --blue-soft: #E8F2FC; --ink: #0F172A; --muted: #64748B; --line: #E2E8F0;
+    --green: #16A34A; --green-soft: #DCFCE7; --violet-soft: #F1F5F9;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1160px; height: 500px; overflow: hidden; background: #fff; color: var(--ink);
+    font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { display: grid; grid-template-columns: 170px 34px 1fr 34px 300px; height: 452px; padding: 6px 4px 0; }
+
+  .col-title { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: .6px; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .col-title svg { width: 16px; height: 16px; }
+
+  /* user column */
+  .user { display: flex; flex-direction: column; justify-content: center; }
+  .u-item { display: flex; align-items: center; gap: 10px; background: #F8FAFC; border: 1px solid var(--line); border-radius: 14px; padding: 12px; margin-bottom: 10px; font-size: 13.5px; font-weight: 500; line-height: 1.3; }
+  .u-ic { width: 38px; height: 38px; border-radius: 50%; background: var(--blue); color: #fff; display: grid; place-items: center; flex: none; }
+  .u-ic svg { width: 20px; height: 20px; }
+
+  .arrow { display: flex; align-items: center; justify-content: center; color: var(--blue); }
+  .arrow svg { width: 26px; height: 26px; stroke-width: 2.6; }
+
+  /* phone column */
+  .phone { background: var(--blue-soft); border: 2px solid #BFDBF7; border-radius: 22px; padding: 14px 14px 12px; display: flex; flex-direction: column; }
+  .phone .head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .phone .head .t { font-size: 17px; font-weight: 700; color: var(--blue); display: flex; align-items: center; gap: 8px; }
+  .phone .head .t svg { width: 20px; height: 20px; }
+  .phone .head .tag { font-size: 12.5px; font-weight: 600; color: #fff; background: var(--blue); border-radius: 10px; padding: 3px 10px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; flex: 1; }
+  .mod { background: #fff; border-radius: 16px; padding: 12px 13px; box-shadow: 0 2px 8px rgba(15,23,42,.06); display: flex; flex-direction: column; }
+  .mod .top { display: flex; align-items: center; gap: 9px; }
+  .mod .ic { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; flex: none; }
+  .mod .ic svg { width: 19px; height: 19px; }
+  .mod .name { font-size: 15px; font-weight: 600; }
+  .mod .what { font-size: 12.5px; color: var(--muted); margin-top: 7px; line-height: 1.35; flex: 1; }
+  .mod .tool { margin-top: 8px; font-size: 12px; font-weight: 600; color: var(--blue); background: var(--blue-soft); border-radius: 8px; padding: 4px 8px; align-self: stretch; }
+  .secure { margin-top: 10px; display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #15803D; background: var(--green-soft); border-radius: 12px; padding: 7px 12px; }
+  .secure svg { width: 17px; height: 17px; }
+
+  /* right column */
+  .right { display: flex; flex-direction: column; gap: 10px; }
+  .right .cloud { flex: 1; display: flex; flex-direction: column; }
+  .right .cloud .row { flex: 1; align-items: center; margin-top: 4px; }
+  .box { border-radius: 18px; padding: 12px 14px; border: 1.5px solid var(--line); background: #fff; }
+  .box.cloud { background: #F8FAFC; }
+  .box.out { background: var(--green-soft); border-color: #86EFAC; }
+  .row { display: flex; align-items: flex-start; gap: 10px; margin-top: 9px; }
+  .row .ic { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; flex: none; background: #fff; border: 1px solid var(--line); color: var(--blue); }
+  .row .ic svg { width: 17px; height: 17px; }
+  .row .n { font-size: 13.5px; font-weight: 600; line-height: 1.25; }
+  .row .d { font-size: 12px; color: var(--muted); line-height: 1.3; }
+  .box .bt { font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 7px; }
+  .box .bt svg { width: 17px; height: 17px; }
+  .box .bt small { display: block; font-size: 11.5px; font-weight: 500; color: var(--muted); }
+  .out .row .ic { color: var(--green); border-color: #86EFAC; }
+
+  .footer { height: 42px; display: flex; align-items: center; gap: 10px; padding: 0 6px; font-size: 13px; color: var(--muted); }
+  .footer b { color: var(--ink); font-weight: 600; }
+  .pill { border: 1px solid var(--line); border-radius: 14px; padding: 3px 11px; color: var(--ink); font-weight: 500; background: #fff; }
+
+  [data-lucide] { stroke-width: 2.2; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- user -->
+  <div class="user">
+    <div class="col-title"><i data-lucide="user"></i>User</div>
+    <div class="u-item"><span class="u-ic"><i data-lucide="mic"></i></span>Speaks Tamil or English</div>
+    <div class="u-item"><span class="u-ic"><i data-lucide="camera"></i></span>Photo of document</div>
+    <div class="u-item"><span class="u-ic"><i data-lucide="user-check"></i></span>Reviews &amp; confirms</div>
+  </div>
+
+  <div class="arrow"><i data-lucide="arrow-right"></i></div>
+
+  <!-- phone -->
+  <div class="phone">
+    <div class="head">
+      <div class="t"><i data-lucide="smartphone"></i>On the phone — GoScheme app</div>
+      <div class="tag">Flutter · Android</div>
+    </div>
+    <div class="grid">
+      <div class="mod">
+        <div class="top"><span class="ic" style="background:#E0EEFA;color:#0070C0"><i data-lucide="audio-lines"></i></span><span class="name">Voice</span></div>
+        <div class="what">Speaks each question, listens to the answer, checks confidence</div>
+        <div class="tool">Speech-to-text · flutter_tts</div>
+      </div>
+      <div class="mod">
+        <div class="top"><span class="ic" style="background:#FEF3C7;color:#D97706"><i data-lucide="languages"></i></span><span class="name">Answer parser</span></div>
+        <div class="what">Tamil numbers, “2 lakh”, district names → clean values</div>
+        <div class="tool">Dart rules + LLM fallback</div>
+      </div>
+      <div class="mod">
+        <div class="top"><span class="ic" style="background:#DCFCE7;color:#16A34A"><i data-lucide="badge-check"></i></span><span class="name">Rule engine</span></div>
+        <div class="what">Eligible / Maybe / Not eligible because… for each family member</div>
+        <div class="tool">JSON rules (json_logic)</div>
+      </div>
+      <div class="mod">
+        <div class="top"><span class="ic" style="background:#FCE7F3;color:#DB2777"><i data-lucide="scan-text"></i></span><span class="name">OCR</span></div>
+        <div class="what">Reads Aadhaar, ration card, income certificate; photo deleted after</div>
+        <div class="tool">Google ML Kit + Tesseract</div>
+      </div>
+      <div class="mod">
+        <div class="top"><span class="ic" style="background:#EDE9FE;color:#6D28D9"><i data-lucide="file-pen-line"></i></span><span class="name">Form filler</span></div>
+        <div class="what">Fills the official PDF form, or the official portal inside the app</div>
+        <div class="tool">Syncfusion PDF · WebView</div>
+      </div>
+      <div class="mod">
+        <div class="top"><span class="ic" style="background:#F1F5F9;color:#334155"><i data-lucide="database"></i></span><span class="name">Profiles</span></div>
+        <div class="what">One profile per family member, masked Aadhaar (last 4 digits)</div>
+        <div class="tool">SQLite + SQLCipher</div>
+      </div>
+    </div>
+    <div class="secure"><i data-lucide="lock"></i>Personal data is encrypted and stays on the phone</div>
+  </div>
+
+  <div class="arrow"><i data-lucide="arrow-left-right"></i></div>
+
+  <!-- right -->
+  <div class="right">
+    <div class="box cloud">
+      <div class="bt"><i data-lucide="cloud"></i><div>Cloud services<small>No personal data stored</small></div></div>
+      <div class="row"><span class="ic"><i data-lucide="mic-vocal"></i></span><div><div class="n">Bhashini / Google Speech</div><div class="d">Tamil speech recognition &amp; voice</div></div></div>
+      <div class="row"><span class="ic"><i data-lucide="sparkles"></i></span><div><div class="n">LLM API</div><div class="d">Only for answers the rules can't parse</div></div></div>
+      <div class="row"><span class="ic"><i data-lucide="flame"></i></span><div><div class="n">Firebase</div><div class="d">Scheme catalog updates &amp; push alerts</div></div></div>
+    </div>
+    <div class="box out">
+      <div class="bt" style="color:#15803D"><i data-lucide="circle-check-big"></i>Output</div>
+      <div class="row"><span class="ic"><i data-lucide="file-check"></i></span><div><div class="n">Filled official PDF</div><div class="d">+ list of documents to carry</div></div></div>
+      <div class="row"><span class="ic"><i data-lucide="globe"></i></span><div><div class="n">Official portal, auto-filled</div><div class="d">User reviews before submitting</div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <b>Build &amp; design tools:</b>
+  <span class="pill">Dart</span><span class="pill">Android Studio</span><span class="pill">VS Code</span><span class="pill">Figma</span><span class="pill">GitHub</span>
+  <span style="margin-left:auto">Scheme data: myScheme.gov.in &amp; Tamil Nadu govt websites</span>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

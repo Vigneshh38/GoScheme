@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>Review Auto-filled Form</title>
+<link rel="stylesheet" href="common.css">
+<style>
+  .top { display: flex; align-items: center; gap: 12px; padding: 10px 20px 0; }
+  .back { width: 40px; height: 40px; border-radius: 50%; background: #F4F7FB; display: grid; place-items: center; }
+  .back svg { width: 20px; height: 20px; }
+  .top .t1 { font-size: 18px; font-weight: 700; line-height: 1.2; }
+  .top .t2 { font-size: 12.5px; color: var(--muted); }
+
+  .scheme {
+    margin: 14px 18px 0; padding: 12px 14px; border-radius: 18px; background: var(--blue-soft);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .scheme .ic { width: 42px; height: 42px; border-radius: 13px; background: #DCFCE7; color: var(--green); display: grid; place-items: center; }
+  .scheme .ic svg { width: 22px; height: 22px; }
+  .scheme .n { font-size: 15px; font-weight: 600; }
+  .scheme .s { font-size: 12px; color: var(--muted); }
+  .bar { margin-top: 6px; height: 6px; border-radius: 3px; background: #CFE3F6; overflow: hidden; }
+  .bar i { display: block; width: 90%; height: 100%; background: var(--blue); border-radius: 3px; }
+
+  .legend { display: flex; gap: 6px; padding: 12px 20px 4px; }
+
+  .tag { display: inline-flex; align-items: center; gap: 4px; font-size: 10.5px; font-weight: 600; padding: 3px 8px; border-radius: 8px; white-space: nowrap; }
+  .tag svg { width: 12px; height: 12px; stroke-width: 2.6; }
+  .t-prof { background: var(--blue-soft); color: var(--blue); }
+  .t-doc  { background: #FCE7F3; color: #BE185D; }
+  .t-voice{ background: var(--amber-soft); color: #B45309; }
+
+  .fields { margin: 6px 18px 0; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+  .f { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px; border-bottom: 1px solid var(--line); gap: 10px; }
+  .f:last-child { border-bottom: 0; }
+  .f .l { font-size: 11.5px; color: var(--muted); }
+  .f .v { font-size: 14.5px; font-weight: 600; margin-top: 1px; }
+  .f .r { display: flex; align-items: center; gap: 8px; }
+  .f .edit { color: #94A3B8; }
+  .f .edit svg { width: 16px; height: 16px; }
+  .f.check { background: #FFFBEB; }
+  .f .ask { font-size: 11px; font-weight: 600; color: #B45309; margin-top: 2px; display: flex; align-items: center; gap: 4px; }
+  .f .ask svg { width: 12px; height: 12px; }
+
+  .docs { margin: 10px 18px 0; padding: 10px 14px; border-radius: 16px; background: #F8FAFC; font-size: 12px; color: #334155; display: flex; gap: 10px; align-items: flex-start; }
+  .docs svg { width: 18px; height: 18px; color: var(--blue); flex: none; margin-top: 1px; }
+  .docs b { font-weight: 600; color: var(--ink); }
+
+  .cta {
+    position: absolute; left: 18px; right: 18px; bottom: 30px; height: 54px; border-radius: 18px;
+    background: linear-gradient(145deg, #2F8FE0, #0070C0); color: #fff; font-weight: 600; font-size: 16px;
+    display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 10px 24px rgba(0,112,192,.35);
+  }
+  .cta svg { width: 20px; height: 20px; }
+</style>
+</head>
+<body>
+<div class="screen">
+  <div class="status"><span>9:41</span><span class="icons"></span></div>
+
+  <div class="top">
+    <div class="back"><i data-lucide="chevron-left"></i></div>
+    <div>
+      <div class="t1">Review your form</div>
+      <div class="t2"><span class="ta">சரிபார்க்கவும்</span> · Check and edit</div>
+    </div>
+  </div>
+
+  <div class="scheme">
+    <div class="ic"><i data-lucide="wheat"></i></div>
+    <div style="flex:1">
+      <div class="n">PM-KISAN · Murugan</div>
+      <div class="s">9 of 10 fields auto-filled</div>
+      <div class="bar"><i></i></div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="tag t-prof"><i data-lucide="user"></i>Profile</span>
+    <span class="tag t-doc"><i data-lucide="scan-text"></i>Document</span>
+    <span class="tag t-voice"><i data-lucide="mic"></i>Voice</span>
+  </div>
+
+  <div class="fields">
+    <div class="f"><div><div class="l">Full name</div><div class="v">Murugan K</div></div>
+      <div class="r"><span class="tag t-prof"><i data-lucide="user"></i>Profile</span><span class="edit"><i data-lucide="pencil"></i></span></div></div>
+    <div class="f"><div><div class="l">Aadhaar number</div><div class="v">XXXX XXXX 4821</div></div>
+      <div class="r"><span class="tag t-doc"><i data-lucide="scan-text"></i>Document</span><span class="edit"><i data-lucide="pencil"></i></span></div></div>
+    <div class="f"><div><div class="l">Father's name</div><div class="v">Kannan</div></div>
+      <div class="r"><span class="tag t-voice"><i data-lucide="mic"></i>Voice</span><span class="edit"><i data-lucide="pencil"></i></span></div></div>
+    <div class="f"><div><div class="l">District · Village</div><div class="v">Madurai · Melur</div></div>
+      <div class="r"><span class="tag t-prof"><i data-lucide="user"></i>Profile</span><span class="edit"><i data-lucide="pencil"></i></span></div></div>
+    <div class="f check"><div><div class="l">Land survey no. · Area</div><div class="v">112/3 · 1.5 acres</div>
+        <div class="ask"><i data-lucide="circle-alert"></i>Read from photo — please confirm</div></div>
+      <div class="r"><span class="tag t-doc"><i data-lucide="scan-text"></i>Document</span><span class="edit"><i data-lucide="pencil"></i></span></div></div>
+    <div class="f"><div><div class="l">Bank account · IFSC</div><div class="v">XXXXXX3390 · IOBA0001234</div></div>
+      <div class="r"><span class="tag t-doc"><i data-lucide="scan-text"></i>Document</span><span class="edit"><i data-lucide="pencil"></i></span></div></div>
+    <div class="f"><div><div class="l">Pincode</div><div class="v">625 106</div></div>
+      <div class="r"><span class="tag t-voice"><i data-lucide="mic"></i>Voice</span><span class="edit"><i data-lucide="pencil"></i></span></div></div>
+  </div>
+
+  <div class="docs"><i data-lucide="folder-check"></i>
+    <div><b>Carry:</b> Aadhaar card, land record (patta), bank passbook</div></div>
+
+  <div class="cta"><i data-lucide="file-check"></i>Looks good — create form</div>
+  <div class="home-indicator"></div>
+</div>
+<script src="statusbar.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

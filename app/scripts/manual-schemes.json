@@ -1,0 +1,240 @@
+{
+  "_note": "Schemes that are not on myScheme. Facts copied from the official pages in each sourceUrl; re-check them when you run npm run schemes:extract. _overrides fill gaps or fix outdated myScheme data: PMJJBY documents (its official form), CMCHIS steps (cmchistn.com), old-age pension amount (TN Cabinet, Aug 2023: https://www.dtnext.in/news/tamilnadu/cabinet-decides-to-increase-oap-to-rs-1200-per-month-725825).",
+  "kmut": {
+    "sourceName": "kmut.tn.gov.in (Government of Tamil Nadu)",
+    "sourceUrl": "https://kmut.tn.gov.in/about-kmut.html",
+    "checked": "2026-09-29",
+    "en": {
+      "name": "Kalaignar Magalir Urimai Thogai",
+      "department": "Government of Tamil Nadu",
+      "summary": "A monthly rights amount for the woman head of every eligible family in Tamil Nadu.",
+      "benefits_md": "**₹1,000 every month**, paid directly into the bank account of the woman head of the family.",
+      "eligibility_md": "1. Everyone named on one ration card is treated as one family. The **woman head of each eligible family** can apply.\n1. A woman named as head on the ration card is the woman head. If a man is named as head, **his wife is treated as the woman head**. If his wife's name is not on the card, the family can choose another woman.\n1. Unmarried single women, widows and transgender persons who head a family are also treated as woman heads.\n1. She must be **21 or older** (born before 15 September 2002).\n1. The family must meet all three economic criteria: **annual income below ₹2.5 lakh**; less than **5 acres of wet land or 10 acres of dry land**; household electricity use **below 3,600 units a year**.",
+      "exclusions_md": "",
+      "process": [
+        {
+          "mode": "Offline",
+          "md": "1. Apply only at the **registration camp for the ration shop** where your family card is registered.\n1. Only **one beneficiary per ration card** can apply.\n1. You do **not** need a separate income certificate or land documents for the economic criteria.\n1. The result is sent by SMS. You can check the status on the KMUT website by logging in with your Aadhaar number.\n1. If rejected, you can appeal **within 30 days** of the SMS, with proof, to the Revenue Divisional Officer — **only through an e-Sevai centre**."
+        }
+      ],
+      "documents": [
+        "Aadhaar card",
+        "Ration card (family card)",
+        "Bank account linked with Aadhaar"
+      ]
+    },
+    "ta": {
+      "name": "கலைஞர் மகளிர் உரிமைத் தொகை",
+      "department": "தமிழ்நாடு அரசு",
+      "summary": "தகுதியான ஒவ்வொரு குடும்பத்தின் குடும்பத் தலைவிக்கும் மாதந்தோறும் வழங்கப்படும் உரிமைத் தொகை.",
+      "benefits_md": "**மாதம் ₹1,000**, குடும்பத் தலைவியின் வங்கிக் கணக்கில் நேரடியாக வரவு வைக்கப்படும்.",
+      "eligibility_md": "1. குடும்ப அட்டையில் பெயர் இடம் பெற்றுள்ள அனைவரும் ஒரு குடும்பமாகக் கருதப்படுவர். தகுதி வாய்ந்த ஒவ்வொரு குடும்பத்திலும் உள்ள **குடும்பத் தலைவி** விண்ணப்பிக்கலாம்.\n1. குடும்ப அட்டையில் குடும்பத் தலைவர் எனக் குறிப்பிடப்பட்டுள்ள பெண் குடும்பத் தலைவி ஆவார். ஆண் குடும்பத் தலைவராக இருந்தால், **அவரின் மனைவி குடும்பத் தலைவியாகக் கருதப்படுவார்**. மனைவியின் பெயர் இல்லையெனில், குடும்பத்தின் வேறு ஒரு பெண்ணைத் தேர்வு செய்யலாம்.\n1. திருமணமாகாத தனித்த பெண்கள், கைம்பெண்கள், திருநங்கைகள் தலைமையிலான குடும்பங்களும் தகுதி பெறும்.\n1. **21 வயது நிரம்பியவராக** இருக்க வேண்டும் (15 செப்டம்பர் 2002-க்கு முன் பிறந்தவர்).\n1. குடும்பம் மூன்று பொருளாதார அளவுகோல்களையும் பூர்த்தி செய்ய வேண்டும்: **ஆண்டு வருமானம் ₹2.5 இலட்சத்திற்குக் கீழ்**; **5 ஏக்கருக்குக் குறைவான நன்செய் அல்லது 10 ஏக்கருக்குக் குறைவான புன்செய்** நிலம்; வீட்டு மின் பயன்பாடு **ஆண்டுக்கு 3,600 யூனிட்டுக்குக் கீழ்**.",
+      "exclusions_md": "",
+      "process": [
+        {
+          "mode": "நேரில்",
+          "md": "1. உங்கள் குடும்ப அட்டை உள்ள **நியாயவிலைக் கடைக்கான விண்ணப்பப் பதிவு முகாமில்** மட்டுமே விண்ணப்பிக்க வேண்டும்.\n1. **ஒரு குடும்ப அட்டைக்கு ஒருவர்** மட்டுமே விண்ணப்பிக்கலாம்.\n1. பொருளாதாரத் தகுதிகளுக்காக தனியாக வருமானச் சான்று அல்லது நில ஆவணங்கள் இணைக்கத் **தேவையில்லை**.\n1. முடிவு குறுஞ்செய்தியாக அனுப்பப்படும். ஆதார் எண் மூலம் KMUT இணையதளத்தில் நிலையை அறியலாம்.\n1. நிராகரிக்கப்பட்டால், குறுஞ்செய்தி வந்த **30 நாட்களுக்குள்**, ஆதாரத்துடன் வருவாய் கோட்ட அலுவலருக்கு **இ-சேவை மையம் வழியாக மட்டும்** மேல்முறையீடு செய்யலாம்."
+        }
+      ],
+      "documents": [
+        "ஆதார் அட்டை",
+        "குடும்ப அட்டை",
+        "ஆதாருடன் இணைக்கப்பட்ட வங்கிக் கணக்கு"
+      ]
+    },
+    "links": [
+      {
+        "kind": "portal",
+        "label": {
+          "en": "KMUT website — check status",
+          "ta": "KMUT இணையதளம் — நிலையை அறிய"
+        },
+        "url": "https://kmut.tn.gov.in/"
+      },
+      {
+        "kind": "info",
+        "label": {
+          "en": "e-Sevai centres (for appeals)",
+          "ta": "இ-சேவை மையங்கள் (மேல்முறையீட்டுக்கு)"
+        },
+        "url": "https://kmut.tn.gov.in/esevai-centers.html"
+      },
+      {
+        "kind": "portal",
+        "label": {
+          "en": "Magalir Urimai portal (TNeGA)",
+          "ta": "மகளிர் உரிமை இணையதளம் (TNeGA)"
+        },
+        "url": "https://kmut.tnega.org/"
+      }
+    ]
+  },
+  "tamil-pudhalvan": {
+    "sourceName": "Vikaspedia (Government of India portal)",
+    "sourceUrl": "https://en.vikaspedia.in/viewcontent/schemesall/state-specific-schemes/welfare-schemes-of-tamil-nadu/tamizh-pudhalvan-scheme?lgn=en",
+    "checked": "2026-09-29",
+    "en": {
+      "name": "Tamizh Pudhalvan",
+      "department": "Social Welfare & Women Empowerment Department, Government of Tamil Nadu",
+      "summary": "Monthly support for boys from government and government-aided schools to finish higher education.",
+      "benefits_md": "**₹1,000 every month**, paid directly into the student's bank account while studying.",
+      "eligibility_md": "1. **Boy students** who studied **class 6 to 12 in a government or government-aided school**.\n1. Now studying an **undergraduate degree, ITI, diploma or polytechnic** course.",
+      "exclusions_md": "",
+      "process": [
+        {
+          "mode": "Online",
+          "md": "1. Get your **EMIS / UMIS ID** from the nodal officer at your college or university.\n1. Log in to the **UMIS portal**. Username: your EMIS / UMIS ID. Password: the last 4 digits of your mobile number and your year of birth.\n1. Fill in the Tamizh Pudhalvan application form and upload the documents.\n1. Print the filled form and **submit it to your college**. The college forwards it for payment.\n1. Help: call **14417** or email umishelpdesk@tn.gov.in, or contact the District Social Welfare Officer."
+        }
+      ],
+      "documents": [
+        "Aadhaar card",
+        "Bank account details",
+        "Mobile number and email",
+        "UMIS / EMIS number",
+        "Education certificates",
+        "Photo"
+      ]
+    },
+    "ta": {
+      "name": "தமிழ்ப் புதல்வன்",
+      "department": "சமூக நலன் மற்றும் மகளிர் உரிமைத் துறை, தமிழ்நாடு அரசு",
+      "summary": "அரசு மற்றும் அரசு உதவி பெறும் பள்ளிகளில் படித்த மாணவர்கள் உயர்கல்வியை முடிக்க மாதாந்திர உதவி.",
+      "benefits_md": "படிக்கும் காலம் முழுவதும் **மாதம் ₹1,000**, மாணவரின் வங்கிக் கணக்கில் நேரடியாக வரவு.",
+      "eligibility_md": "1. **6 முதல் 12 ஆம் வகுப்பு வரை அரசு அல்லது அரசு உதவி பெறும் பள்ளியில்** படித்த **மாணவர்கள்**.\n1. தற்போது **இளங்கலைப் பட்டம், ஐடிஐ, பட்டயம் அல்லது பாலிடெக்னிக்** படிப்பவர்கள்.",
+      "exclusions_md": "",
+      "process": [
+        {
+          "mode": "இணையவழி",
+          "md": "1. உங்கள் கல்லூரியின் பொறுப்பு அலுவலரிடம் **EMIS / UMIS எண்ணைப்** பெறவும்.\n1. **UMIS இணையதளத்தில்** உள்நுழையவும். பயனர் பெயர்: EMIS / UMIS எண். கடவுச்சொல்: மொபைல் எண்ணின் கடைசி 4 இலக்கங்கள் மற்றும் பிறந்த ஆண்டு.\n1. தமிழ்ப் புதல்வன் விண்ணப்பப் படிவத்தை நிரப்பி ஆவணங்களைப் பதிவேற்றவும்.\n1. நிரப்பிய படிவத்தை அச்சிட்டு **கல்லூரியில் சமர்ப்பிக்கவும்**. கல்லூரி அதைத் தொகை வழங்க அனுப்பும்.\n1. உதவிக்கு: **14417** அழைக்கவும் அல்லது umishelpdesk@tn.gov.in, அல்லது மாவட்ட சமூக நல அலுவலரை அணுகவும்."
+        }
+      ],
+      "documents": [
+        "ஆதார் அட்டை",
+        "வங்கிக் கணக்கு விவரம்",
+        "மொபைல் எண் மற்றும் மின்னஞ்சல்",
+        "UMIS / EMIS எண்",
+        "கல்விச் சான்றிதழ்கள்",
+        "புகைப்படம்"
+      ]
+    },
+    "links": [
+      {
+        "kind": "portal",
+        "label": {
+          "en": "UMIS portal — apply online",
+          "ta": "UMIS இணையதளம் — விண்ணப்பிக்க"
+        },
+        "url": "https://umisdashboard.tnega.org/"
+      }
+    ]
+  },
+  "e-shram": {
+    "sourceName": "eshram.gov.in FAQs (Ministry of Labour & Employment)",
+    "sourceUrl": "https://eshram.gov.in/faqs",
+    "checked": "2026-09-29",
+    "en": {
+      "name": "e-Shram card",
+      "department": "Ministry of Labour & Employment, Government of India",
+      "summary": "A national register of unorganised workers. Registered workers get a 12-digit UAN card.",
+      "benefits_md": "1. A free **e-Shram card with a 12-digit UAN** (Universal Account Number).\n1. One ID to reach social-security and welfare schemes for workers through the e-Shram **One-Stop Solution**.\n1. Used to deliver help to workers in emergencies.",
+      "eligibility_md": "1. Anyone **working in the unorganised sector**, aged **16 to 59**.\n1. **No income limit** and no educational qualification needed.\n1. **Agricultural labourers and landless farmers** can register.",
+      "exclusions_md": "If a worker moves to the organised sector, they get only the benefits for organised-sector workers.",
+      "process": [
+        {
+          "mode": "Online",
+          "md": "1. Register yourself on **eshram.gov.in** with your Aadhaar number and the mobile number linked to Aadhaar.\n1. No Aadhaar-linked mobile? Visit the nearest **Common Service Centre (CSC)** or State Seva Kendra to register with your fingerprint.\n1. Registration is **completely free**. Helpline: **14434**."
+        }
+      ],
+      "documents": [
+        "Aadhaar number",
+        "Mobile number linked with Aadhaar"
+      ]
+    },
+    "ta": {
+      "name": "இ-ஷ்ரம் அட்டை",
+      "department": "தொழிலாளர் மற்றும் வேலைவாய்ப்பு அமைச்சகம், இந்திய அரசு",
+      "summary": "அமைப்புசாரா தொழிலாளர்களின் தேசிய பதிவேடு. பதிவு செய்தவர்களுக்கு 12 இலக்க UAN அட்டை வழங்கப்படும்.",
+      "benefits_md": "1. இலவச **இ-ஷ்ரம் அட்டை — 12 இலக்க UAN** எண்.\n1. இ-ஷ்ரம் **ஒருங்கிணைந்த சேவை** மூலம் தொழிலாளர் நலத் திட்டங்களை அணுக ஒரே அடையாளம்.\n1. அவசர காலங்களில் தொழிலாளர்களுக்கு உதவி வழங்கப் பயன்படும்.",
+      "eligibility_md": "1. **அமைப்புசாரா துறையில் வேலை செய்யும்**, **16 முதல் 59 வயது** உடைய எவரும்.\n1. **வருமான வரம்பு இல்லை**; கல்வித் தகுதி தேவையில்லை.\n1. **விவசாயக் கூலித் தொழிலாளர்கள் மற்றும் நிலமற்ற விவசாயிகள்** பதிவு செய்யலாம்.",
+      "exclusions_md": "அமைப்புசார் துறைக்கு மாறினால், அமைப்புசார் தொழிலாளர்களுக்கான பலன்கள் மட்டுமே கிடைக்கும்.",
+      "process": [
+        {
+          "mode": "இணையவழி",
+          "md": "1. ஆதார் எண் மற்றும் ஆதாருடன் இணைக்கப்பட்ட மொபைல் எண்ணுடன் **eshram.gov.in** இல் பதிவு செய்யவும்.\n1. ஆதாருடன் இணைந்த மொபைல் இல்லையெனில், அருகிலுள்ள **பொது சேவை மையத்தில் (CSC)** கைரேகை மூலம் பதிவு செய்யலாம்.\n1. பதிவு **முற்றிலும் இலவசம்**. உதவி எண்: **14434**."
+        }
+      ],
+      "documents": [
+        "ஆதார் எண்",
+        "ஆதாருடன் இணைக்கப்பட்ட மொபைல் எண்"
+      ]
+    },
+    "links": [
+      {
+        "kind": "portal",
+        "label": {
+          "en": "e-Shram portal — register",
+          "ta": "இ-ஷ்ரம் இணையதளம் — பதிவு செய்ய"
+        },
+        "url": "https://eshram.gov.in/"
+      }
+    ]
+  },
+  "_overrides": {
+    "pmjjby": {
+      "en": {
+        "documents": [
+          "Consent-cum-declaration form (filled and signed)",
+          "Aadhaar card",
+          "Bank or post office account (passbook)"
+        ]
+      },
+      "ta": {
+        "documents": [
+          "ஒப்புதல் மற்றும் உறுதிமொழிப் படிவம் (நிரப்பி கையொப்பமிட்டது)",
+          "ஆதார் அட்டை",
+          "வங்கி அல்லது அஞ்சலக கணக்கு (கணக்குப் புத்தகம்)"
+        ]
+      }
+    },
+    "cmchis": {
+      "en": {
+        "name": "Chief Minister's Comprehensive Health Insurance Scheme (CMCHIS + PM-JAY)",
+        "process": [
+          {
+            "mode": "Online / enrolment centre",
+            "md": "1. Read the official enrolment guide (**How to Enroll**) on cmchistn.com — it is available in Tamil and English.\n1. Keep ready: **family card**, **Aadhaar card**, **income certificate from the VAO / Revenue authorities**, and a **self-declaration** from the head of the family.\n1. Apply through **CMCHIS-PMJAY Apply Now** on cmchistn.com, or at the nearest enrolment centre.\n1. After enrolment, treatment is **cashless at empanelled hospitals** (the list is on cmchistn.com). Helpline: **1800 425 3993**."
+          }
+        ]
+      },
+      "ta": {
+        "name": "முதலமைச்சரின் விரிவான மருத்துவக் காப்பீட்டுத் திட்டம் (CMCHIS + PM-JAY)",
+        "process": [
+          {
+            "mode": "இணையவழி / பதிவு மையம்",
+            "md": "1. cmchistn.com இல் உள்ள அதிகாரப்பூர்வ **பதிவு வழிகாட்டியைப் (How to Enroll)** படிக்கவும் — தமிழ் மற்றும் ஆங்கிலத்தில் உள்ளது.\n1. தயாராக வைத்திருக்கவும்: **குடும்ப அட்டை**, **ஆதார் அட்டை**, **கிராம நிர்வாக அலுவலர் / வருவாய்த் துறை வழங்கிய வருமானச் சான்றிதழ்**, குடும்பத் தலைவரின் **சுய உறுதிமொழி**.\n1. cmchistn.com இல் **CMCHIS-PMJAY Apply Now** மூலம் அல்லது அருகிலுள்ள பதிவு மையத்தில் விண்ணப்பிக்கவும்.\n1. பதிவுக்குப் பின், **இணைக்கப்பட்ட மருத்துவமனைகளில் பணமில்லா சிகிச்சை** (பட்டியல் cmchistn.com இல்). உதவி எண்: **1800 425 3993**."
+          }
+        ]
+      },
+      "links": [
+        {
+          "kind": "portal",
+          "url": "https://www.cmchistn.com/",
+          "title": "CMCHIS — Apply Now / Enrollment"
+        },
+        {
+          "kind": "guidelines",
+          "url": "https://www.cmchistn.com/enrollment/how-to-enroll",
+          "title": "How to Enroll (Tamil & English guides)"
+        }
+      ]
+    },
+    "old-age-pension": {
+      "en": {
+        "benefits_md": "1. **Pension: ₹1,200 a month** — raised from ₹1,000 by the Tamil Nadu Cabinet from August 2023 (myScheme still lists ₹1,000).\n1. One free dhoti (men) or saree (women) during Pongal and Deepavali.\n1. Free rice through Anganwadi centres: 2 kg a month for those taking the nutritious meal, 4 kg for others."
+      },
+      "ta": {
+        "benefits_md": "1. **ஓய்வூதியம்: மாதம் ₹1,200** — ஆகஸ்ட் 2023 முதல் தமிழ்நாடு அமைச்சரவை ₹1,000-இலிருந்து உயர்த்தியது (myScheme இல் இன்னும் ₹1,000 எனக் காட்டப்படுகிறது).\n1. பொங்கல், தீபாவளியின் போது இலவச வேட்டி (ஆண்கள்) அல்லது சேலை (பெண்கள்).\n1. அங்கன்வாடி மையங்கள் மூலம் இலவச அரிசி: சத்துணவு உண்பவர்களுக்கு மாதம் 2 கிலோ, மற்றவர்களுக்கு 4 கிலோ."
+      }
+    }
+  }
+}
