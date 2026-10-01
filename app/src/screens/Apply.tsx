@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Camera, CircleAlert, FolderCheck, Mic, Pencil, ScanText, User } from 'lucide-react'
+import { Camera, CircleAlert, FolderCheck, Globe, Mic, Pencil, ScanText, User } from 'lucide-react'
 import { Button, IconTile, Sheet, Toast, TopBar } from '../components/ui'
 import { VoicePrompt } from '../components/VoicePrompt'
 import { AnswerInput } from '../components/AnswerInput'
@@ -8,6 +8,9 @@ import { DOCS, schemeById, type DocId, type FieldDef, type FieldSource } from '.
 import { readDocument } from '../lib/ocr'
 import { parseFreeText } from '../lib/parse'
 import { useApp, newId } from '../state'
+import { PortalSheet } from '../components/PortalSheet'
+import { portalFor } from '../portal/portals'
+import { portalValues } from '../portal/values'
 
 type Filled = { value: string; confirmed: boolean }
 type Props = { schemeId: string; memberId: string; onBack: () => void; onCreated: (formId: string) => void }
@@ -37,6 +40,8 @@ export function Apply({ schemeId, memberId, onBack, onCreated }: Props) {
   const [asking, setAsking] = useState<FieldDef | null>(null)
   const [editing, setEditing] = useState<FieldDef | null>(null)
   const [toast, setToast] = useState<string | null>(null)
+  const [portalOpen, setPortalOpen] = useState(false)
+  const portal = portalFor(schemeId)
   const flash = (s: string) => { setToast(s); setTimeout(() => setToast(null), 2600) }
 
   const profileIds = fields.filter((f) => f.source === 'profile').map((f) => f.id)
@@ -147,10 +152,23 @@ export function Apply({ schemeId, memberId, onBack, onCreated }: Props) {
       </div>
 
       <footer className="footer">
-        <Button block onClick={create} disabled={!ready}>
+        {portal && (
+          // The portal's first step needs only a few details, so this works before every field is done.
+          <Button block icon={Globe} onClick={() => setPortalOpen(true)}>{t('fillOfficial')}</Button>
+        )}
+        <Button block variant={portal ? 'secondary' : 'primary'} onClick={create} disabled={!ready}>
           {ready ? t('createForm') : done < total ? t('finishFields', { n: total - done }) : t('confirmFields', { n: unconfirmed })}
         </Button>
       </footer>
+
+      {portal && (
+        <PortalSheet
+          open={portalOpen}
+          onClose={() => setPortalOpen(false)}
+          portal={portal}
+          values={portalValues(member, state.household, Object.fromEntries(Object.entries(filled).map(([k, v]) => [k, v.value])))}
+        />
+      )}
 
       <Sheet open={!!scanning} onClose={() => setScanning(null)} label={t('scanTitle', { doc: scanning ? pick(DOCS[scanning]) : '' })}>
         {scanning && (

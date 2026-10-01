@@ -10,6 +10,7 @@ import type { FactKey, HouseholdFacts, Lang, Member, Occupation, Text } from '..
 import { GENDERS, OCCUPATIONS, formatIncome } from '../i18n'
 import { parseFreeText, parseMobile, parseName, parsePincode, type Parsed } from '../lib/parse'
 import { districtByName } from './districts'
+import { pickText } from '../lang'
 
 export type Rule = {
   key: FactKey
@@ -56,8 +57,8 @@ export type FieldDef = {
 const F = {
   name: { id: 'name', label: { en: 'Full name', ta: 'முழுப் பெயர்' }, source: 'profile', fromProfile: (m) => m.name, demo: '' },
   age: { id: 'age', label: { en: 'Age', ta: 'வயது' }, source: 'profile', fromProfile: (m) => (m.age ? String(m.age) : undefined), demo: '' },
-  gender: { id: 'gender', label: { en: 'Gender', ta: 'பாலினம்' }, source: 'profile', fromProfile: (m, _h, l) => (m.gender ? GENDERS[m.gender][l] : undefined), demo: '' },
-  occupation: { id: 'occupation', label: { en: 'Work', ta: 'வேலை' }, source: 'profile', fromProfile: (m, _h, l) => (m.occupation ? OCCUPATIONS[m.occupation][l] : undefined), demo: '' },
+  gender: { id: 'gender', label: { en: 'Gender', ta: 'பாலினம்' }, source: 'profile', fromProfile: (m, _h, l) => (m.gender ? pickText(GENDERS[m.gender], l) : undefined), demo: '' },
+  occupation: { id: 'occupation', label: { en: 'Work', ta: 'வேலை' }, source: 'profile', fromProfile: (m, _h, l) => (m.occupation ? pickText(OCCUPATIONS[m.occupation], l) : undefined), demo: '' },
   district: { id: 'district', label: { en: 'District', ta: 'மாவட்டம்' }, source: 'profile', fromProfile: (_m, h, l) => { const d = districtByName(h.district); return d ? d[l] : undefined }, demo: '' },
   income: { id: 'income', label: { en: 'Family income (a year)', ta: 'குடும்ப ஆண்டு வருமானம்' }, source: 'profile', fromProfile: (_m, h, l) => (h.income !== undefined ? formatIncome(h.income, l) : undefined), demo: '' },
   aadhaar: { id: 'aadhaar', label: { en: 'Aadhaar number', ta: 'ஆதார் எண்' }, source: 'document', doc: 'aadhaar', demo: 'XXXX XXXX 4821' },

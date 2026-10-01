@@ -24,6 +24,9 @@ type Entry = {
   source: { name: string; url: string; checked: string }
   en: SchemeDetail
   ta: SchemeDetail
+  hi?: SchemeDetail
+  te?: SchemeDetail
+  kn?: SchemeDetail
   links: SchemeLink[]
 }
 

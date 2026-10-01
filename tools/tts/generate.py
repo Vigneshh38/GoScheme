@@ -6,7 +6,8 @@ Two engines (pick one):
           Voices "Jaya" (Tamil) and "Mary" (Indian English), steered by a text description.
           One-time setup: accept the model terms at https://huggingface.co/ai4bharat/indic-parler-tts
           and log in with `.venv/Scripts/huggingface-cli login` (your own token).
-  azure   Microsoft Azure neural voices ta-IN-PallaviNeural and en-IN-NeerjaNeural.
+  azure   Microsoft Azure neural voices ta-IN-PallaviNeural, en-IN-NeerjaNeural, hi-IN-SwaraNeural,
+          te-IN-ShrutiNeural and kn-IN-SapnaNeural.
           Needs your own Speech key: set AZURE_SPEECH_KEY and AZURE_SPEECH_REGION first.
           The free tier (F0) easily covers these few dozen short lines.
 
@@ -33,7 +34,7 @@ HERE = Path(__file__).parent
 OUT = HERE.parent.parent / "app" / "public" / "voice"
 
 # Rough speaking speed, used to catch broken takes (mumbling, long silences, cut-offs).
-SECONDS_PER_CHAR = {"ta": 0.085, "en": 0.065}
+SECONDS_PER_CHAR = {"ta": 0.085, "en": 0.065, "hi": 0.07, "te": 0.085, "kn": 0.085}
 
 
 def post_process(src: Path, mp3: Path) -> float:
@@ -65,6 +66,9 @@ class Parler:
         "ta": "Jaya speaks in a calm, soothing and warm voice at a slightly slow pace, gentle and friendly. " + QUALITY,
         "en": "Mary speaks in a calm, soothing and warm voice at a slightly slow pace, gentle and friendly, "
               "with an Indian English accent. " + QUALITY,
+        "hi": "Divya speaks in a calm, soothing and warm voice at a slightly slow pace, gentle and friendly. " + QUALITY,
+        "te": "Lalitha speaks in a calm, soothing and warm voice at a slightly slow pace, gentle and friendly. " + QUALITY,
+        "kn": "Anu speaks in a calm, soothing and warm voice at a slightly slow pace, gentle and friendly. " + QUALITY,
     }
 
     def __init__(self):
@@ -94,7 +98,8 @@ class Parler:
 
 
 class Azure:
-    VOICES = {"ta": ("ta-IN", "ta-IN-PallaviNeural"), "en": ("en-IN", "en-IN-NeerjaNeural")}
+    VOICES = {"ta": ("ta-IN", "ta-IN-PallaviNeural"), "en": ("en-IN", "en-IN-NeerjaNeural"),
+              "hi": ("hi-IN", "hi-IN-SwaraNeural"), "te": ("te-IN", "te-IN-ShrutiNeural"), "kn": ("kn-IN", "kn-IN-SapnaNeural")}
 
     def __init__(self):
         self.key = os.environ.get("AZURE_SPEECH_KEY")
@@ -128,10 +133,11 @@ def main() -> None:
     ap.add_argument("--engine", choices=["parler", "azure"], default="parler")
     ap.add_argument("--force", action="store_true", help="re-record lines that already have audio")
     ap.add_argument("--only", nargs="*", help="line ids to record")
+    ap.add_argument("--langs", nargs="*", help="only these languages, e.g. --langs hi te kn")
     args = ap.parse_args()
 
     all_lines = json.loads((HERE / "lines.json").read_text(encoding="utf-8"))
-    lines = [l for l in all_lines if not args.only or l["id"] in args.only]
+    lines = [l for l in all_lines if (not args.only or l["id"] in args.only) and (not args.langs or l["lang"] in args.langs)]
     engine = Parler() if args.engine == "parler" else Azure()
     tmp = HERE / "tmp.wav"
 

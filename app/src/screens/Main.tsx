@@ -1,12 +1,12 @@
 import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
-  ChevronDown, FileCheck, FileText, House, Lock, LockOpen, Pencil, Plus, Sparkles, Trash2, Users,
+  ChevronDown, FileCheck, FileText, House, Lock, LockOpen, Pencil, Plus, Sparkles, Trash2, Users, BellRing,
 } from 'lucide-react'
 import { Button, Disclaimer, IconTile, Sheet, Toast } from '../components/ui'
 import { SchemeCard } from '../components/SchemeCard'
 import { MaybeSheet } from '../components/MaybeSheet'
-import { LangSwitch } from '../components/LangSwitch'
+import { LangList, LangSwitch } from '../components/LangSwitch'
 import { AnswerInput } from '../components/AnswerInput'
 import { matchFamily, type Evaluation } from '../lib/rules'
 import { ANSWER_LABEL, formatAnswer, initial } from '../lib/format'
@@ -16,7 +16,9 @@ import { QUESTIONS, type QuestionKey } from '../data/questions'
 import { inr, relationLabel, OCCUPATIONS } from '../i18n'
 import { districtByName } from '../data/districts'
 import { useApp } from '../state'
-import type { Member } from '../types'
+import { localeOf, pickText, say } from '../lang'
+import type { FormStatus, Member } from '../types'
+import type { StrKey } from '../i18n'
 
 export type Tab = 'schemes' | 'forms' | 'family'
 
@@ -78,7 +80,7 @@ function SchemesTab({ openScheme, addMember, flash }: { openScheme: Props['openS
   const not = matches.filter((m) => m.best.status === 'not')
   const cash = eligible.reduce((sum, m) => sum + m.scheme.cashPerYear * Math.max(1, m.eligibleMembers.length), 0)
 
-  const occ = owner?.occupation ? OCCUPATIONS[owner.occupation][lang] : ''
+  const occ = owner?.occupation ? pickText(OCCUPATIONS[owner.occupation], lang) : ''
   const dist = districtByName(state.household.district)?.[lang] ?? ''
 
   return (
@@ -114,7 +116,7 @@ function SchemesTab({ openScheme, addMember, flash }: { openScheme: Props['openS
         {state.members.map((m) => (
           <button key={m.id} type="button" className={`chip${only === m.id ? ' chip--on' : ''}`} onClick={() => setOnly(m.id)}>
             <span className={`chip-dot dot-${m.relation}`}>{initial(m.name)}</span>
-            {m.relation === 'self' ? (lang === 'ta' ? 'நான்' : 'Me') : m.name}
+            {m.relation === 'self' ? say(lang, 'Me', 'நான்') : m.name}
           </button>
         ))}
         <button type="button" className="chip chip--add" onClick={addMember} aria-label={t('addMember')}>
@@ -169,8 +171,14 @@ function SchemesTab({ openScheme, addMember, flash }: { openScheme: Props['openS
 
 // ---------- My forms ----------
 
+const STATUS_BADGE: Record<FormStatus, [string, StrKey]> = {
+  ready: ['badge--ok', 'formReadyTag'], submitted: ['badge--maybe', 'stSubmitted'], approved: ['badge--ok', 'stApproved'], rejected: ['badge--not', 'stRejected'],
+}
+
 function FormsTab({ openForm, goSchemes }: { openForm: (id: string) => void; goSchemes: () => void }) {
   const { state, t, pick, lang } = useApp()
+  // Submitted applications whose reminder date has passed.
+  const due = state.forms.filter((f) => f.status === 'submitted' && f.remindAt && f.remindAt <= Date.now()).length
   return (
     <div className="tab-page">
       <h1 className="h1 tab-title">{t('tabForms')}</h1>
@@ -183,6 +191,7 @@ function FormsTab({ openForm, goSchemes }: { openForm: (id: string) => void; goS
         </div>
       ) : (
         <div className="card-list">
+          {due > 0 && <p className="status-due"><BellRing size={16} />{t('checkStatusDue', { n: due })}</p>}
           {state.forms.map((f) => {
             const s = schemeById(f.schemeId)
             const m = state.members.find((x) => x.id === f.memberId)
@@ -193,10 +202,10 @@ function FormsTab({ openForm, goSchemes }: { openForm: (id: string) => void; goS
                 <span className="card-mid">
                   <span className="card-name">{pick(s.name)}</span>
                   <span className="card-who">
-                    {m?.name} · {new Date(f.createdAt).toLocaleDateString(lang === 'ta' ? 'ta-IN' : 'en-IN', { day: 'numeric', month: 'short' })}
+                    {m?.name} · {new Date(f.createdAt).toLocaleDateString(localeOf(lang), { day: 'numeric', month: 'short' })}
                   </span>
                 </span>
-                <span className="badge badge--ok"><FileCheck size={14} />{t('formReadyTag')}</span>
+                <span className={`badge ${STATUS_BADGE[f.status ?? 'ready'][0]}`}><FileCheck size={14} />{t(STATUS_BADGE[f.status ?? 'ready'][1])}</span>
               </button>
             )
           })}
@@ -230,7 +239,7 @@ function FamilyTab({ addMember, flash }: { addMember: () => void; flash: (s: str
               <small>
                 {relationLabel(m.relation, m.gender, lang)}
                 {m.age ? ` · ${t('years', { n: m.age })}` : ''}
-                {m.occupation ? ` · ${OCCUPATIONS[m.occupation][lang]}` : ''}
+                {m.occupation ? ` · ${pickText(OCCUPATIONS[m.occupation], lang)}` : ''}
               </small>
             </span>
             {m.relation !== 'self' && (
@@ -255,10 +264,7 @@ function FamilyTab({ addMember, flash }: { addMember: () => void; flash: (s: str
       </div>
 
       <h2 className="section-title">{t('language')}</h2>
-      <div className="seg">
-        <button type="button" className={lang === 'ta' ? 'on ta' : 'ta'} onClick={() => dispatch({ type: 'lang', lang: 'ta' })}>தமிழ்</button>
-        <button type="button" className={lang === 'en' ? 'on' : ''} onClick={() => dispatch({ type: 'lang', lang: 'en' })}>English</button>
-      </div>
+      <LangList />
 
       <p className="store-note">
         {canPersist ? <Lock size={15} /> : <LockOpen size={15} />}

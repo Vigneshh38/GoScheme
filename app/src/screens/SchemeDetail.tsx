@@ -11,6 +11,7 @@ import { evaluate, type Evaluation } from '../lib/rules'
 import { relationLabel, type StrKey } from '../i18n'
 import { initial } from '../lib/format'
 import { useApp } from '../state'
+import { localeOf } from '../lang'
 
 type Props = { schemeId: string; memberId?: string; onBack: () => void; onApply: (memberId: string) => void }
 type Tab = 'overview' | 'eligibility' | 'apply'
@@ -32,7 +33,7 @@ export function SchemeDetail({ schemeId, memberId, onBack, onApply }: Props) {
   if (!ev) return null
   const fixes = ev.checks.filter((c) => c.state === 'fail' && c.rule.fix)
   const detail = entry && detailIn(entry, lang)
-  const date = entry ? new Date(entry.source.checked).toLocaleDateString(lang === 'ta' ? 'ta-IN' : 'en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : ''
+  const date = entry ? new Date(entry.source.checked).toLocaleDateString(localeOf(lang), { day: 'numeric', month: 'short', year: 'numeric' }) : ''
 
   return (
     <div className="screen">
@@ -159,7 +160,7 @@ export function SchemeDetail({ schemeId, memberId, onBack, onApply }: Props) {
           <p className="source">
             {t('sourceLine', { name: entry.source.name, date })} ·{' '}
             <a href={entry.source.url} target="_blank" rel="noreferrer">{t('officialSite')}</a>
-            {lang === 'ta' && entry.source.name.startsWith('myScheme') && <><br />{t('translatedBy')}</>}
+            {lang !== 'en' && entry.source.name.startsWith('myScheme') && <><br />{t('translatedBy')}</>}
           </p>
         )}
         <p className="fineprint">{t('demoRules')}</p>

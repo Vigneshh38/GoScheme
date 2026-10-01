@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useReducer, useRef, useState, type ReactNode } from 'react'
 import type { AppState, HouseholdFacts, Lang, Member, MemberFacts, SavedForm, Text } from './types'
 import { translate, type StrKey } from './i18n'
+import { pickText } from './lang'
 import { loadState, saveState, wipeState } from './lib/store'
 
 export const EMPTY: AppState = { lang: 'en', consented: false, onboarded: false, household: {}, members: [], forms: [] }
@@ -15,6 +16,7 @@ type Action =
   | { type: 'removeMember'; id: string }
   | { type: 'onboarded' }
   | { type: 'addForm'; form: SavedForm }
+  | { type: 'formStatus'; id: string; patch: Pick<SavedForm, 'status' | 'submittedAt' | 'remindAt'> }
   | { type: 'reset' }
 
 function reducer(s: AppState, a: Action): AppState {
@@ -31,6 +33,7 @@ function reducer(s: AppState, a: Action): AppState {
     case 'removeMember': return { ...s, members: s.members.filter((m) => m.id !== a.id), forms: s.forms.filter((f) => f.memberId !== a.id) }
     case 'onboarded': return { ...s, onboarded: true }
     case 'addForm': return { ...s, forms: [a.form, ...s.forms] }
+    case 'formStatus': return { ...s, forms: s.forms.map((f) => (f.id === a.id ? { ...f, ...a.patch } : f)) }
     case 'reset': return { ...EMPTY, lang: s.lang }
   }
 }
@@ -68,7 +71,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }, [state, ready])
 
   useEffect(() => {
-    document.documentElement.lang = state.lang === 'ta' ? 'ta' : 'en'
+    document.documentElement.lang = state.lang
   }, [state.lang])
 
   const wipe = useCallback(async () => {
@@ -82,7 +85,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     return {
       state, ready, dispatch, lang,
       t: (key, vars) => translate(lang, key, vars),
-      pick: (text) => text[lang],
+      pick: (text) => pickText(text, lang),
       owner: state.members.find((m) => m.relation === 'self'),
       wipe,
     }

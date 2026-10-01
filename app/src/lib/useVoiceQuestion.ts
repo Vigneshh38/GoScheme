@@ -9,6 +9,7 @@ import type { Lang } from '../types'
 import type { Parsed } from './parse'
 import { canRecognize, listen, micState, MIN_CONFIDENCE, MIN_CONFIDENCE_IF_VALID, speak, stopSpeaking, type Listening } from './speech'
 import { translate, type StrKey } from '../i18n'
+import { pickText } from '../lang'
 
 export type Phase = 'idle' | 'speaking' | 'listening' | 'accepted' | 'rejected'
 
@@ -96,7 +97,7 @@ export function useVoiceQuestion<T>({ id, lang, prompt, spoken, intro, parse, on
       setHeard(res.transcript)
       const parsed = latest.current.parse(res.transcript)
       const lowConfidence = res.confidence > 0 && res.confidence < MIN_CONFIDENCE
-      problem = parsed.ok || lowConfidence ? msg('unclear') : parsed.error[l]
+      problem = parsed.ok || lowConfidence ? msg('unclear') : pickText(parsed.error, l)
     }
 
     tries.current++

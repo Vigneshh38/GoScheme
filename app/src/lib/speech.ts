@@ -4,7 +4,9 @@
  * - Speaking: `speechSynthesis`, only when a voice for that language is installed; otherwise
  *   the question is just shown on screen (a Tamil question read by an English voice is noise).
  */
+import { Capacitor, type PluginListenerHandle } from '@capacitor/core'
 import type { Lang } from '../types'
+import { localeOf } from '../lang'
 
 type SRResultList = { length: number; [i: number]: { isFinal: boolean; length: number; [j: number]: { transcript: string; confidence: number } } }
 type SREvent = { resultIndex: number; results: SRResultList }
@@ -31,8 +33,11 @@ function getSR(): (new () => SpeechRec) | undefined {
   return w.SpeechRecognition ?? w.webkitSpeechRecognition
 }
 
+// Inside the Android app the WebView has no SpeechRecognition, so the native recognizer is used.
+const NATIVE = Capacitor.isNativePlatform()
+
 export function canRecognize(): boolean {
-  return !!getSR()
+  return NATIVE || !!getSR()
 }
 
 /** Set when the user blocks the microphone; later questions go straight to tap / type. */
@@ -53,10 +58,11 @@ export type Listening = { result: Promise<Heard>; stop: () => void; abort: () =>
 
 /** Listen for one answer. `onInterim` receives the words as they are recognised. */
 export function listen(lang: Lang, onInterim?: (text: string) => void): Listening {
+  if (NATIVE) return listenNative(lang, onInterim)
   const SR = getSR()
   if (!SR) return { result: Promise.resolve({ kind: 'unsupported' }), stop: () => {}, abort: () => {} }
   const rec = new SR()
-  rec.lang = lang === 'ta' ? 'ta-IN' : 'en-IN'
+  rec.lang = localeOf(lang)
   rec.interimResults = true
   rec.continuous = false
   rec.maxAlternatives = 3
@@ -121,6 +127,56 @@ export function listen(lang: Lang, onInterim?: (text: string) => void): Listenin
   }
 }
 
+/** Android app: Android's own speech recognizer (supports ta-IN), via the Capgo plugin. */
+function listenNative(lang: Lang, onInterim?: (text: string) => void): Listening {
+  let done = false
+  let matches: string[] = []
+  const handles: PluginListenerHandle[] = []
+  let settle: (h: Heard) => void = () => {}
+  const result = new Promise<Heard>((resolve) => {
+    settle = (h) => {
+      if (done) return
+      done = true
+      clearTimeout(timer)
+      handles.forEach((h) => h.remove())
+      resolve(h)
+    }
+  })
+  const finish = () =>
+    settle(matches.length
+      ? { kind: 'ok', transcript: matches[0], confidence: 0, alternatives: matches.map((t) => ({ transcript: t, confidence: 0 })) }
+      : { kind: 'silence' })
+  let plugin: typeof import('@capgo/capacitor-speech-recognition').SpeechRecognition | undefined
+  const timer = setTimeout(() => { plugin?.stop().catch(() => {}); setTimeout(finish, 800) }, 12000)
+
+  ;(async () => {
+    const { SpeechRecognition } = await import('@capgo/capacitor-speech-recognition')
+    plugin = SpeechRecognition
+    let perm = await SpeechRecognition.checkPermissions()
+    if (perm.speechRecognition !== 'granted') perm = await SpeechRecognition.requestPermissions()
+    if (perm.speechRecognition !== 'granted') return settle({ kind: 'blocked' })
+    handles.push(await SpeechRecognition.addListener('partialResults', (e) => {
+      if (e.matches?.length) { matches = e.matches; onInterim?.(e.matches[0]) }
+    }))
+    handles.push(await SpeechRecognition.addListener('error', (e) => {
+      const why = `${e.code} ${e.message}`
+      if (/permission|insufficient/i.test(why)) settle({ kind: 'blocked' })
+      else if (/network|server/i.test(why)) settle({ kind: 'network' })
+    }))
+    handles.push(await SpeechRecognition.addListener('listeningState', (e) => {
+      if (e.state === 'stopped') setTimeout(finish, 150)
+    }))
+    const res = await SpeechRecognition.start({ language: localeOf(lang), maxResults: 5, partialResults: true, popup: false })
+    if (res?.matches?.length) { matches = res.matches; finish() }
+  })().catch(() => settle({ kind: 'blocked' }))
+
+  return {
+    result,
+    stop: () => { plugin?.stop().catch(() => {}) },
+    abort: () => { plugin?.forceStop().catch(() => {}); settle({ kind: 'aborted' }) },
+  }
+}
+
 /** Confidence below this (when the browser gives one) means "ask again". */
 export const MIN_CONFIDENCE = 0.45
 /** A guess that makes sense as an answer is accepted down to this confidence
@@ -178,15 +234,15 @@ function voices(): Promise<SpeechSynthesisVoice[]> {
   return voicesReady
 }
 
-const FEMALE = /pallavi|neerja|swara|heera|kalpana|zira|aria|jenny|female|woman|google/i
+const FEMALE = /pallavi|neerja|swara|shruti|sapna|heera|kalpana|zira|aria|jenny|female|woman|google/i
 const NATURAL = /natural|online|neural|google/i
 
 async function voiceFor(lang: Lang): Promise<SpeechSynthesisVoice | undefined> {
   const all = await voices()
-  const pool = lang === 'ta' ? all.filter((v) => v.lang.toLowerCase().startsWith('ta')) : all.filter((v) => v.lang.startsWith('en'))
+  const pool = all.filter((v) => v.lang.toLowerCase().startsWith(lang))
   if (!pool.length) return undefined
   const score = (v: SpeechSynthesisVoice) =>
-    (NATURAL.test(v.name) ? 4 : 0) + (FEMALE.test(v.name) ? 2 : 0) + (v.lang === 'en-IN' || v.lang === 'ta-IN' ? 1 : 0)
+    (NATURAL.test(v.name) ? 4 : 0) + (FEMALE.test(v.name) ? 2 : 0) + (v.lang === localeOf(lang) ? 1 : 0)
   return [...pool].sort((a, b) => score(b) - score(a))[0]
 }
 
@@ -216,16 +272,34 @@ export async function speak(text: string | string[], lang: Lang, signal?: { canc
     if (signal?.cancelled) return
     const url = map[`${lang}|${line}`]
     if (url && (await playClip(`${import.meta.env.BASE_URL}voice/${url}`, signal))) continue
-    await speakSynth(line, lang, signal)
+    if (NATIVE) await speakNative(line, lang, signal)
+    else await speakSynth(line, lang, signal)
+  }
+}
+
+/** Android app: the phone's own text-to-speech (the WebView has no speechSynthesis). */
+async function speakNative(text: string, lang: Lang, signal?: { cancelled: boolean }): Promise<void> {
+  if (signal?.cancelled) return
+  try {
+    const { TextToSpeech } = await import('@capacitor-community/text-to-speech')
+    const { languages } = await TextToSpeech.getSupportedLanguages()
+    const locale = localeOf(lang)
+    // Skip when the phone has no voice for the language: a wrong-language voice is noise.
+    if (!languages.some((l) => l.toLowerCase().replace('_', '-').startsWith(lang))) return
+    await TextToSpeech.speak({ text, lang: locale, rate: 0.95, pitch: 1.05, volume: 1, category: 'playback' })
+  } catch {
+    // No text-to-speech engine: the question is still shown on screen.
   }
 }
 
 export async function canSpeak(lang: Lang): Promise<boolean> {
+  if (NATIVE) return true
   const map = await clips()
   return Object.keys(map).some((k) => k.startsWith(`${lang}|`)) || !!(await voiceFor(lang))
 }
 
 export function stopSpeaking(): void {
   if (current) { current.pause(); current = null }
-  if (typeof speechSynthesis !== 'undefined') speechSynthesis.cancel()
+  if (NATIVE) import('@capacitor-community/text-to-speech').then(({ TextToSpeech }) => TextToSpeech.stop()).catch(() => {})
+  else if (typeof speechSynthesis !== 'undefined') speechSynthesis.cancel()
 }

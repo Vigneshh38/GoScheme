@@ -27,7 +27,7 @@
   --r-lg: 24px;
   --shadow-card: 0 2px 10px rgba(15, 23, 42, 0.05);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --font: 'Poppins', 'Noto Sans Tamil', system-ui, sans-serif;
+  --font: 'Poppins', 'Noto Sans Tamil', 'Noto Sans Telugu', 'Noto Sans Kannada', system-ui, sans-serif;
   --font-ta: 'Noto Sans Tamil', 'Poppins', system-ui, sans-serif;
 }
 
@@ -201,10 +201,15 @@ html[lang='ta'] .section-title { text-transform: none; letter-spacing: 0; font-s
 /* ---------- welcome ---------- */
 .welcome { gap: 6px; padding: 28px 24px calc(18px + env(safe-area-inset-bottom)); justify-content: space-between; }
 .welcome-hero { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.welcome-greet { font-size: 30px; font-weight: 700; margin: -6px 0 6px; letter-spacing: -0.4px; display: flex; gap: 10px; align-items: baseline; }
+.welcome-greet { font-size: 30px; font-weight: 700; margin: -6px 0 6px; letter-spacing: -0.4px; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 10px; align-items: baseline; }
 .welcome-dot { color: var(--faint); }
 .welcome-sub { margin: 0; color: var(--muted); font-size: 14px; }
-.lang-pick { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.lang-pick { width: 100%; display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.lang-pick .lang-card { grid-column: span 3; }
+.lang-pick .lang-card--sm { grid-column: span 2; padding: 12px 10px; min-width: 0; }
+.lang-card--sm .lang-glyph { width: 36px; height: 36px; font-size: 18px; border-radius: 12px; margin-bottom: 6px; }
+.lang-card--sm .lang-name { font-size: 16px; }
+.welcome-more { flex-basis: 100%; text-align: center; letter-spacing: 0; font-size: 14px; font-weight: 500; color: var(--muted); margin-top: 6px; }
 .lang-pick-label { grid-column: 1 / -1; text-align: center; font-size: 13px; color: var(--muted); margin: 0 0 2px; }
 .lang-card { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 16px; border-radius: var(--r-lg); border: 1.5px solid var(--line); background: #fff; text-align: left; transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s; }
 .lang-card:hover { border-color: var(--blue-line); box-shadow: 0 8px 24px rgba(0, 112, 192, 0.1); }
@@ -352,6 +357,11 @@ button.row:hover { background: var(--surface); }
 .empty-ic { width: 64px; height: 64px; border-radius: 20px; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; margin-bottom: 8px; }
 .empty p { color: var(--muted); margin: 0 0 12px; }
 .seg { display: grid; grid-template-columns: 1fr 1fr; padding: 4px; border-radius: 14px; background: var(--surface); }
+.seg--langs { grid-template-columns: repeat(auto-fit, minmax(92px, 1fr)); gap: 2px; }
+.lang-menu { display: grid; gap: 8px; }
+.lang-menu button { display: flex; align-items: center; gap: 12px; height: 56px; padding: 0 14px; border-radius: 14px; border: 1.5px solid var(--line); background: #fff; font-size: 17px; font-weight: 600; color: var(--ink); text-align: left; }
+.lang-menu button.on { border-color: var(--blue); background: var(--blue-soft); }
+.lang-menu small { margin-left: auto; font-size: 12.5px; font-weight: 500; color: var(--muted); }
 .seg button { height: 42px; border: 0; border-radius: 11px; background: none; font-weight: 600; color: var(--muted); }
 .seg .on { background: #fff; color: var(--ink); box-shadow: var(--shadow-card); }
 .store-note { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); margin: 22px 0 12px; }
@@ -512,3 +522,39 @@ html[lang='ta'] .sec-title { text-transform: none; letter-spacing: 0; font-size:
 .link-mid small { font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
 .link-go { flex: none; color: var(--faint); }
 .md-sub { margin: 6px 0 2px; gap: 4px; }
+
+/* official portal sheet */
+.portal { display: grid; gap: 12px; }
+.portal .h2 { margin: 0; }
+.portal .lead { margin: 0; }
+.portal-ic { width: 56px; height: 56px; border-radius: 18px; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; }
+.portal-field { display: grid; gap: 6px; font-size: 13px; font-weight: 500; color: var(--muted); }
+.portal-note { display: flex; align-items: center; gap: 6px; margin: 0; font-size: 12.5px; color: var(--green-ink); }
+.portal-you { border-radius: 14px; background: var(--amber-soft); padding: 10px 14px; }
+.portal-you b { font-size: 13px; color: var(--amber-ink); }
+.portal-you p { margin: 2px 0 0; font-size: 13.5px; color: var(--ink-2); }
+.copy-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.copy-list li { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 8px 8px 14px; border: 1px solid var(--line); border-radius: 14px; }
+.copy-list span { display: flex; flex-direction: column; min-width: 0; }
+.copy-list small { font-size: 11.5px; color: var(--muted); }
+.copy-list b { font-weight: 600; overflow-wrap: anywhere; }
+
+/* Demo copy of a portal, full-screen over the app */
+.demo-portal { position: fixed; inset: 0; z-index: 60; background: #fff; display: flex; flex-direction: column; }
+.demo-portal-bar { display: flex; align-items: center; gap: 10px; padding: calc(8px + env(safe-area-inset-top, 0px)) 12px 8px; border-bottom: 1px solid var(--line); }
+.demo-portal-bar b { flex: 1; min-width: 0; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.demo-pill { flex: none; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; color: #92400e; background: #fef3c7; border-radius: 999px; padding: 3px 9px; }
+.demo-portal iframe { flex: 1; width: 100%; border: 0; }
+
+/* Application status */
+.status-lead { margin: -4px 0 10px; font-size: 13px; color: var(--muted); }
+.status-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.status-step { display: flex; align-items: center; justify-content: center; gap: 6px; height: 44px; border-radius: 12px; border: 1.5px solid var(--line); background: #fff; font-weight: 600; font-size: 13.5px; color: var(--muted); }
+.status-step.on { color: #fff; border-color: transparent; }
+.status-step--ready.on, .status-step--approved.on { background: var(--green, #16a34a); }
+.status-step--submitted.on { background: var(--blue); }
+.status-step--rejected.on { background: #dc2626; }
+.status-note { display: flex; gap: 8px; align-items: flex-start; margin: 10px 0 0; font-size: 13.5px; color: var(--ink); background: var(--blue-soft); border-radius: 12px; padding: 10px 12px; }
+.status-note--bad { background: #fef2f2; color: #991b1b; }
+.status-due { display: flex; gap: 8px; align-items: center; margin: 0; padding: 12px 14px; border-radius: 14px; background: var(--amber-soft); color: var(--amber-ink); font-weight: 600; font-size: 13.5px; }
+@media print { .sec, .status-due { display: none; } }

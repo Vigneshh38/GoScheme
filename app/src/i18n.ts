@@ -1,6 +1,7 @@
 import type { Lang, Occupation, Gender, Relation, Text } from './types'
+import { pickText } from './lang'
 
-const s = {
+export const STRINGS = {
   appTagline: { en: 'Government schemes, found by voice', ta: 'அரசுத் திட்டங்கள், உங்கள் குரலில்' },
   chooseLanguage: { en: 'Choose your language', ta: 'உங்கள் மொழியைத் தேர்ந்தெடுக்கவும்' },
   notOfficial: { en: 'Not an official government app', ta: 'இது அதிகாரப்பூர்வ அரசு செயலி அல்ல' },
@@ -142,7 +143,12 @@ const s = {
   kindGuidelines: { en: 'Guidelines', ta: 'வழிகாட்டுதல்கள்' },
   kindInfo: { en: 'More information', ta: 'மேலும் தகவல்' },
   sourceLine: { en: 'Source: {name} · checked {date}', ta: 'ஆதாரம்: {name} · சரிபார்த்தது {date}' },
-  translatedBy: { en: '', ta: 'தமிழாக்கம்: myScheme. சந்தேகம் இருந்தால் ஆங்கிலப் பதிப்பைப் பார்க்கவும்.' },
+  translatedBy: {
+    en: '', ta: 'தமிழாக்கம்: myScheme. சந்தேகம் இருந்தால் ஆங்கிலப் பதிப்பைப் பார்க்கவும்.',
+    hi: 'अनुवाद: myScheme. संदेह हो तो अंग्रेज़ी संस्करण देखें।',
+    te: 'అనువాదం: myScheme. సందేహం ఉంటే ఆంగ్ల వెర్షన్ చూడండి.',
+    kn: 'ಅನುವಾದ: myScheme. ಸಂದೇಹವಿದ್ದರೆ ಇಂಗ್ಲಿಷ್ ಆವೃತ್ತಿಯನ್ನು ನೋಡಿ.',
+  },
   whereToSubmit: { en: 'Where to submit', ta: 'எங்கே சமர்ப்பிப்பது' },
 
   reviewTitle: { en: 'Review your form', ta: 'உங்கள் படிவத்தைச் சரிபார்க்கவும்' },
@@ -187,6 +193,24 @@ const s = {
   },
   savePdf: { en: 'Save as PDF', ta: 'PDF ஆகச் சேமி' },
   copyDetails: { en: 'Copy details', ta: 'விவரங்களை நகலெடு' },
+  fillOfficial: { en: 'Fill the official form', ta: 'அதிகாரப்பூர்வ படிவத்தை நிரப்பு' },
+  portalLead: {
+    en: 'GoScheme opens the official website and fills in your details. You type the captcha and OTP, check everything, then tap Continue.',
+    ta: 'GoScheme அதிகாரப்பூர்வ இணையதளத்தைத் திறந்து உங்கள் விவரங்களை நிரப்பும். கேப்ட்சா, OTP-ஐ நீங்கள் உள்ளிட்டு, சரிபார்த்து "தொடர்" அழுத்தவும்.',
+  },
+  aadhaarFull: { en: 'Aadhaar number (12 digits)', ta: 'ஆதார் எண் (12 இலக்கம்)' },
+  notSaved: { en: 'Used only to fill this form. Never saved on the phone.', ta: 'இந்தப் படிவத்தை நிரப்ப மட்டும். மொபைலில் சேமிக்கப்படாது.' },
+  youDo: { en: 'You do', ta: 'நீங்கள் செய்ய வேண்டியது' },
+  openPortal: { en: 'Open official website', ta: 'அதிகாரப்பூர்வ இணையதளத்தைத் திற' },
+  webOnlyNote: {
+    en: 'Automatic filling works in the GoScheme Android app. In a browser, the website opens in a new tab and you copy each detail.',
+    ta: 'தானியங்கி நிரப்புதல் GoScheme ஆண்ட்ராய்டு செயலியில் மட்டும். உலாவியில், இணையதளம் புதிய தாவலில் திறக்கும்; ஒவ்வொரு விவரத்தையும் நகலெடுக்கவும்.',
+  },
+  copyEach: { en: 'The website opened in a new tab. Copy each detail into it:', ta: 'இணையதளம் புதிய தாவலில் திறந்தது. ஒவ்வொரு விவரத்தையும் நகலெடுத்து ஒட்டவும்:' },
+  copy: { en: 'Copy', ta: 'நகலெடு' },
+  demoPortal: { en: 'Try with demo data', ta: 'டெமோ தரவுடன் முயற்சிக்கவும்' },
+  badAadhaar: { en: 'Enter the 12-digit Aadhaar number.', ta: '12 இலக்க ஆதார் எண்ணை உள்ளிடவும்.' },
+  badMobile: { en: 'Enter the 10-digit mobile number.', ta: '10 இலக்க மொபைல் எண்ணை உள்ளிடவும்.' },
   copied: { en: 'Copied — paste it into a note or message', ta: 'நகலெடுக்கப்பட்டது — குறிப்பு அல்லது செய்தியில் ஒட்டவும்' },
   formReadyLeadCopy: {
     en: 'Copy the details, then submit them at your nearest e-Sevai centre or on the official website.',
@@ -199,6 +223,16 @@ const s = {
     ta: 'தகுதியுள்ள திட்டத்தைத் திறந்து "விண்ணப்பத்தை நிரப்பு" என்பதைத் தொடவும்.',
   },
   formReadyTag: { en: 'Form ready', ta: 'படிவம் தயார்' },
+  statusTitle: { en: 'Application status', ta: 'விண்ணப்ப நிலை' },
+  statusLead: { en: 'Update it after you submit, so GoScheme can remind you.', ta: 'சமர்ப்பித்த பின் புதுப்பிக்கவும்; GoScheme உங்களுக்கு நினைவூட்டும்.' },
+  stSubmitted: { en: 'Submitted', ta: 'சமர்ப்பிக்கப்பட்டது' },
+  stApproved: { en: 'Approved', ta: 'அங்கீகரிக்கப்பட்டது' },
+  stRejected: { en: 'Rejected', ta: 'நிராகரிக்கப்பட்டது' },
+  remindOn: { en: "We'll remind you to check the status on {date}.", ta: '{date} அன்று நிலையைச் சரிபார்க்க நினைவூட்டுவோம்.' },
+  checkStatusDue: { en: 'Check the status of {n} submitted application(s) on the official website.', ta: 'சமர்ப்பித்த {n} விண்ணப்பங்களின் நிலையை அதிகாரப்பூர்வ இணையதளத்தில் சரிபார்க்கவும்.' },
+  remindTitle: { en: 'Check your application', ta: 'உங்கள் விண்ணப்பத்தைச் சரிபார்க்கவும்' },
+  remindBody: { en: '{scheme}: check the status on the official website.', ta: '{scheme}: அதிகாரப்பூர்வ இணையதளத்தில் நிலையைச் சரிபார்க்கவும்.' },
+  rejectedLead: { en: 'Ask the office for the reason. You can usually fix it and apply again.', ta: 'காரணத்தை அலுவலகத்தில் கேளுங்கள். பொதுவாகச் சரிசெய்து மீண்டும் விண்ணப்பிக்கலாம்.' },
 
   familyTitle: { en: 'Your family', ta: 'உங்கள் குடும்பம்' },
   household: { en: 'Household', ta: 'குடும்ப விவரம்' },
@@ -228,10 +262,10 @@ const s = {
   perYear: { en: '₹{amount} a year', ta: 'ஆண்டுக்கு ₹{amount}' },
 } satisfies Record<string, Text>
 
-export type StrKey = keyof typeof s
+export type StrKey = keyof typeof STRINGS
 
 export function translate(lang: Lang, key: StrKey, vars?: Record<string, string | number>): string {
-  let out = s[key][lang]
+  let out = pickText(STRINGS[key], lang)
   if (vars) for (const [k, v] of Object.entries(vars)) out = out.split(`{${k}}`).join(String(v))
   return out
 }
@@ -270,8 +304,8 @@ export function relationLabel(relation: Relation, gender: Gender | undefined, la
     parent: [{ en: 'Father', ta: 'தந்தை' }, { en: 'Mother', ta: 'தாய்' }],
     sibling: [{ en: 'Brother', ta: 'சகோதரர்' }, { en: 'Sister', ta: 'சகோதரி' }],
   }
-  if (relation === 'self' || relation === 'other' || !gender || gender === 'other') return RELATIONS[relation][lang]
-  return g[relation][gender === 'female' ? 1 : 0][lang]
+  if (relation === 'self' || relation === 'other' || !gender || gender === 'other') return pickText(RELATIONS[relation], lang)
+  return pickText(g[relation][gender === 'female' ? 1 : 0], lang)
 }
 
 /** Indian digit grouping: 250000 → "2,50,000". */
@@ -279,10 +313,12 @@ export function inr(n: number): string {
   return Math.round(n).toLocaleString('en-IN')
 }
 
+const LAKH_WORD: Record<Lang, string> = { en: 'lakh', ta: 'லட்சம்', hi: 'लाख', te: 'లక్షలు', kn: 'ಲಕ್ಷ' }
+
 export function formatIncome(n: number, lang: Lang): string {
   if (n >= 100000) {
     const l = +(n / 100000).toFixed(2)
-    return lang === 'ta' ? `₹${l} லட்சம்` : `₹${l} lakh`
+    return `₹${l} ${LAKH_WORD[lang]}`
   }
   return `₹${inr(n)}`
 }

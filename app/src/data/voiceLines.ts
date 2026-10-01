@@ -4,6 +4,7 @@
  * recording instead of the browser's robotic voice.
  */
 import type { Lang } from '../types'
+import { LANGS, pickText } from '../lang'
 import { translate } from '../i18n'
 import { QUESTIONS, OWNER_FLOW, MEMBER_FLOW, type QuestionKey } from './questions'
 import { SCHEMES } from './schemes'
@@ -15,14 +16,14 @@ const MEMBER_KEYS: QuestionKey[] = [...MEMBER_FLOW, 'ownsLand', 'studiedGovtScho
 
 export function voiceLines(): VoiceLine[] {
   const out: VoiceLine[] = []
-  for (const lang of ['ta', 'en'] as Lang[]) {
+  for (const lang of LANGS.map((l) => l.code)) {
     out.push({ lang, text: translate(lang, 'intro') }, { lang, text: translate(lang, 'sayAgain') })
     const keys = new Set<QuestionKey>([...OWNER_FLOW, ...(Object.keys(QUESTIONS) as QuestionKey[])])
     for (const key of keys) {
       out.push({ lang, text: QUESTIONS[key].say(lang, true) })
       if (MEMBER_KEYS.includes(key)) out.push({ lang, text: QUESTIONS[key].say(lang, false) })
     }
-    for (const s of SCHEMES) for (const f of s.fields) if (f.voice) out.push({ lang, text: f.voice.ask[lang] })
+    for (const s of SCHEMES) for (const f of s.fields) if (f.voice) out.push({ lang, text: pickText(f.voice.ask, lang) })
   }
   const seen = new Set<string>()
   return out.filter((l) => {

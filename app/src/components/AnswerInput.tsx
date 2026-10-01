@@ -21,14 +21,14 @@ type Props = {
 }
 
 export function AnswerInput({ kind, choices, parse, numeric, initial = '', onSubmit }: Props) {
-  const { t, pick, lang } = useApp()
+  const { t, pick } = useApp()
   const [text, setText] = useState(initial)
   const [error, setError] = useState<string | null>(null)
 
   const submitText = (raw: string) => {
     const res = parse(raw)
     if (res.ok) { setError(null); onSubmit(res.value, raw.trim()) }
-    else setError(res.error[lang])
+    else setError(pick(res.error))
   }
 
   if (kind === 'yesno') {
@@ -94,7 +94,7 @@ function DistrictPicker({ onPick }: { onPick: (en: string, shown: string) => voi
     const s = q.trim().toLowerCase()
     const sorted = [...DISTRICTS].sort((a, b) => a[lang].localeCompare(b[lang], lang))
     if (!s) return sorted
-    return sorted.filter((d) => d.en.toLowerCase().includes(s) || d.ta.includes(q.trim()) || d.aliases.some((a) => a.includes(s)))
+    return sorted.filter((d) => d.en.toLowerCase().includes(s) || [d.ta, d.hi, d.te, d.kn].some((n) => n.includes(q.trim())) || d.aliases.some((a) => a.includes(s)))
   }, [q, lang])
   return (
     <div className="answer-stack">
@@ -106,7 +106,7 @@ function DistrictPicker({ onPick }: { onPick: (en: string, shown: string) => voi
         {list.map((d) => (
           <button key={d.en} type="button" className="district" onClick={() => onPick(d.en, d[lang])}>
             {d[lang]}
-            {lang === 'ta' && <small>{d.en}</small>}
+            {lang !== 'en' && <small>{d.en}</small>}
           </button>
         ))}
       </div>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UMIS demo copy</title>
+<!--
+  A demo copy of the UMIS login + Tamizh Pudhalvan / Pudhumai Penn application, bundled with
+  GoScheme so the auto-fill can be shown without a real student account or internet.
+  Nothing is sent anywhere: "Submit" only shows a demo confirmation.
+-->
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.45 system-ui, 'Noto Sans Tamil', sans-serif; background: #eef2f7; color: #1e293b; }
+  .demo { background: #fef3c7; color: #92400e; text-align: center; font-size: 12.5px; font-weight: 600; padding: 6px 12px; }
+  header { background: #1f3b73; color: #fff; padding: 14px 16px; display: flex; gap: 12px; align-items: center; }
+  header .seal { width: 40px; height: 40px; border-radius: 50%; background: #fff; color: #1f3b73; display: grid; place-items: center; font-weight: 800; font-size: 12px; flex: none; }
+  header b { display: block; font-size: 16px; }
+  header small { opacity: .85; font-size: 12px; }
+  main { max-width: 560px; margin: 0 auto; padding: 16px; }
+  .card { background: #fff; border-radius: 10px; padding: 18px 16px; box-shadow: 0 1px 3px rgba(15,23,42,.12); }
+  h1 { font-size: 18px; margin: 0 0 4px; color: #1f3b73; }
+  .sub { margin: 0 0 14px; color: #64748b; font-size: 13px; }
+  label { display: block; font-size: 13px; font-weight: 600; margin: 12px 0 4px; }
+  input, select { width: 100%; height: 42px; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0 10px; font: inherit; background: #fff; }
+  .row { display: flex; gap: 8px; align-items: center; }
+  .code { font: 700 20px/42px monospace; letter-spacing: 4px; background: repeating-linear-gradient(45deg, #e2e8f0 0 6px, #f8fafc 6px 12px); border-radius: 6px; padding: 0 12px; user-select: none; text-decoration: line-through; text-decoration-color: #94a3b8; width: auto; border: 0; }
+  .refresh { flex: none; height: 42px; border: 1px solid #cbd5e1; background: #fff; border-radius: 6px; padding: 0 10px; }
+  .btn { margin-top: 18px; width: 100%; height: 46px; border: 0; border-radius: 6px; background: #1f3b73; color: #fff; font: 700 15px system-ui, sans-serif; }
+  .err { color: #b91c1c; font-size: 13px; margin: 10px 0 0; min-height: 1em; }
+  .check { display: flex; gap: 8px; align-items: flex-start; font-weight: 500; margin-top: 16px; }
+  .check input { width: 20px; height: 20px; flex: none; margin-top: 2px; }
+  .ok { text-align: center; }
+  .ok .tick { width: 64px; height: 64px; border-radius: 50%; background: #16a34a; color: #fff; font-size: 34px; display: grid; place-items: center; margin: 6px auto 12px; }
+  .appno { font: 700 18px monospace; background: #f1f5f9; border-radius: 6px; padding: 8px; margin: 10px 0; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="demo">DEMO COPY for the GoScheme expo — not the real UMIS website. Nothing is sent.</div>
+<header>
+  <span class="seal">TN</span>
+  <span><b>UMIS</b><small>University Management Information System · Government of Tamil Nadu</small></span>
+</header>
+<main>
+  <!-- Step 1: login -->
+  <form class="card" id="login" autocomplete="off">
+    <h1>Student login</h1>
+    <p class="sub">Use your UMIS / EMIS ID. First time? Password = last 4 digits of mobile + birth year.</p>
+    <label for="username">Username</label>
+    <input id="username" formcontrolname="username" placeholder="User Name">
+    <label for="password">Password</label>
+    <input id="password" type="password" formcontrolname="password" placeholder="Password">
+    <label for="CaptchaInput">Captcha</label>
+    <div class="row">
+      <input class="code" id="captchaCode" formcontrolname="CaptchaDiv" readonly tabindex="-1">
+      <button type="button" class="refresh" id="refresh" aria-label="Refresh captcha">↻</button>
+    </div>
+    <input id="CaptchaInput" formcontrolname="txtCaptcha" placeholder="Enter the captcha" style="margin-top:8px">
+    <p class="err" id="loginErr"></p>
+    <button class="btn" id="submitButton" type="submit">LOGIN</button>
+  </form>
+
+  <!-- Step 2: application -->
+  <form class="card" id="apply" hidden autocomplete="off">
+    <h1 id="schemeTitle">Tamizh Pudhalvan — Application</h1>
+    <p class="sub">Monthly assistance of ₹1,000 for students from government schools.</p>
+    <label for="studentName">Name of the Student</label>
+    <input id="studentName" name="studentName">
+    <label for="fatherName">Father's / Guardian's Name</label>
+    <input id="fatherName" name="fatherName">
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender"><option value="">-- Select --</option><option>Male</option><option>Female</option><option>Transgender</option></select>
+    <label for="aadhaarNo">Aadhaar Number</label>
+    <input id="aadhaarNo" name="aadhaarNo" inputmode="numeric" maxlength="12">
+    <label for="mobileNo">Mobile Number</label>
+    <input id="mobileNo" name="mobileNo" inputmode="numeric" maxlength="10">
+    <label for="district">District</label>
+    <select id="district" name="district"><option value="">-- Select --</option></select>
+    <label for="collegeName">College / Institution Name</label>
+    <input id="collegeName" name="collegeName">
+    <label for="accountNo">Bank Account Number</label>
+    <input id="accountNo" name="accountNo" inputmode="numeric">
+    <label for="ifsc">IFSC Code</label>
+    <input id="ifsc" name="ifsc">
+    <label class="check"><input type="checkbox" id="declare"> I declare that the details given above are true.</label>
+    <p class="err" id="applyErr"></p>
+    <button class="btn" type="submit">SUBMIT</button>
+  </form>
+
+  <!-- Step 3: done -->
+  <div class="card ok" id="done" hidden>
+    <div class="tick">✓</div>
+    <h1>Application submitted (demo)</h1>
+    <div class="appno" id="appNo"></div>
+    <p class="sub">In the real UMIS portal, print this and submit it to your college.</p>
+  </div>
+</main>
+<script>
+  const DISTRICTS = ['Ariyalur','Chengalpattu','Chennai','Coimbatore','Cuddalore','Dharmapuri','Dindigul','Erode','Kallakurichi','Kanchipuram','Kanniyakumari','Karur','Krishnagiri','Madurai','Mayiladuthurai','Nagapattinam','Namakkal','Nilgiris','Perambalur','Pudukkottai','Ramanathapuram','Ranipet','Salem','Sivaganga','Tenkasi','Thanjavur','Theni','Thoothukudi','Tiruchirappalli','Tirunelveli','Tirupathur','Tiruppur','Tiruvallur','Tiruvannamalai','Tiruvarur','Vellore','Viluppuram','Virudhunagar']
+  const sel = document.getElementById('district')
+  for (const d of DISTRICTS) sel.add(new Option(d.toUpperCase(), d))
+  if (new URLSearchParams(location.search).get('scheme') === 'pudhumai-penn') {
+    document.getElementById('schemeTitle').textContent = 'Pudhumai Penn — Application'
+  }
+
+  const code = document.getElementById('captchaCode')
+  const newCode = () => { code.value = Math.random().toString(36).slice(2, 8).toUpperCase().replace(/0/g, 'X').replace(/O/g, 'P') }
+  newCode()
+  document.getElementById('refresh').onclick = newCode
+
+  const $ = (id) => document.getElementById(id)
+  $('login').onsubmit = (e) => {
+    e.preventDefault()
+    const err = $('loginErr')
+    if (!$('username').value.trim()) return (err.textContent = 'Enter the username.')
+    if (!$('password').value) return (err.textContent = 'Enter the password.')
+    if ($('CaptchaInput').value.trim().toUpperCase() !== code.value) {
+      err.textContent = 'Captcha does not match. Try again.'
+      $('CaptchaInput').value = ''
+      newCode()
+      return
+    }
+    $('login').hidden = true
+    $('apply').hidden = false
+    window.scrollTo(0, 0)
+  }
+  $('apply').onsubmit = (e) => {
+    e.preventDefault()
+    const err = $('applyErr')
+    const empty = [...$('apply').querySelectorAll('input:not([type=checkbox]), select')].filter((f) => !f.value)
+    if (empty.length) { err.textContent = 'Fill every field.'; empty[0].focus(); return }
+    if (!/^\d{12}$/.test($('aadhaarNo').value)) return (err.textContent = 'Aadhaar must be 12 digits.')
+    if (!/^[6-9]\d{9}$/.test($('mobileNo').value)) return (err.textContent = 'Mobile must be 10 digits.')
+    if (!$('declare').checked) return (err.textContent = 'Tick the declaration to submit.')
+    $('apply').hidden = true
+    $('done').hidden = false
+    $('appNo').textContent = 'TNPD/2026/' + String(Math.floor(100000 + Math.random() * 900000))
+    window.scrollTo(0, 0)
+  }
+</script>
+</body>
+</html>

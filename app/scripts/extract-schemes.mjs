@@ -10,6 +10,7 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 
 const BASE = 'https://www.myscheme.gov.in'
+const LANGS = ['en', 'ta', 'hi', 'te', 'kn']
 
 /** app scheme id → where its details come from */
 const SOURCES = {
@@ -41,7 +42,8 @@ async function getJson(path) {
 const ENTITIES = { '&#39;': "'", '&quot;': '"', '&amp;': '&', '&lt;': '<', '&gt;': '>', '&nbsp;': ' ' }
 
 // Known machine-translation slips in myScheme's Tamil text.
-const TA_FIXES = [['ராமதீர்தம்', 'ராமாமிர்தம்']]
+// myScheme misspells Moovalur Ramamirtham Ammaiyar's name as "Ramatheertham" in every language.
+const TA_FIXES = [['ராமதீர்தம்', 'ராமாமிர்தம்'], ['रामतीर्थम', 'रामामृतम'], ['రామతీర్థమ్', 'రామామృతం'], ['ರಾಮತೀರ್ಥಮ್', 'ರಾಮಾಮೃತಂ']]
 
 /** Tidy myScheme markdown: HTML entities, stray escapes, bold markers broken by translation ("* *"),
  *  list items that the Tamil translation joined onto one line, and nested-list indentation. */
@@ -119,9 +121,11 @@ function linksFrom(detail) {
 
 async function fromMyScheme(slug) {
   const out = { source: { name: 'myScheme (Government of India)', url: `${BASE}/schemes/${slug}`, checked: new Date().toISOString().slice(0, 10) } }
-  for (const lang of ['en', 'ta']) {
+  for (const lang of LANGS) {
     const data = await getJson(`/api/apisetu/schemes?slug=${encodeURIComponent(slug)}&lang=${lang}`)
-    const d = data[lang] ?? data.en
+    const d = data[lang]
+    // Not every scheme is translated into every language; the app falls back to English.
+    if (!d) { if (lang === 'en') throw new Error('no English data'); continue }
     const docs = await getJson(`/api/apisetu/schemes/${data._id}/documents?lang=${lang}`).catch(() => null)
     const basic = d.basicDetails ?? {}
     const content = d.schemeContent ?? {}
@@ -138,7 +142,7 @@ async function fromMyScheme(slug) {
     }
   }
   out.links = linksFrom(out.en)
-  for (const lang of ['en', 'ta']) delete out[lang].references
+  for (const lang of LANGS) delete out[lang]?.references
   return out
 }
 
@@ -147,7 +151,7 @@ const schemes = {}
 for (const [id, src] of Object.entries(SOURCES)) {
   if (src.manual) {
     const m = manual[id]
-    schemes[id] = { source: { name: m.sourceName, url: m.sourceUrl, checked: m.checked }, en: m.en, ta: m.ta, links: m.links }
+    schemes[id] = { source: { name: m.sourceName, url: m.sourceUrl, checked: m.checked }, en: m.en, ta: m.ta, hi: m.hi, te: m.te, kn: m.kn, links: m.links }
     console.log(`✓ ${id} (official site, curated)`)
     continue
   }
@@ -156,7 +160,7 @@ for (const [id, src] of Object.entries(SOURCES)) {
     // Gaps in myScheme filled from the official source (see manual-schemes.json → _overrides).
     const fix = manual._overrides?.[id]
     if (fix) {
-      for (const lang of ['en', 'ta']) Object.assign(schemes[id][lang], fix[lang] ?? {})
+      for (const lang of LANGS) if (schemes[id][lang]) Object.assign(schemes[id][lang], fix[lang] ?? {})
       if (fix.links) schemes[id].links = [...schemes[id].links, ...fix.links]
     }
     // Apply the Tamil spelling fixes everywhere, names included.

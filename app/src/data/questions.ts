@@ -1,4 +1,5 @@
 import type { FactKey, Lang, Text } from '../types'
+import { say, tr } from '../lang'
 import { GENDERS, OCCUPATIONS } from '../i18n'
 import {
   parseAge, parseDistrict, parseFamilySize, parseGender, parseIncome, parseName, parseOccupation, parseYesNo,
@@ -22,7 +23,8 @@ export type Question = {
   parse: (text: string) => Parsed<unknown>
 }
 
-const t = (lang: Lang, en: string, ta: string) => (lang === 'ta' ? ta : en)
+// Hindi / Telugu / Kannada come from the dictionaries in src/lang, keyed by the English text.
+const t = (lang: Lang, en: string, ta: string, name?: string) => say(lang, en, ta, name === undefined ? undefined : { name })
 
 export const QUESTIONS: Record<QuestionKey, Question> = {
   name: {
@@ -36,7 +38,7 @@ export const QUESTIONS: Record<QuestionKey, Question> = {
   age: {
     key: 'age',
     say: (l, self) => (self ? t(l, 'How old are you?', 'உங்கள் வயது என்ன?') : t(l, 'How old are they?', 'அவருடைய வயது என்ன?')),
-    ask: (l, c) => (c.self ? t(l, 'How old are you?', 'உங்கள் வயது என்ன?') : t(l, `How old is ${c.name}?`, `${c.name} அவர்களின் வயது என்ன?`)),
+    ask: (l, c) => (c.self ? t(l, 'How old are you?', 'உங்கள் வயது என்ன?') : t(l, 'How old is {name}?', '{name} அவர்களின் வயது என்ன?', c.name)),
     hint: { en: 'e.g. "45"', ta: 'எ.கா. "45"' },
     input: 'number',
     parse: parseAge,
@@ -47,7 +49,7 @@ export const QUESTIONS: Record<QuestionKey, Question> = {
     ask: (l, c) =>
       c.self
         ? t(l, 'Are you male, female or other?', 'நீங்கள் ஆணா, பெண்ணா, அல்லது மற்றவரா?')
-        : t(l, `Is ${c.name} male, female or other?`, `${c.name} ஆணா, பெண்ணா, அல்லது மற்றவரா?`),
+        : t(l, 'Is {name} male, female or other?', '{name} ஆணா, பெண்ணா, அல்லது மற்றவரா?', c.name),
     hint: { en: '"Male", "Female" or "Other"', ta: '"ஆண்", "பெண்" அல்லது "மற்றவை"' },
     input: 'choice',
     choices: Object.entries(GENDERS).map(([value, label]) => ({ value, label })),
@@ -56,7 +58,7 @@ export const QUESTIONS: Record<QuestionKey, Question> = {
   occupation: {
     key: 'occupation',
     say: (l, self) => (self ? t(l, 'What work do you do?', 'நீங்கள் என்ன வேலை செய்கிறீர்கள்?') : t(l, 'What work do they do?', 'அவர் என்ன வேலை செய்கிறார்?')),
-    ask: (l, c) => (c.self ? t(l, 'What work do you do?', 'நீங்கள் என்ன வேலை செய்கிறீர்கள்?') : t(l, `What does ${c.name} do?`, `${c.name} என்ன செய்கிறார்?`)),
+    ask: (l, c) => (c.self ? t(l, 'What work do you do?', 'நீங்கள் என்ன வேலை செய்கிறீர்கள்?') : t(l, 'What does {name} do?', '{name} என்ன செய்கிறார்?', c.name)),
     hint: { en: 'e.g. "I am a farmer"', ta: 'எ.கா. "நான் விவசாயி"' },
     input: 'choice',
     choices: Object.entries(OCCUPATIONS).map(([value, label]) => ({ value, label })),
@@ -121,8 +123,8 @@ export const QUESTIONS: Record<QuestionKey, Question> = {
 function yesNo(key: QuestionKey, en: (self: boolean, name: string) => string, ta: (self: boolean, name: string) => string): Question {
   return {
     key,
-    ask: (l, c) => (l === 'ta' ? ta(c.self, c.name) : en(c.self, c.name)),
-    say: (l, self) => (l === 'ta' ? ta(self, 'அவர்') : en(self, 'they')).replace(/^Does they /, 'Do they ').replace(/^Did they /, 'Did they ').replace(/^Is they /, 'Are they ').replace(/, is they /, ', are they '),
+    ask: (l, c) => say(l, en(c.self, '{name}'), ta(c.self, '{name}'), { name: c.name }),
+    say: (l, self) => (l === 'ta' ? ta(self, 'அவர்') : tr(l, en(self, 'they').replace(/^Does they /, 'Do they ').replace(/^Is they /, 'Are they ').replace(/, is they /, ', are they '))),
     hint: { en: '"Yes" or "No"', ta: '"ஆம்" அல்லது "இல்லை"' },
     input: 'yesno',
     parse: parseYesNo,

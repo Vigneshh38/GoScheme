@@ -18,3 +18,5 @@ Scheme_Saathi_Expo*.pptx
 # local editor / Claude Code settings
 .claude/
 .vscode/
+*.apk
+app/public/tesseract/

@@ -4,7 +4,7 @@ Project name: **GoScheme** (earlier working name "Scheme Saathi" — do not use 
 Team: **Techies** — Vignesh A, Musthaba S, Mohammed AlHameed. CresIgnite CSE Project Expo 2K26,
 Crescent Institute. Expo deck: GoScheme_Expo.pptx; team logo + UI mockups in mockups/.
 
-Voice-first Tamil + English app that tells people which government schemes they
+Voice-first app (Tamil, English, Hindi, Telugu, Kannada) that tells people which government schemes they
 are eligible for and helps them fill the forms. MUST be very simple to use.
 
 Pitch: "myScheme tells you, Haqdarshak does it for a fee, we do it free with AI."
@@ -63,13 +63,17 @@ Rules:
 - Always confirm OCR text with the user
 
 ## Later phases
-- Deadline reminders + application status tracking
-- Alerts for new matching schemes
+- Done: application status tracking (Ready → Submitted → Approved / Rejected) with a
+  30-day "check the status" reminder (phone notification + banner) — `src/lib/reminders.ts`
+- Alerts for new matching schemes (needs a server / scheme feed)
 - Private schemes (start with govt schemes from myScheme data)
 
 ## Constraints
-- Output is a ready-filled PDF for the user to submit — no direct portal submission
-- Captcha: guide the user through it, never bypass
+- Android app: opens the official portal in-app and auto-fills it (PM-KISAN, e-Shram, Tamizh Pudhalvan + Pudhumai Penn via UMIS login so far —
+  `src/portal/portals.ts`). The user types captcha/OTP; our "Continue" bar then presses the
+  portal's own Get OTP / Submit button. Other schemes (and the web version): ready-filled PDF
+- Captcha / OTP: guide the user through it, never bypass or auto-fill
+- Full Aadhaar / bank account live only in memory (`src/lib/secrets.ts`), never stored
 - No paid middleman / agent step
 
 ## Target users
@@ -78,8 +82,8 @@ categories (farmers, students, women, seniors, workers, etc.), and the UI must
 work for low-literacy and first-time smartphone users.
 
 ## App (decided 2026-09-29: React web app, mobile-first PWA)
-Code in `app/` — React 19 + Vite + TypeScript, framer-motion, lucide-react. (Slide 3 of the
-deck still says Flutter — update it if the deck is reused.)
+Code in `app/` — React 19 + Vite + TypeScript, framer-motion, lucide-react. Deck slide 3 shows
+`mockups/architecture.html` (re-render the PNG with headless Edge at 1160×500, scale 3).
 - `npm run dev` (in app/) → http://localhost:5173 · `npm run dev:phone` → HTTPS on the LAN
   (phones only allow the mic on HTTPS) · `npm run build` · `npm run typecheck`
 - `npm run build:artifact` → dist-artifact/ (single inlined page + voice clips) for the phone
@@ -89,7 +93,26 @@ deck still says Flutter — update it if the deck is reused.)
 - Screens in `src/screens`, schemes + rules in `src/data/schemes.ts`, questions in
   `src/data/questions.ts`, answer parsing (Tamil/English numbers, lakh, districts) in `src/lib/parse.ts`
 - Data is AES-GCM encrypted in the browser (`src/lib/store.ts`); Aadhaar kept as last 4 digits only
-- OCR: tesseract.js in the browser; PDF = print page ("Save as PDF") so Tamil renders correctly
+- OCR: tesseract.js, fully offline — engine + English data are copied into `public/tesseract`
+  by `scripts/copy-ocr-assets.mjs` before each build (not committed); PDF = print page ("Save as PDF") so Tamil renders correctly
+
+### Android app (Capacitor 8, appId in.techies.goscheme)
+- `npm run android` (in app/) → web build + `cap sync` + debug APK at
+  `android/app/build/outputs/apk/debug/app-debug.apk` (copied to `GoScheme.apk` in the root)
+- Set `GRADLE_USER_HOME=D:\gradle-cache` first (C: is nearly full); SDK path is in android/local.properties
+- Portal filling: @capgo/inappbrowser injects `src/portal/autofill.ts` on every page load
+- "Try with demo data" (UMIS schemes): opens the bundled demo copy `public/demo/umis.html`
+  full-screen and runs the same fill script — works offline, for the expo demo
+
+### Languages
+All five are live: Tamil, English, Hindi, Telugu, Kannada. English + Tamil text sits inline as
+{ en, ta }; Hindi / Telugu / Kannada come from `src/lang/*.json` keyed by the English text —
+`npm run lang:check` must report "every language complete" after any text change. Scheme
+details come from myScheme in all five. `src/lib/parse.ts` understands spoken answers in all
+five (number words, money words, native digits, work/gender/yes-no words). Phone speech:
+Android recognizer (hi-IN, te-IN, kn-IN…) + Android text-to-speech where no recording exists
+(Azure clips exist only for ta/en; generate.py also has hi/te/kn voices: `--langs hi te kn`).
+- Voice: @capgo/capacitor-speech-recognition (Android WebView has no Web Speech API)
 
 ### Official scheme data
 `npm run schemes:extract` (in app/) writes `src/data/scheme-details.json` (English + Tamil):

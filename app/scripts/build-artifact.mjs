@@ -28,7 +28,7 @@ const page = `<title>${title}</title>
 <meta name="description" content="${description}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Kannada:wght@400;600&family=Poppins:wght@400;500;600;700&display=swap">
 <style>
 ${styles}
 /* Artifact frame: fill the viewer, keep the app's white page */
@@ -43,4 +43,6 @@ ${script}
 writeFileSync(join(OUT, 'index.html'), page)
 rmSync(join(OUT, 'assets'), { recursive: true })
 for (const f of ['icon.svg', 'manifest.webmanifest']) rmSync(join(OUT, f), { force: true })
+// Offline OCR files are for the Android app; the Artifact frame scans with demo values instead.
+rmSync(join(OUT, 'tesseract'), { recursive: true, force: true })
 console.log(`artifact page: ${(page.length / 1024).toFixed(0)} KB, voice clips: ${readdirSync(join(OUT, 'voice', 'ta')).length + readdirSync(join(OUT, 'voice', 'en')).length}`)

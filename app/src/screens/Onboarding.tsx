@@ -9,6 +9,7 @@ import { QUESTIONS, type QuestionKey } from '../data/questions'
 import { formatValue, isHouseholdKey, rawAnswer } from '../lib/format'
 import { useVoiceQuestion } from '../lib/useVoiceQuestion'
 import { useApp } from '../state'
+import { say } from '../lang'
 import type { Member } from '../types'
 
 type Props = {
@@ -33,9 +34,11 @@ export function Onboarding({ member, flow, onDone, onExit }: Props) {
   const key = flow[index]
   const q = QUESTIONS[key]
   const self = member.relation === 'self'
-  const ctxName = member.name || (lang === 'ta' ? 'அவர்' : 'them')
+  const ctxName = member.name || say(lang, 'them', 'அவர்')
   const prompt = q.ask(lang, { self, name: ctxName })
-  const other = q.ask(lang === 'ta' ? 'en' : 'ta', { self, name: ctxName })
+  // The same question in a second language, shown small (English, or Tamil for English users).
+  const otherLang = lang === 'en' ? 'ta' : 'en'
+  const other = q.ask(otherLang, { self, name: member.name || say(otherLang, 'them', 'அவர்') })
 
   const save = (value: unknown) => {
     if (key === 'name') dispatch({ type: 'memberFact', id: member.id, patch: { name: value as string } })

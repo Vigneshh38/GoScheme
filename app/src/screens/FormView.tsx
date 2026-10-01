@@ -1,18 +1,21 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { Check, Copy, Download } from 'lucide-react'
+import { BellRing, Check, Copy, Download, Send, ThumbsUp, X as XIcon } from 'lucide-react'
 import { Button, IconTile, TopBar } from '../components/ui'
 import { schemeById } from '../data/schemes'
 import { detailsFor, sortedLinks } from '../data/details'
 import { SchemeLinks } from '../components/SchemeLinks'
 import { useApp } from '../state'
+import { localeOf } from '../lang'
+import type { FormStatus } from '../types'
+import { cancelReminder, remindDate, scheduleReminder } from '../lib/reminders'
 
 // Inside a Claude Artifact printing is blocked, so offer copying instead.
 const IN_ARTIFACT = import.meta.env.MODE === 'artifact'
 
 /** The finished form: a printable sheet the user saves as PDF and takes to submit. */
 export function FormView({ formId, fresh, onBack, onHome }: { formId: string; fresh: boolean; onBack: () => void; onHome: () => void }) {
-  const { state, t, pick, lang } = useApp()
+  const { state, t, pick, lang, dispatch } = useApp()
   const form = state.forms.find((f) => f.id === formId)
   const scheme = form && schemeById(form.schemeId)
   const member = form && state.members.find((m) => m.id === form.memberId)
@@ -31,7 +34,22 @@ export function FormView({ formId, fresh, onBack, onHome }: { formId: string; fr
     ].join('\n')
     navigator.clipboard?.writeText(text).then(() => setCopied(true), () => setCopied(false))
   }
-  const date = new Date(form.createdAt).toLocaleDateString(lang === 'ta' ? 'ta-IN' : 'en-IN', { day: 'numeric', month: 'long', year: 'numeric' })
+  const date = new Date(form.createdAt).toLocaleDateString(localeOf(lang), { day: 'numeric', month: 'long', year: 'numeric' })
+  const status = form.status ?? 'ready'
+  const setStatus = (next: FormStatus) => {
+    if (next === 'submitted') {
+      const now = Date.now()
+      const at = remindDate(now)
+      dispatch({ type: 'formStatus', id: form.id, patch: { status: next, submittedAt: now, remindAt: at } })
+      void scheduleReminder(form.id, at, t('remindTitle'), t('remindBody', { scheme: pick(scheme.name) }))
+    } else {
+      dispatch({ type: 'formStatus', id: form.id, patch: { status: next, remindAt: undefined } })
+      void cancelReminder(form.id)
+    }
+  }
+  const STEPS: [FormStatus, typeof Send, string][] = [
+    ['ready', Check, t('formReadyTag')], ['submitted', Send, t('stSubmitted')], ['approved', ThumbsUp, t('stApproved')], ['rejected', XIcon, t('stRejected')],
+  ]
 
   return (
     <div className="screen">
@@ -81,6 +99,22 @@ export function FormView({ formId, fresh, onBack, onHome }: { formId: string; fr
           )}
           <p className="ps-foot">{t('notOfficial')}. {t('demoRules')}</p>
         </article>
+
+        <section className="sec">
+          <h2 className="sec-title">{t('statusTitle')}</h2>
+          <p className="status-lead">{t('statusLead')}</p>
+          <div className="status-steps">
+            {STEPS.map(([key, Icon, label]) => (
+              <button key={key} type="button" className={`status-step status-step--${key}${status === key ? ' on' : ''}`} onClick={() => setStatus(key)} aria-pressed={status === key}>
+                <Icon size={16} />{label}
+              </button>
+            ))}
+          </div>
+          {status === 'submitted' && form.remindAt && (
+            <p className="status-note"><BellRing size={15} />{t('remindOn', { date: new Date(form.remindAt).toLocaleDateString(localeOf(lang), { day: 'numeric', month: 'long' }) })}</p>
+          )}
+          {status === 'rejected' && <p className="status-note status-note--bad">{t('rejectedLead')}</p>}
+        </section>
 
         {links.length > 0 && (
           <section className="sec">

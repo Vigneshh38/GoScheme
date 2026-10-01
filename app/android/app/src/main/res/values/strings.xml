@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">GoScheme</string>
+    <string name="title_activity_main">GoScheme</string>
+    <string name="package_name">in.techies.goscheme</string>
+    <string name="custom_url_scheme">in.techies.goscheme</string>
+</resources>

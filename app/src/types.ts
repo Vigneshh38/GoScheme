@@ -1,7 +1,11 @@
-export type Lang = 'en' | 'ta'
+export type Lang = 'en' | 'ta' | 'hi' | 'te' | 'kn'
 
-/** A piece of text in both app languages. */
-export type Text = { en: string; ta: string }
+/**
+ * A piece of text. English and Tamil are written next to each other in the code; Hindi,
+ * Telugu and Kannada usually come from the dictionaries in src/lang (looked up by the
+ * English text), but can also be given inline.
+ */
+export type Text = { en: string; ta: string; hi?: string; te?: string; kn?: string }
 
 export type Relation = 'self' | 'spouse' | 'child' | 'parent' | 'sibling' | 'other'
 export type Gender = 'male' | 'female' | 'other'
@@ -52,7 +56,14 @@ export type SavedForm = {
   createdAt: number
   fields: FormField[]
   documents: string[]
+  /** Where the application is; missing on forms saved before tracking existed (= ready). */
+  status?: FormStatus
+  submittedAt?: number
+  /** When to remind the person to check the status (set when submitted). */
+  remindAt?: number
 }
+
+export type FormStatus = 'ready' | 'submitted' | 'approved' | 'rejected'
 
 export type AppState = {
   lang: Lang
