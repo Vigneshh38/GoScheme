@@ -53,17 +53,33 @@ export function PortalSheet({ open, onClose, portal, values }: Props) {
     if (needsUmis && !/^[A-Za-z0-9]{6,}$/.test(umisId.trim())) return setError(say(lang, 'Enter your UMIS / EMIS ID', 'சரியான UMIS / EMIS எண்ணை உள்ளிடவும்'))
     setError(null)
     if (a) setSecret('aadhaar', a)
-    const how = await openPortal(portal.url, pick(portal.name), { values: all, exact: portal.exact, text: barText(lang) })
+    const finalValues: FillValues = {
+      ...all,
+      ...(a ? { aadhaar: a } : {}),
+      ...(mobile ? { mobile } : {}),
+    }
+    const how = await openPortal(portal.url, pick(portal.name), { values: finalValues, exact: portal.exact, text: barText(lang) })
     if (how === 'opened-tab') setOpenedTab(true)
     else onClose()
   }
 
+  const validAadhaar = all.aadhaar && all.aadhaar.replace(/\D/g, '').length === 12
+    ? all.aadhaar
+    : '234567890123'
+  const validMobile = all.mobile && all.mobile.replace(/\D/g, '').length === 10
+    ? all.mobile
+    : '9876543210'
+
   // Demo data: the person's own details where known, sample values for the rest.
   const demoValues: FillValues = {
-    name: 'Arun Kumar', gender: 'Male', district: 'Madurai', fatherName: 'Kannan', college: 'Govt Arts College, Madurai',
-    bankAccount: '50100234567890', ifsc: 'SBIN0001234',
+    name: all.name || 'Murugan Kannan', gender: all.gender || 'Male', district: all.district || 'Madurai',
+    fatherName: all.fatherName || 'Kannan', college: all.college || 'Govt Arts College, Madurai',
+    bankAccount: all.bankAccount || '50100234567890', ifsc: all.ifsc || 'SBIN0001234',
     ...all,
-    umisId: all.umisId || 'DEMO2026TN0142', aadhaar: all.aadhaar || '234567890123', mobile: all.mobile || '9876543210',
+    umisId: all.umisId || 'DEMO2026TN0142',
+    aadhaar: validAadhaar,
+    mobile: validMobile,
+    state: 'TAMIL NADU',
   }
 
   const copy = (key: string, text: string) => {
@@ -108,7 +124,7 @@ export function PortalSheet({ open, onClose, portal, values }: Props) {
               <p>{pick(portal.youDo)}</p>
             </div>
             {error && <p className="input-error">{error}</p>}
-            <Button block icon={Globe} onClick={go}>{t('openPortal')}</Button>
+            <Button block icon={Globe} onClick={go}>{t('fillOfficial')}</Button>
             {portal.demo && (
               <Button block variant="secondary" icon={PlayCircle} onClick={() => { onClose(); setDemo(true) }}>{t('demoPortal')}</Button>
             )}

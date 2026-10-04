@@ -19,9 +19,9 @@ export function portalValues(m: Member, h: HouseholdFacts, filled: Record<string
     ifsc: filled.ifsc,
     surveyNo: filled.surveyNo,
     college: filled.college,
-    mobile: filled.mobile,
-    aadhaar: getSecret('aadhaar'),
-    bankAccount: getSecret('bankAccount'),
+    mobile: filled.mobile || (m as { phone?: string; mobile?: string }).phone || (m as { phone?: string; mobile?: string }).mobile,
+    aadhaar: getSecret('aadhaar') || (filled.aadhaar && !filled.aadhaar.includes('X') ? filled.aadhaar.replace(/\s/g, '') : undefined),
+    bankAccount: getSecret('bankAccount') || (filled.bankAccount && !filled.bankAccount.includes('X') ? filled.bankAccount : undefined),
   }
   return Object.fromEntries(Object.entries(v).filter(([, x]) => x)) as FillValues
 }

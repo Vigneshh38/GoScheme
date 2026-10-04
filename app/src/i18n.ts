@@ -193,7 +193,7 @@ export const STRINGS = {
   },
   savePdf: { en: 'Save as PDF', ta: 'PDF ஆகச் சேமி' },
   copyDetails: { en: 'Copy details', ta: 'விவரங்களை நகலெடு' },
-  fillOfficial: { en: 'Fill the official form', ta: 'அதிகாரப்பூர்வ படிவத்தை நிரப்பு' },
+  fillOfficial: { en: 'Fill Official Government Form', ta: 'அதிகாரப்பூர்வ அரசு படிவத்தை நிரப்பு' },
   portalLead: {
     en: 'GoScheme opens the official website and fills in your details. You type the captcha and OTP, check everything, then tap Continue.',
     ta: 'GoScheme அதிகாரப்பூர்வ இணையதளத்தைத் திறந்து உங்கள் விவரங்களை நிரப்பும். கேப்ட்சா, OTP-ஐ நீங்கள் உள்ளிட்டு, சரிபார்த்து "தொடர்" அழுத்தவும்.',

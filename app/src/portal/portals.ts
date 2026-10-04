@@ -38,10 +38,11 @@ export const PORTALS: Record<string, Portal> = {
     url: 'https://pmkisan.gov.in/RegistrationFormupdated.aspx',
     needs: ['aadhaar', 'mobile'],
     exact: [
-      { selector: '#txtsrch', key: 'aadhaar' },
-      { selector: '#ContentPlaceHolder1_txtMobileNo', key: 'mobile' },
-      { selector: '#ContentPlaceHolder1_DropDownState', key: 'state' },
+      { selector: '#txtsrch, [id*="txtsrch" i], input[name*="txtsrch" i]', key: 'aadhaar' },
+      { selector: '#ContentPlaceHolder1_txtMobileNo, [id*="txtMobileNo" i], input[name*="txtMobileNo" i]', key: 'mobile' },
+      { selector: '#ContentPlaceHolder1_DropDownState, [id*="DropDownState" i], select[name*="DropDownState" i]', key: 'state' },
     ],
+    demo: 'demo/pmkisan.html',
     youDo: {
       en: 'Type the captcha, then the OTP sent to your Aadhaar-linked mobile.',
       ta: 'கேப்ட்சாவையும், ஆதாருடன் இணைந்த மொபைலுக்கு வரும் OTP-ஐயும் நீங்களே உள்ளிடவும்.',
@@ -50,13 +51,15 @@ export const PORTALS: Record<string, Portal> = {
   'e-shram': {
     name: { en: 'e-Shram self registration', ta: 'இ-ஷ்ரம் சுயப் பதிவு' },
     url: 'https://register.eshram.gov.in/#/user/self',
-    needs: ['mobile'],
+    needs: ['mobile', 'aadhaar'],
     exact: [
       { selector: '#mobileNumber', key: 'mobile' },
       // Only unorganised workers without PF / ESI are eligible, so both answers are "No".
       { selector: '#epfo_no', choose: true },
       { selector: '#esic_no', choose: true },
+      { selector: '#aadhaarNumber, [id*="aadhaar" i], input[name*="aadhaar" i]', key: 'aadhaar' },
     ],
+    demo: 'demo/eshram.html',
     youDo: {
       en: 'Type the captcha, then the OTPs sent to your mobile and Aadhaar-linked mobile.',
       ta: 'கேப்ட்சாவையும், உங்கள் மொபைலுக்கு வரும் OTP-களையும் நீங்களே உள்ளிடவும்.',

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PM-KISAN New Farmer Registration (Demo)</title>
+<!--
+  A demo copy of PM-KISAN New Farmer Registration bundled with GoScheme.
+  Allows testing the auto-fill and CAPTCHA flow completely offline even if
+  the official pmkisan.gov.in server is down or slow.
+-->
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14.5px/1.45 system-ui, -apple-system, sans-serif; background: #f0fdf4; color: #1e293b; }
+  .demo-banner { background: #fef3c7; color: #92400e; text-align: center; font-size: 12px; font-weight: 600; padding: 6px 12px; border-bottom: 1px solid #fde68a; }
+  header { background: #166534; color: #fff; padding: 14px 16px; display: flex; gap: 12px; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  header .emblem { width: 42px; height: 42px; border-radius: 50%; background: #ffffff; color: #166534; display: grid; place-items: center; font-weight: 800; font-size: 11px; flex: none; }
+  header b { display: block; font-size: 16px; }
+  header small { opacity: .9; font-size: 12px; }
+  main { max-width: 580px; margin: 0 auto; padding: 16px; }
+  .card { background: #fff; border-radius: 12px; padding: 20px 18px; box-shadow: 0 2px 8px rgba(15,23,42,.08); border: 1px solid #dcfce7; }
+  h1 { font-size: 18px; margin: 0 0 6px; color: #166534; }
+  .sub { margin: 0 0 16px; color: #64748b; font-size: 13px; }
+  .radio-group { display: flex; gap: 16px; margin: 12px 0 16px; font-size: 13.5px; }
+  .radio-group label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+  label.field-lbl { display: block; font-size: 13px; font-weight: 600; margin: 14px 0 4px; color: #334155; }
+  input, select { width: 100%; height: 42px; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 0 10px; font: inherit; background: #fff; }
+  .captcha-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+  .code { font: 700 20px/42px monospace; letter-spacing: 5px; background: repeating-linear-gradient(45deg, #e2e8f0 0 6px, #f8fafc 6px 12px); border-radius: 6px; padding: 0 14px; user-select: none; text-decoration: line-through; text-decoration-color: #94a3b8; width: auto; border: 0; color: #1e293b; }
+  .refresh-btn { flex: none; height: 42px; border: 1px solid #cbd5e1; background: #fff; border-radius: 6px; padding: 0 12px; font-size: 16px; cursor: pointer; }
+  .btn { margin-top: 18px; width: 100%; height: 46px; border: 0; border-radius: 6px; background: #166534; color: #fff; font: 700 15px system-ui, sans-serif; cursor: pointer; transition: background 0.2s; }
+  .btn:hover { background: #14532d; }
+  .err { color: #b91c1c; font-size: 13px; margin: 8px 0 0; min-height: 1.2em; font-weight: 500; }
+  .ok { text-align: center; }
+  .ok .tick { width: 64px; height: 64px; border-radius: 50%; background: #16a34a; color: #fff; font-size: 34px; display: grid; place-items: center; margin: 10px auto 14px; }
+  .reg-no { font: 700 18px monospace; background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; border-radius: 8px; padding: 10px; margin: 12px 0; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="demo-banner">DEMO SIMULATION for GoScheme — pmkisan.gov.in replica</div>
+<header>
+  <span class="emblem">GOI</span>
+  <span><b>PM-KISAN</b><small>Pradhan Mantri Kisan Samman Nidhi · Government of India</small></span>
+</header>
+<main>
+  <!-- Step 1: Initial New Farmer Registration Form -->
+  <form class="card" id="regForm" autocomplete="off">
+    <h1>New Farmer Registration</h1>
+    <p class="sub">Register with your Aadhaar number to get ₹6,000 yearly financial benefit.</p>
+
+    <div class="radio-group">
+      <label><input type="radio" name="farmerType" value="rural" checked> Rural Farmer Registration</label>
+      <label><input type="radio" name="farmerType" value="urban"> Urban Farmer Registration</label>
+    </div>
+
+    <!-- Official PM-KISAN exact IDs -->
+    <label class="field-lbl" for="txtsrch">Aadhaar Number</label>
+    <input id="txtsrch" name="txtsrch" type="password" inputmode="numeric" maxlength="12" placeholder="Enter 12 digit Aadhaar Number">
+
+    <label class="field-lbl" for="ContentPlaceHolder1_txtMobileNo">Mobile Number</label>
+    <input id="ContentPlaceHolder1_txtMobileNo" name="ContentPlaceHolder1_txtMobileNo" inputmode="numeric" maxlength="10" placeholder="Enter 10 digit Mobile Number">
+
+    <label class="field-lbl" for="ContentPlaceHolder1_DropDownState">State</label>
+    <select id="ContentPlaceHolder1_DropDownState" name="ContentPlaceHolder1_DropDownState">
+      <option value="0">--Select State--</option>
+      <option value="28">ANDHRA PRADESH</option>
+      <option value="29">KARNATAKA</option>
+      <option value="32">KERALA</option>
+      <option value="33">TAMIL NADU</option>
+      <option value="36">TELANGANA</option>
+      <option value="27">MAHARASHTRA</option>
+    </select>
+
+    <label class="field-lbl" for="txtCaptcha">Enter Captcha</label>
+    <div class="captcha-row">
+      <input class="code" id="captchaDisplay" readonly tabindex="-1">
+      <button type="button" class="refresh-btn" id="btnRefresh" aria-label="Refresh Captcha">↻</button>
+    </div>
+    <input id="txtCaptcha" name="txtCaptcha" placeholder="Enter Captcha code shown above">
+
+    <p class="err" id="formErr"></p>
+    <button class="btn" id="ContentPlaceHolder1_btnGetOTP" type="submit">GET OTP</button>
+  </form>
+
+  <!-- Step 2: OTP Verification & Final Details -->
+  <form class="card" id="otpForm" hidden autocomplete="off">
+    <h1>Aadhaar OTP Verification</h1>
+    <p class="sub">Enter the 6-digit OTP sent to your Aadhaar-linked mobile number.</p>
+    
+    <label class="field-lbl" for="txtOTP">Enter OTP</label>
+    <input id="txtOTP" name="txtOTP" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit OTP (e.g. 123456)">
+
+    <p class="err" id="otpErr"></p>
+    <button class="btn" id="btnSubmitOtp" type="submit">VERIFY & REGISTER</button>
+  </form>
+
+  <!-- Step 3: Registration Success -->
+  <div class="card ok" id="successBox" hidden>
+    <div class="tick">✓</div>
+    <h1>Registration Submitted!</h1>
+    <p class="sub">Your farmer registration application has been received successfully.</p>
+    <div class="reg-no" id="regIdDisplay"></div>
+    <p class="sub">Financial benefits of ₹2,000 every 4 months will be directly credited to your Aadhaar-linked bank account.</p>
+  </div>
+</main>
+
+<script>
+  const codeEl = document.getElementById('captchaDisplay')
+  const newCaptcha = () => {
+    codeEl.value = Math.random().toString(36).slice(2, 7).toUpperCase().replace(/0/g, '7').replace(/O/g, '9')
+  }
+  newCaptcha()
+  document.getElementById('btnRefresh').onclick = newCaptcha
+
+  const $ = (id) => document.getElementById(id)
+
+  $('regForm').onsubmit = (e) => {
+    e.preventDefault()
+    const err = $('formErr')
+    const aadhaarVal = $('txtsrch').value.replace(/\D/g, '')
+    const mobileVal = $('ContentPlaceHolder1_txtMobileNo').value.replace(/\D/g, '')
+    const stateVal = $('ContentPlaceHolder1_DropDownState').value
+    const captchaVal = $('txtCaptcha').value.trim().toUpperCase()
+
+    if (aadhaarVal.length !== 12) {
+      err.textContent = 'Enter a valid 12-digit Aadhaar number.'
+      return
+    }
+    if (mobileVal.length !== 10) {
+      err.textContent = 'Enter a valid 10-digit mobile number.'
+      return
+    }
+    if (stateVal === '0') {
+      err.textContent = 'Please select your State.'
+      return
+    }
+    if (!captchaVal || captchaVal !== codeEl.value) {
+      err.textContent = 'Captcha code does not match. Please enter the captcha shown above.'
+      $('txtCaptcha').value = ''
+      newCaptcha()
+      return
+    }
+
+    err.textContent = ''
+    $('regForm').hidden = true
+    $('otpForm').hidden = false
+    window.scrollTo(0, 0)
+  }
+
+  $('otpForm').onsubmit = (e) => {
+    e.preventDefault()
+    const err = $('otpErr')
+    const otp = $('txtOTP').value.trim()
+    if (otp.length < 4) {
+      err.textContent = 'Enter the OTP received on your mobile (e.g. 123456).'
+      return
+    }
+    $('otpForm').hidden = true
+    $('successBox').hidden = false
+    $('regIdDisplay').textContent = 'TN/' + Math.floor(100000000 + Math.random() * 900000000)
+    window.scrollTo(0, 0)
+  }
+</script>
+</body>
+</html>

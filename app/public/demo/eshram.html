@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>e-Shram Self Registration (Demo)</title>
+<!--
+  A demo replica of e-Shram Self Registration bundled with GoScheme.
+  Demonstrates Step 1 (Mobile & EPFO/ESIC check), Step 2 (Aadhaar verification),
+  and Step 3 (Personal & Bank details autofill) completely offline.
+-->
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14.5px/1.45 system-ui, -apple-system, sans-serif; background: #f8fafc; color: #1e293b; }
+  .demo-banner { background: #fef3c7; color: #92400e; text-align: center; font-size: 12px; font-weight: 600; padding: 6px 12px; border-bottom: 1px solid #fde68a; }
+  header { background: #0284c7; color: #fff; padding: 14px 16px; display: flex; gap: 12px; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  header .emblem { width: 42px; height: 42px; border-radius: 50%; background: #ffffff; color: #0284c7; display: grid; place-items: center; font-weight: 800; font-size: 11px; flex: none; }
+  header b { display: block; font-size: 16px; }
+  header small { opacity: .9; font-size: 12px; }
+  main { max-width: 580px; margin: 0 auto; padding: 16px; }
+  .card { background: #fff; border-radius: 12px; padding: 20px 18px; box-shadow: 0 2px 8px rgba(15,23,42,.08); border: 1px solid #e2e8f0; }
+  h1 { font-size: 18px; margin: 0 0 6px; color: #0369a1; }
+  .sub { margin: 0 0 16px; color: #64748b; font-size: 13px; }
+  .field-block { margin-bottom: 14px; }
+  label.field-lbl { display: block; font-size: 13px; font-weight: 600; margin: 12px 0 4px; color: #334155; }
+  .radio-row { display: flex; gap: 16px; align-items: center; margin: 6px 0; }
+  .radio-row label { display: flex; align-items: center; gap: 6px; font-size: 13.5px; cursor: pointer; }
+  input[type="text"], input[type="password"], select { width: 100%; height: 42px; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 0 10px; font: inherit; background: #fff; }
+  .captcha-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+  .code { font: 700 20px/42px monospace; letter-spacing: 5px; background: repeating-linear-gradient(45deg, #e2e8f0 0 6px, #f8fafc 6px 12px); border-radius: 6px; padding: 0 14px; user-select: none; text-decoration: line-through; text-decoration-color: #94a3b8; width: auto; border: 0; color: #1e293b; }
+  .refresh-btn { flex: none; height: 42px; border: 1px solid #cbd5e1; background: #fff; border-radius: 6px; padding: 0 12px; font-size: 16px; cursor: pointer; }
+  .btn { margin-top: 18px; width: 100%; height: 46px; border: 0; border-radius: 6px; background: #0284c7; color: #fff; font: 700 15px system-ui, sans-serif; cursor: pointer; transition: background 0.2s; }
+  .btn:hover { background: #0369a1; }
+  .err { color: #b91c1c; font-size: 13px; margin: 8px 0 0; min-height: 1.2em; font-weight: 500; }
+  .check-lbl { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; margin-top: 14px; color: #475569; }
+  .check-lbl input { width: 18px; height: 18px; margin-top: 2px; }
+  .uan-card { border: 2px solid #0284c7; border-radius: 12px; padding: 16px; background: linear-gradient(135deg, #f0f9ff, #e0f2fe); margin: 16px 0; }
+  .uan-no { font: 700 20px monospace; color: #0369a1; letter-spacing: 2px; margin: 10px 0; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="demo-banner">DEMO SIMULATION for GoScheme — register.eshram.gov.in replica</div>
+<header>
+  <span class="emblem">GOI</span>
+  <span><b>e-Shram Portal</b><small>Ministry of Labour & Employment · Government of India</small></span>
+</header>
+<main>
+  <!-- Step 1: Self Registration Screen 1 -->
+  <form class="card" id="step1Form" autocomplete="off">
+    <h1>Self Registration — Step 1</h1>
+    <p class="sub">Aadhaar linked mobile number is preferred for instant verification.</p>
+
+    <!-- Official e-Shram selector #mobileNumber -->
+    <label class="field-lbl" for="mobileNumber">Aadhaar linked Mobile Number *</label>
+    <input id="mobileNumber" name="mobileNumber" inputmode="numeric" maxlength="10" placeholder="Enter 10 digit Mobile Number">
+
+    <div class="field-block">
+      <label class="field-lbl">Are you a member of EPFO? *</label>
+      <div class="radio-row">
+        <label><input type="radio" id="epfo_yes" name="epfo" value="yes"> Yes</label>
+        <label><input type="radio" id="epfo_no" name="epfo" value="no" checked> No</label>
+      </div>
+    </div>
+
+    <div class="field-block">
+      <label class="field-lbl">Are you a member of ESIC? *</label>
+      <div class="radio-row">
+        <label><input type="radio" id="esic_yes" name="esic" value="yes"> Yes</label>
+        <label><input type="radio" id="esic_no" name="esic" value="no" checked> No</label>
+      </div>
+    </div>
+
+    <!-- Official Captcha Field -->
+    <label class="field-lbl" for="captcha">Enter Captcha *</label>
+    <div class="captcha-row">
+      <input class="code" id="captchaDisp1" readonly tabindex="-1">
+      <button type="button" class="refresh-btn" id="btnRefresh1" aria-label="Refresh Captcha">↻</button>
+    </div>
+    <input id="captcha" name="captcha" placeholder="Enter Captcha code shown above">
+
+    <p class="err" id="step1Err"></p>
+    <button class="btn" id="btnSendOtp" type="submit">SEND OTP</button>
+  </form>
+
+  <!-- Step 2: Aadhaar Number Entry -->
+  <form class="card" id="step2Form" hidden autocomplete="off">
+    <h1>Self Registration — Step 2 (Aadhaar Verification)</h1>
+    <p class="sub">Enter your 12-digit Aadhaar number for identity confirmation.</p>
+
+    <label class="field-lbl" for="aadhaarNumber">Aadhaar Number *</label>
+    <input id="aadhaarNumber" name="aadhaarNumber" inputmode="numeric" maxlength="12" placeholder="Enter 12-digit Aadhaar Number">
+
+    <label class="field-lbl" for="aadhaarCaptcha">Enter Captcha *</label>
+    <div class="captcha-row">
+      <input class="code" id="captchaDisp2" readonly tabindex="-1">
+      <button type="button" class="refresh-btn" id="btnRefresh2" aria-label="Refresh Captcha">↻</button>
+    </div>
+    <input id="aadhaarCaptcha" name="aadhaarCaptcha" placeholder="Enter Captcha">
+
+    <label class="check-lbl">
+      <input type="checkbox" id="termsCheck" checked>
+      I agree to the terms and conditions for Aadhaar based authentication.
+    </label>
+
+    <p class="err" id="step2Err"></p>
+    <button class="btn" id="btnSubmitAadhaar" type="submit">SUBMIT & CONTINUE</button>
+  </form>
+
+  <!-- Step 3: Registration Form (Personal & Bank Details) -->
+  <form class="card" id="step3Form" hidden autocomplete="off">
+    <h1>Worker Registration Details</h1>
+    <p class="sub">Review your details to issue your Universal Account Number (UAN) card.</p>
+
+    <label class="field-lbl" for="applicantName">Full Name</label>
+    <input id="applicantName" name="applicantName" placeholder="Full name">
+
+    <label class="field-lbl" for="district">District</label>
+    <select id="district" name="district">
+      <option value="">-- Select District --</option>
+      <option value="Chennai">CHENNAI</option>
+      <option value="Madurai">MADURAI</option>
+      <option value="Coimbatore">COIMBATORE</option>
+      <option value="Tiruchirappalli">TIRUCHIRAPPALLI</option>
+      <option value="Salem">SALEM</option>
+      <option value="Tirunelveli">TIRUNELVELI</option>
+    </select>
+
+    <label class="field-lbl" for="accountNo">Bank Account Number</label>
+    <input id="accountNo" name="accountNo" inputmode="numeric" placeholder="Bank Account Number">
+
+    <label class="field-lbl" for="ifscCode">IFSC Code</label>
+    <input id="ifscCode" name="ifscCode" placeholder="IFSC Code">
+
+    <p class="err" id="step3Err"></p>
+    <button class="btn" id="btnSubmitFinal" type="submit">CONFIRM & GENERATE UAN CARD</button>
+  </form>
+
+  <!-- Step 4: Card Generated -->
+  <div class="card ok" id="step4Card" hidden style="text-align:center;">
+    <div style="width:54px;height:54px;border-radius:50%;background:#16a34a;color:#fff;font-size:28px;display:grid;place-items:center;margin:10px auto;">✓</div>
+    <h1>e-Shram Card Generated!</h1>
+    <div class="uan-card">
+      <div style="font-weight:700;color:#0284c7;font-size:13px;">MINISTRY OF LABOUR & EMPLOYMENT</div>
+      <div style="font-size:12px;color:#64748b;">Universal Account Number (UAN)</div>
+      <div class="uan-no" id="uanDisplay">1009 8452 7714</div>
+      <div style="font-weight:600;font-size:15px;" id="nameDisplay">Murugan K</div>
+      <div style="font-size:12px;color:#475569;margin-top:4px;">Unorganised Worker ID</div>
+    </div>
+    <p class="sub">Your digital e-Shram UAN card has been registered in the National Database of Unorganised Workers.</p>
+  </div>
+</main>
+
+<script>
+  const c1 = document.getElementById('captchaDisp1')
+  const newC1 = () => { c1.value = Math.random().toString(36).slice(2, 7).toUpperCase().replace(/0/g, '3').replace(/O/g, '8') }
+  newC1()
+  document.getElementById('btnRefresh1').onclick = newC1
+
+  const c2 = document.getElementById('captchaDisp2')
+  const newC2 = () => { c2.value = Math.random().toString(36).slice(2, 7).toUpperCase().replace(/0/g, '5').replace(/O/g, '6') }
+  newC2()
+  document.getElementById('btnRefresh2').onclick = newC2
+
+  const $ = (id) => document.getElementById(id)
+
+  $('step1Form').onsubmit = (e) => {
+    e.preventDefault()
+    const err = $('step1Err')
+    const mobile = $('mobileNumber').value.replace(/\D/g, '')
+    const captcha = $('captcha').value.trim().toUpperCase()
+
+    if (mobile.length !== 10) {
+      err.textContent = 'Enter a valid 10-digit mobile number.'
+      return
+    }
+    if (!captcha || captcha !== c1.value) {
+      err.textContent = 'Captcha code does not match. Please enter the captcha shown above.'
+      $('captcha').value = ''
+      newC1()
+      return
+    }
+
+    err.textContent = ''
+    $('step1Form').hidden = true
+    $('step2Form').hidden = false
+    window.scrollTo(0, 0)
+  }
+
+  $('step2Form').onsubmit = (e) => {
+    e.preventDefault()
+    const err = $('step2Err')
+    const aadhaar = $('aadhaarNumber').value.replace(/\D/g, '')
+    const captcha = $('aadhaarCaptcha').value.trim().toUpperCase()
+
+    if (aadhaar.length !== 12) {
+      err.textContent = 'Enter a valid 12-digit Aadhaar number.'
+      return
+    }
+    if (!captcha || captcha !== c2.value) {
+      err.textContent = 'Captcha code does not match.'
+      $('aadhaarCaptcha').value = ''
+      newC2()
+      return
+    }
+    if (!$('termsCheck').checked) {
+      err.textContent = 'Please accept the Aadhaar verification terms.'
+      return
+    }
+
+    err.textContent = ''
+    $('step2Form').hidden = true
+    $('step3Form').hidden = false
+    window.scrollTo(0, 0)
+  }
+
+  $('step3Form').onsubmit = (e) => {
+    e.preventDefault()
+    const err = $('step3Err')
+    const name = $('applicantName').value.trim()
+    if (!name) {
+      err.textContent = 'Please enter your name.'
+      return
+    }
+    err.textContent = ''
+    $('step3Form').hidden = true
+    $('step4Card').hidden = false
+    $('nameDisplay').textContent = name
+    $('uanDisplay').textContent = '100' + Math.floor(100000000 + Math.random() * 900000000).toString().replace(/(\d{4})(\d{4})/, '$1 $2 ')
+    window.scrollTo(0, 0)
+  }
+</script>
+</body>
+</html>
