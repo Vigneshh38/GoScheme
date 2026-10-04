@@ -11,12 +11,10 @@ tools/tts/pip-install.log
 tools/tts/report.json
 __pycache__/
 
-# Office lock files and superseded decks (old "Scheme Saathi" name)
+# Office lock files
 ~$*
-Scheme_Saathi_Expo*.pptx
 
 # local editor / Claude Code settings
 .claude/
 .vscode/
-*.apk
 app/public/tesseract/
